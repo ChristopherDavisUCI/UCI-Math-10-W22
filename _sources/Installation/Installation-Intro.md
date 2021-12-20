@@ -1,30 +1,100 @@
-# Installation and Configuration
+# Installation
 
-**Warning**.  Every computer is different, and there is no guarantee these instructions will work on your computer.  If you can't get Python installed on your own computer, you can use the ALP lab computers.
+For Math 10, you will need access to a computer running Python 3.8 (or any of 3.7-3.10) and on which you can install Python libraries.  One option is to use the ALP lab computers.  If you want to use your personal computer, one method is to use Miniconda.See the [Alternatives section](subsec:alt-installation) below for more options.
 
-**Installing Miniconda**
+Outline to use Miniconda:
 
-I'll describe two different ways to use Python on your computer.  You should probably **only follow one** of these two options.
+1.  Download and install Miniconda.
+1.  Create a Conda virtual environment named `math10`.
+1.  Activate that environment and then install the Python libraries we will use for this class.
 
-1. Use Miniconda.  This is what I currently use (in December 2021). I like that it is faster and more lightweight than Anaconda, but I found it confusing when I first started, and for years I used Anaconda Navigator instead.<br>Installing Miniconda on Windows.<br>Installing Miniconda on Mac.
+## Warnings  
 
-2. Use Anaconda Navigator.  This option is easier and probably better for beginners, but the software takes up more space and is slower to load, etc.  The lab computers already have Anaconda Navigator installed.<br>Installing Anaconda Navigator (on Windows or Mac)
+* If you already have Anaconda installed, don't install Miniconda; use Anaconda instead.  If you try to install both, probably neither will work correctly.
+* Every computer is different, and there is no guarantee these instructions will work on your computer.  If you can't get Python installed on your own computer, you can always use the ALP lab computers.
 
+## Instructions for Windows
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MTnTzlJA1To" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**Configuration**
-
-We need to install a number of Python libraries (more may be added later).  From a terminal, run the following.
-
+* [Download Miniconda](https://docs.conda.io/en/latest/miniconda.html) and then install it.
+* Search for Anaconda Prompt (not Anaconda Powershell Prompt) on your computer and then open it.
+* From the Anaconda Prompt, create a new Python 3.8 environment (or any version you want from 3.7-3.10) for our class using the following command:
+```
+conda create --name math10 python=3.8
+```
+* Switch into that environment:
+```
+conda activate math10
+```
+* (This next step might take 20-30 minutes.)  Install the first set of Python libraries we will need, from the `conda-forge` channel:
 ```
 conda install -c conda-forge ipykernel jupyter numpy pandas matplotlib seaborn altair vega_datasets scikit-learn plotly jupyter-book
+```
+* (This next step might take 20-30 minutes.) Install the next set of libraries we will need, from the `pytorch` channel:
+```
 conda install -c pytorch pytorch torchvision torchaudio
 ```
 
-The `-c conda-forge` indicates that the libraries should be downloaded from the conda-forge channel.  Similarly, the `-c pytorch` downloads from a different channel.  (Make sure you type `pytorch` twice, the first pytorch indicates where to download from, and the second indicates to download the PyTorch library.)
+To check that things worked, try executing the command `jupyter notebook` from the Anaconda prompt.  It should open a page in your internet browser.  From that page, create a new Python 3 notebook from the `New` dropdown menu.  Try to execute the following commands in the notebook (execute by hitting `shift+enter`).
+```
+import numpy as np
+np.array([3,1,4,1])
+```
+and
+```
+import torch
+torch.rand((3,4))
+```
+If these commands work without any errors (the first should produce something like a vector and the second should produce something like a matrix), then your Python environment is working!
 
-When you are done, you can close the terminal and then click the `Update index` button in Anaconda.  You should see the many libraries we just downloaded.
 
-## Mac
+## Instructions for Mac
 
-Download Miniconda.  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FU9Ri7I9vkE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+```{dropdown} Here's my dropdown
+And here's my dropdown content
+```
+
+* [Download Miniconda](https://docs.conda.io/en/latest/miniconda.html) and then install it.  I recommend downloading the `.pkg` file.  (I could not get the M1 file to work, even though I have an M1 Mac.)
+* Open a terminal.  You should see `(base)` on the left side if Miniconda is installed correctly.  This indicates you are in the *base* Conda environment.
+* From the terminal, create a new Python 3.8 environment (or any version you want from 3.7-3.10) for our class using the following command:
+```
+conda create --name math10 python=3.8
+```
+* Switch into that environment:
+```
+conda activate math10
+```
+* (This next step might take 20-30 minutes.)  Install the first set of Python libraries we will need, from the `conda-forge` channel:
+```
+conda install -c conda-forge ipykernel jupyter numpy pandas matplotlib seaborn altair vega_datasets scikit-learn plotly jupyter-book
+```
+* (This step might take 20-30 minutes.) Install the next set of libraries we will need, from the `pytorch` channel:
+```
+conda install -c pytorch pytorch torchvision torchaudio
+```
+
+To check that things worked, try executing the command `jupyter notebook` from the terminal prompt, still within the `math10` environment.  It should open a page in your internet browser.  From that page, create a new Python 3 notebook from the `New` dropdown menu.  Try to execute the following commands in the notebook (execute by hitting `shift+enter`).
+```
+import numpy as np
+np.array([3,1,4,1])
+```
+and
+```
+import torch
+torch.rand((3,4))
+```
+If these commands work without any errors (the first should produce something like a vector and the second should produce something like a matrix), then your Python environment is working!
+
+(subsec:alt-installation)=
+## Alternatives
+
+There are some alternatives if you don't want to follow the above instructions.
+
+* It is fine to do everything on the ALP lab computers, instead of using your personal computer.
+
+* A very reasonable alternative, and what I recommended in Fall 2021, is to download Anaconda instead of Miniconda.  (You should not install both.)  Anaconda is more similar to what we would use on the lab computers.  The reason I suggest Miniconda is because that is what I personally use and because it installs less unnecessary software.
+
+* Cloud resources.  It may be possible in Math 10 to do everything "in the cloud".  The most famous option would be to use Google Colab.  I personally have found the interface of Deepnote to be more intuitive, so I understand Deepnote better than Google Colab.
