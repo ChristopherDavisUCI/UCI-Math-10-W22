@@ -1,8 +1,10 @@
-# Installation
+# Installation (optional)
 
-For Math 10, you will need access to a computer running Python 3.8 (or any of 3.7-3.10) and on which you can install Python libraries.  One option is to use the ALP lab computers.  If you want to use your personal computer, one method is to use Miniconda.See the [Alternatives section](subsec:alt-installation) below for more options.
+For the Winter 2022 version Math 10, because the class is starting out remote, we will primarily run Python code "in the cloud" using Deepnote.  This way you do not have to install anything on your own computers.
 
-Outline to use Miniconda:
+If you do wish to run Python code on your personal computer, here are instructions for installing Python via Miniconda.  See the [Alternatives section](subsec:alt-installation) below for more options.
+
+Brief outline:
 
 1.  Download and install Miniconda.
 1.  Create a Conda virtual environment named `math10`.
@@ -53,12 +55,8 @@ If these commands work without any errors (the first should produce something li
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FU9Ri7I9vkE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-```{dropdown} Here's my dropdown
-And here's my dropdown content
-```
-
 * [Download Miniconda](https://docs.conda.io/en/latest/miniconda.html) and then install it.  I recommend downloading the `.pkg` file.  (I could not get the M1 file to work, even though I have an M1 Mac.)
-* Open a terminal.  You should see `(base)` on the left side if Miniconda is installed correctly.  This indicates you are in the *base* Conda environment.
+* Open a new terminal window.  You should see `(base)` on the left side if Miniconda is installed correctly.  This indicates you are in the *base* Conda environment.
 * From the terminal, create a new Python 3.8 environment (or any version you want from 3.7-3.10) for our class using the following command:
 ```
 conda create --name math10 python=3.8
@@ -93,8 +91,4 @@ If these commands work without any errors (the first should produce something li
 
 There are some alternatives if you don't want to follow the above instructions.
 
-* It is fine to do everything on the ALP lab computers, instead of using your personal computer.
-
 * A very reasonable alternative, and what I recommended in Fall 2021, is to download Anaconda instead of Miniconda.  (You should not install both.)  Anaconda is more similar to what we would use on the lab computers.  The reason I suggest Miniconda is because that is what I personally use and because it installs less unnecessary software.
-
-* Cloud resources.  It may be possible in Math 10 to do everything "in the cloud".  The most famous option would be to use Google Colab.  I personally have found the interface of Deepnote to be more intuitive, so I understand Deepnote better than Google Colab.

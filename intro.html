@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UC Irvine, Math 10, Winter 2022 &#8212; UC Irvine Math 10</title>
+    <title>UC Irvine, Math 10, Winter 2022 &#8212; UC Irvine Math 10 W22</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,25 +33,26 @@
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="Installation/Installation-Intro.html" />
+    <link rel="next" title="Getting Started" href="GettingStarted/GettingStarted-Intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -73,9 +74,14 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">UC Irvine Math 10</h1>
+      <img src="_static/digitsyellow.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10 W22</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -91,10 +97,27 @@
  </li>
 </ul>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Installation/Installation-Intro.html">
-   Installation
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="GettingStarted/GettingStarted-Intro.html">
+   Getting Started
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="GettingStarted/Installation.html">
+     Installation (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="GettingStarted/Deepnote.html">
+     Deepnote
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -175,24 +198,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#course-level-learning-outcomes">
-   Course-level Learning Outcomes
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -205,27 +210,23 @@
 <h1>UC Irvine, Math 10, Winter 2022<a class="headerlink" href="#uc-irvine-math-10-winter-2022" title="Permalink to this headline">¶</a></h1>
 <p><strong>Introduction to Programming for Data Science</strong></p>
 <p>Use the Navigation menu on the left to find the course content.</p>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p>I originally duplicated the University of Washington’s <a class="reference external" href="https://uwdata.github.io/visualization-curriculum/intro.html">Visualization Curriculum</a>.
-I thank the authors for making this material available not just to use, but to edit via their <a class="reference external" href="https://github.com/uwdata/visualization-curriculum">GitHub source code</a>.</p>
-</div>
-<div class="section" id="course-level-learning-outcomes">
-<h2>Course-level Learning Outcomes<a class="headerlink" href="#course-level-learning-outcomes" title="Permalink to this headline">¶</a></h2>
+<p><strong>Course-level Learning Outcomes</strong></p>
 <p>The goal of this course is to introduce programming in Python, with an emphasis on some of the tools that are most relevant to <strong>data science</strong>.  The primary learning outcomes for Math 10 are that students will be able to:</p>
 <ul class="simple">
 <li><p>select appropriate data types (both built-in Python types as well as types defined in external libraries) when performing computations;</p></li>
 <li><p>apply tools from unfamiliar Python libraries using some combination of documentation, error messages, and code examples written by experienced programmers;</p></li>
-<li><p>write code which is <em>Pythonic</em> and adheres to the <em>DRY</em> (Don’t Repeat Yourself) principle;</p></li>
-<li><p>given an unfamiliar dataset, apply techniques of <em>Exploratory Data Analysis</em> (EDA) to gain a rapid first-impression of its contents;</p></li>
+<li><p>write code which is <em>Pythonic</em> (for example, avoiding unnecessary for loops) and adheres to the <em>DRY</em> (Don’t Repeat Yourself) principle;</p></li>
+<li><p>given an unfamiliar dataset, apply techniques of <em>Exploratory Data Analysis</em> (EDA) to gain a rapid first-impression of the dataset’s contents;</p></li>
 <li><p>manipulate structured data using NumPy and pandas;</p></li>
-<li><p>display significant aspects of datasets using Altair;</p></li>
-<li><p>improve the performance of various machine learning algorithms by adjusting parameters within scikit-learn;</p></li>
+<li><p>produce visualizations conveying significant aspects of datasets using Altair;</p></li>
 <li><p>illustrate the structure of a neural network and the various components involved in the training of a neural network, and implement the procedure using PyTorch;</p></li>
-<li><p>detect the presence of overfitting within a machine learning algorithm;</p></li>
-<li><p>create an educational, data-focused Jupyter notebook using a combination of code cells and explanatory markdown cells.</p></li>
+<li><p>improve the performance of various machine learning algorithms by adjusting parameters within scikit-learn and PyTorch;</p></li>
+<li><p>recognize the potential for overfitting when applying a machine learning algorithm;</p></li>
+<li><p>create an educational, data-focused Jupyter notebook or Deepnote notebook using a combination of code cells and explanatory markdown cells.</p></li>
 </ul>
-</div>
+<p><strong>References</strong></p>
+<p>I originally duplicated the University of Washington’s <a class="reference external" href="https://uwdata.github.io/visualization-curriculum/intro.html">Visualization Curriculum</a>.
+I thank the authors for making this material available not just to use, but to edit via their <a class="reference external" href="https://github.com/uwdata/visualization-curriculum">GitHub source code</a>.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -255,10 +256,10 @@ I thank the authors for making this material available not just to use, but to e
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Installation/Installation-Intro.html" title="next page">
+    <a class='right-next' id="next-link" href="GettingStarted/GettingStarted-Intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installation</p>
+        <p class="prev-next-title">Getting Started</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

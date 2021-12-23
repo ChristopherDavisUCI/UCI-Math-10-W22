@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Installation &#8212; UC Irvine Math 10</title>
+    <title>Installation (optional) &#8212; UC Irvine Math 10 W22</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,25 +33,27 @@
     
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="UC Irvine, Math 10, Winter 2022" href="../intro.html" />
+    <link rel="next" title="Deepnote" href="Deepnote.html" />
+    <link rel="prev" title="Getting Started" href="GettingStarted-Intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -73,9 +75,14 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">UC Irvine Math 10</h1>
+      <img src="../_static/digitsyellow.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10 W22</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -91,10 +98,27 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Installation
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="GettingStarted-Intro.html">
+   Getting Started
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Installation (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Deepnote.html">
+     Deepnote
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -137,7 +161,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Installation/Installation-Intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/GettingStarted/Installation.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -211,10 +235,11 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>For Math 10, you will need access to a computer running Python 3.8 (or any of 3.7-3.10) and on which you can install Python libraries.  One option is to use the ALP lab computers.  If you want to use your personal computer, one method is to use Miniconda.See the <a class="reference internal" href="#subsec-alt-installation"><span class="std std-ref">Alternatives section</span></a> below for more options.</p>
-<p>Outline to use Miniconda:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="installation-optional">
+<h1>Installation (optional)<a class="headerlink" href="#installation-optional" title="Permalink to this headline">¶</a></h1>
+<p>For the Winter 2022 version Math 10, because the class is starting out remote, we will primarily run Python code “in the cloud” using Deepnote.  This way you do not have to install anything on your own computers.</p>
+<p>If you do wish to run Python code on your personal computer, here are instructions for installing Python via Miniconda.  See the <a class="reference internal" href="#subsec-alt-installation"><span class="std std-ref">Alternatives section</span></a> below for more options.</p>
+<p>Brief outline:</p>
 <ol class="simple">
 <li><p>Download and install Miniconda.</p></li>
 <li><p>Create a Conda virtual environment named <code class="docutils literal notranslate"><span class="pre">math10</span></code>.</p></li>
@@ -271,18 +296,9 @@
 <div class="section" id="instructions-for-mac">
 <h2>Instructions for Mac<a class="headerlink" href="#instructions-for-mac" title="Permalink to this headline">¶</a></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FU9Ri7I9vkE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Here’s my dropdown<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">And here’s my dropdown content</p>
-</div>
-</details><ul class="simple">
+<ul class="simple">
 <li><p><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Download Miniconda</a> and then install it.  I recommend downloading the <code class="docutils literal notranslate"><span class="pre">.pkg</span></code> file.  (I could not get the M1 file to work, even though I have an M1 Mac.)</p></li>
-<li><p>Open a terminal.  You should see <code class="docutils literal notranslate"><span class="pre">(base)</span></code> on the left side if Miniconda is installed correctly.  This indicates you are in the <em>base</em> Conda environment.</p></li>
+<li><p>Open a new terminal window.  You should see <code class="docutils literal notranslate"><span class="pre">(base)</span></code> on the left side if Miniconda is installed correctly.  This indicates you are in the <em>base</em> Conda environment.</p></li>
 <li><p>From the terminal, create a new Python 3.8 environment (or any version you want from 3.7-3.10) for our class using the following command:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">math10</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8</span>
@@ -322,9 +338,7 @@ Here’s my dropdown<div class="summary-down docutils">
 <span id="subsec-alt-installation"></span><h2>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this headline">¶</a></h2>
 <p>There are some alternatives if you don’t want to follow the above instructions.</p>
 <ul class="simple">
-<li><p>It is fine to do everything on the ALP lab computers, instead of using your personal computer.</p></li>
 <li><p>A very reasonable alternative, and what I recommended in Fall 2021, is to download Anaconda instead of Miniconda.  (You should not install both.)  Anaconda is more similar to what we would use on the lab computers.  The reason I suggest Miniconda is because that is what I personally use and because it installs less unnecessary software.</p></li>
-<li><p>Cloud resources.  It may be possible in Math 10 to do everything “in the cloud”.  The most famous option would be to use Google Colab.  I personally have found the interface of Deepnote to be more intuitive, so I understand Deepnote better than Google Colab.</p></li>
 </ul>
 </div>
 </div>
@@ -342,7 +356,7 @@ Here’s my dropdown<div class="summary-down docutils">
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Installation"
+            path: "./GettingStarted"
         },
         predefinedOutput: true
     }
@@ -354,12 +368,19 @@ Here’s my dropdown<div class="summary-down docutils">
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="GettingStarted-Intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">UC Irvine, Math 10, Winter 2022</p>
+            <p class="prev-next-title">Getting Started</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="Deepnote.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Deepnote</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
         
