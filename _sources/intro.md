@@ -2,6 +2,8 @@
 
 **Introduction to Programming for Data Science**
 
+**Update 12/29/2021**: Not much is posted yet, but material will be posted throughout the course.
+
 Use the Navigation menu on the left to find the course content. 
 
 
@@ -13,7 +15,7 @@ The goal of this course is to introduce programming in Python, with an emphasis 
 * write code which is *Pythonic* (for example, avoiding unnecessary for loops) and adheres to the *DRY* (Don't Repeat Yourself) principle; 
 * given an unfamiliar dataset, apply techniques of *Exploratory Data Analysis* (EDA) to gain a rapid first-impression of the dataset's contents;
 * manipulate structured data using NumPy and pandas;
-* produce visualizations conveying significant aspects of datasets using Altair;
+* produce interactive visualizations conveying significant aspects of datasets using Altair;
 * illustrate the structure of a neural network and the various components involved in the training of a neural network, and implement the procedure using PyTorch;
 * improve the performance of various machine learning algorithms by adjusting parameters within scikit-learn and PyTorch;
 * recognize the potential for overfitting when applying a machine learning algorithm;
