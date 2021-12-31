@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.17e99cb0ad62fb3181c7ff3fb104e51b.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -120,6 +120,11 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Week1/Week1-Intro.html">
+   Week 1
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -166,7 +171,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -197,7 +202,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -230,7 +235,180 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Installation (optional)</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warnings">
+   Warnings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructions-for-windows">
+   Instructions for Windows
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructions-for-mac">
+   Instructions for Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternatives">
+   Alternatives
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="installation-optional">
+<h1>Installation (optional)<a class="headerlink" href="#installation-optional" title="Permalink to this headline">¶</a></h1>
+<p>For the Winter 2022 version Math 10, because the class is starting out remote, we will primarily run Python code “in the cloud” using Deepnote.  This way you do not have to install anything on your own computers.</p>
+<p>If you do wish to run Python code on your personal computer, here are instructions for installing Python via Miniconda.  See the <a class="reference internal" href="#subsec-alt-installation"><span class="std std-ref">Alternatives section</span></a> below for more options.</p>
+<p>Brief outline:</p>
+<ol class="simple">
+<li><p>Download and install Miniconda.</p></li>
+<li><p>Create a Conda virtual environment named <code class="docutils literal notranslate"><span class="pre">math10</span></code>.</p></li>
+<li><p>Activate that environment and then install the Python libraries we will use for this class.</p></li>
+</ol>
+<div class="section" id="warnings">
+<h2>Warnings<a class="headerlink" href="#warnings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If you already have Anaconda installed, don’t install Miniconda; use Anaconda instead.  If you try to install both, probably neither will work correctly.</p></li>
+<li><p>Every computer is different, and there is no guarantee these instructions will work on your computer.  If you can’t get Python installed on your own computer, you can always use the ALP lab computers.</p></li>
+</ul>
+</div>
+<div class="section" id="instructions-for-windows">
+<h2>Instructions for Windows<a class="headerlink" href="#instructions-for-windows" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MTnTzlJA1To" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Download Miniconda</a> and then install it.</p></li>
+<li><p>Search for Anaconda Prompt (not Anaconda Powershell Prompt) on your computer and then open it.</p></li>
+<li><p>From the Anaconda Prompt, create a new Python 3.8 environment (or any version you want from 3.7-3.10) for our class using the following command:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">math10</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Switch into that environment:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">math10</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>(This next step might take 20-30 minutes.)  Install the first set of Python libraries we will need, from the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">ipykernel</span> <span class="n">jupyter</span> <span class="n">numpy</span> <span class="n">pandas</span> <span class="n">matplotlib</span> <span class="n">seaborn</span> <span class="n">altair</span> <span class="n">vega_datasets</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">plotly</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>(This next step might take 20-30 minutes.) Install the next set of libraries we will need, from the <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> channel:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span> <span class="n">pytorch</span> <span class="n">torchvision</span> <span class="n">torchaudio</span>
+</pre></div>
+</div>
+<p>To check that things worked, try executing the command <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> from the Anaconda prompt.  It should open a page in your internet browser.  From that page, create a new Python 3 notebook from the <code class="docutils literal notranslate"><span class="pre">New</span></code> dropdown menu.  Try to execute the following commands in the notebook (execute by hitting <code class="docutils literal notranslate"><span class="pre">shift+enter</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>If these commands work without any errors (the first should produce something like a vector and the second should produce something like a matrix), then your Python environment is working!</p>
+</div>
+<div class="section" id="instructions-for-mac">
+<h2>Instructions for Mac<a class="headerlink" href="#instructions-for-mac" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FU9Ri7I9vkE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Download Miniconda</a> and then install it.  I recommend downloading the <code class="docutils literal notranslate"><span class="pre">.pkg</span></code> file.  (I could not get the M1 file to work, even though I have an M1 Mac.)</p></li>
+<li><p>Open a new terminal window.  You should see <code class="docutils literal notranslate"><span class="pre">(base)</span></code> on the left side if Miniconda is installed correctly.  This indicates you are in the <em>base</em> Conda environment.</p></li>
+<li><p>From the terminal, create a new Python 3.8 environment (or any version you want from 3.7-3.10) for our class using the following command:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">math10</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Switch into that environment:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">math10</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>(This next step might take 20-30 minutes.)  Install the first set of Python libraries we will need, from the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">ipykernel</span> <span class="n">jupyter</span> <span class="n">numpy</span> <span class="n">pandas</span> <span class="n">matplotlib</span> <span class="n">seaborn</span> <span class="n">altair</span> <span class="n">vega_datasets</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">plotly</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>(This step might take 20-30 minutes.) Install the next set of libraries we will need, from the <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> channel:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span> <span class="n">pytorch</span> <span class="n">torchvision</span> <span class="n">torchaudio</span>
+</pre></div>
+</div>
+<p>To check that things worked, try executing the command <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> from the terminal prompt, still within the <code class="docutils literal notranslate"><span class="pre">math10</span></code> environment.  It should open a page in your internet browser.  From that page, create a new Python 3 notebook from the <code class="docutils literal notranslate"><span class="pre">New</span></code> dropdown menu.  Try to execute the following commands in the notebook (execute by hitting <code class="docutils literal notranslate"><span class="pre">shift+enter</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>If these commands work without any errors (the first should produce something like a vector and the second should produce something like a matrix), then your Python environment is working!</p>
+</div>
+<div class="section" id="alternatives">
+<span id="subsec-alt-installation"></span><h2>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this headline">¶</a></h2>
+<p>There are some alternatives if you don’t want to follow the above instructions.</p>
+<ul class="simple">
+<li><p>A very reasonable alternative, and what I recommended in Fall 2021, is to download Anaconda instead of Miniconda.  (You should not install both.)  Anaconda is more similar to what we would use on the lab computers.  The reason I suggest Miniconda is because that is what I personally use and because it installs less unnecessary software.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./GettingStarted"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -387,15 +565,13 @@
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Christopher Davis<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Christopher Davis<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
