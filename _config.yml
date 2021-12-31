@@ -23,9 +23,8 @@ execute:
   allow_errors: true
   
 
-launch_buttons: {
-  deepnote_url: "https://deepnote.com"
-}
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
 
 # Define the name of the latex output file for PDF builds
 latex:

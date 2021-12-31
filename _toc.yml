@@ -5,4 +5,7 @@ chapters:
     sections:
     - file: GettingStarted/Installation
     - file: GettingStarted/Deepnote
+  - file: Week1/Week1-Intro
+    sections:
+    - file: Week1/Homework1
 
