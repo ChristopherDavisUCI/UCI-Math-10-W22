@@ -1,0 +1,50 @@
+# Originally duplicated from UW Visualization Curriculum
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: UC Irvine Math 10 W22
+author: Christopher Davis
+logo: images/digitsyellow.png
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  exclude_patterns:
+    - 'Week1/Week1-Monday.ipynb'
+    - 'Week5/Week5-Monday.ipynb'
+    - 'Week8/Week8-Homework.ipynb'
+    - 'Week8/Week8-Monday.ipynb'
+    - 'Week9/Week8-Wednesday.ipynb'
+    - 'Week9/Week8-Friday.ipynb'
+    - 'Week10/overfitting.ipynb'
+    - 'Saturday.ipynb'
+    - 'param.ipynb'
+  execute_notebooks: auto
+  allow_errors: true
+  
+
+launch_buttons: {
+  deepnote_url: "https://deepnote.com"
+}
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/ChristopherDavisUCI/UCI-Math-10-W22 # Online location of your book
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_repository_button: true
+  favicon : "images/favicon.ico"
+
+sphinx:
+  config:
+    html_extra_path:
+      - Extra
+      - data

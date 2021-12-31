@@ -1,0 +1,8 @@
+format: jb-book
+root: intro
+chapters:
+  - file: GettingStarted/GettingStarted-Intro
+    sections:
+    - file: GettingStarted/Installation
+    - file: GettingStarted/Deepnote
+
