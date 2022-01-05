@@ -41,7 +41,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.17e99cb0ad62fb3181c7ff3fb104e51b.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -119,10 +119,22 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week1/Week1-Intro.html">
    Week 1
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week1/forloop1.html">
+     Making a for loop more Pythonic
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -170,7 +182,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -201,12 +213,75 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>UC Irvine, Math 10, Winter 2022</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="uc-irvine-math-10-winter-2022">
+<h1>UC Irvine, Math 10, Winter 2022<a class="headerlink" href="#uc-irvine-math-10-winter-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Introduction to Programming for Data Science</strong></p>
+<p><strong>Update 12/29/2021</strong>: Not much is posted yet, but material will be posted throughout the course.</p>
+<p>Use the Navigation menu on the left to find the course content.</p>
+<p><strong>Course-level Learning Outcomes</strong></p>
+<p>The goal of this course is to introduce programming in Python, with an emphasis on some of the tools that are most relevant to <strong>data science</strong>.  The primary learning outcomes for Math 10 are that students will be able to:</p>
+<ul class="simple">
+<li><p>select appropriate data types (both built-in Python types as well as types defined in external libraries) when performing computations;</p></li>
+<li><p>apply tools from unfamiliar Python libraries using some combination of documentation, error messages, and code examples written by experienced programmers;</p></li>
+<li><p>write code which is <em>Pythonic</em> (for example, avoiding unnecessary for loops) and adheres to the <em>DRY</em> (Don’t Repeat Yourself) principle;</p></li>
+<li><p>given an unfamiliar dataset, apply techniques of <em>Exploratory Data Analysis</em> (EDA) to gain a rapid first-impression of the dataset’s contents;</p></li>
+<li><p>manipulate structured data using NumPy and pandas;</p></li>
+<li><p>produce interactive visualizations conveying significant aspects of datasets using Altair;</p></li>
+<li><p>illustrate the structure of a neural network and the various components involved in the training of a neural network, and implement the procedure using PyTorch;</p></li>
+<li><p>improve the performance of various machine learning algorithms by adjusting parameters within scikit-learn and PyTorch;</p></li>
+<li><p>recognize the potential for overfitting when applying a machine learning algorithm;</p></li>
+<li><p>create an educational, data-focused Jupyter notebook or Deepnote notebook using a combination of code cells and explanatory markdown cells.</p></li>
+</ul>
+<p><strong>References</strong></p>
+<p>I originally duplicated the University of Washington’s <a class="reference external" href="https://uwdata.github.io/visualization-curriculum/intro.html">Visualization Curriculum</a>.
+I thank the authors for making this material available not just to use, but to edit via their <a class="reference external" href="https://github.com/uwdata/visualization-curriculum">GitHub source code</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -274,15 +349,13 @@ I thank the authors for making this material available not just to use, but to e
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Christopher Davis<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Christopher Davis<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
