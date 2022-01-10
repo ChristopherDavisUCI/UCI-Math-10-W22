@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deepnote &#8212; UC Irvine Math 10 W22</title>
+    <title>Week 2 Videos &#8212; UC Irvine Math 10 W22</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week 1" href="../Week1/Week1-Intro.html" />
-    <link rel="prev" title="Installation (optional)" href="Installation.html" />
+    <link rel="next" title="Random numbers in NumPy" href="rng.html" />
+    <link rel="prev" title="Week 2" href="Week2-Intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -98,23 +98,23 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="GettingStarted-Intro.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../GettingStarted/GettingStarted-Intro.html">
    Getting Started
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Installation.html">
+    <a class="reference internal" href="../GettingStarted/Installation.html">
      Installation (optional)
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/Deepnote.html">
      Deepnote
     </a>
    </li>
@@ -142,28 +142,28 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week2/Week2-Intro.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week2-Intro.html">
    Week 2
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/Week2-Videos.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Week 2 Videos
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/rng.html">
+    <a class="reference internal" href="rng.html">
      Random numbers in NumPy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/BooleanArray.html">
+    <a class="reference internal" href="BooleanArray.html">
      Boolean arrays in NumPy
     </a>
    </li>
@@ -210,7 +210,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/GettingStarted/Deepnote.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Week2/Week2-Videos.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -254,8 +254,23 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-a-deepnote-account">
-   Getting a Deepnote account
+  <a class="reference internal nav-link" href="#list-vs-tuple-vs-set-vs-range">
+   list vs tuple vs set vs range
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-vs-numpy-array">
+   list vs NumPy array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries-and-pandas-series">
+   Dictionaries and pandas Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-simulation-using-numpy">
+   Random simulation using NumPy
   </a>
  </li>
 </ul>
@@ -268,7 +283,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Deepnote</h1>
+                <h1>Week 2 Videos</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -279,8 +294,23 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-a-deepnote-account">
-   Getting a Deepnote account
+  <a class="reference internal nav-link" href="#list-vs-tuple-vs-set-vs-range">
+   list vs tuple vs set vs range
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-vs-numpy-array">
+   list vs NumPy array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries-and-pandas-series">
+   Dictionaries and pandas Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-simulation-using-numpy">
+   Random simulation using NumPy
   </a>
  </li>
 </ul>
@@ -292,29 +322,35 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="deepnote">
-<h1>Deepnote<a class="headerlink" href="#deepnote" title="Permalink to this headline">¶</a></h1>
-<p>In Fall 2021, we used Jupyter notebooks.  In Winter 2022, partially because we are beginning with remote learning, we will use Deepnote notebooks.  Deepnote is a cloud-based resource for running Python notebooks.</p>
-<div class="note admonition">
-<p class="admonition-title">Video (7:42)</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u5VMbFnZejY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-2-videos">
+<h1>Week 2 Videos<a class="headerlink" href="#week-2-videos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="list-vs-tuple-vs-set-vs-range">
+<h2>list vs tuple vs set vs range<a class="headerlink" href="#list-vs-tuple-vs-set-vs-range" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A_-oGyhfeg0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>This video explains some of the advantages and disadvantages among the Python data types list, tuple, set, range.</p>
 </div>
-<p>Some advantages of using Deepnote instead of local Jupyter notebooks:</p>
+<div class="section" id="list-vs-numpy-array">
+<h2>list vs NumPy array<a class="headerlink" href="#list-vs-numpy-array" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aqPr34hGhG8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Similar to the previous video, but for the data type Numpy array.  This data type is defined in the NumPy library, so we first need to get access to that library using <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>.</p>
+<p>NumPy arrays are extremely important.  Even at times when it seems like we are not using them, they may be getting used in the background.</p>
+<p>Many operations can be performed much faster with NumPy arrays than with Python lists.</p>
+</div>
+<div class="section" id="dictionaries-and-pandas-series">
+<h2>Dictionaries and pandas Series<a class="headerlink" href="#dictionaries-and-pandas-series" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iQqslErllcw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Python dictionaries and pandas Series have many similarities.  The <code class="docutils literal notranslate"><span class="pre">dict</span></code> data type in Python is the more fundamental data type, but we will use pandas Series more often in Math 10.  For example, when we import a dataset, each column in that imported dataset will be a pandas Series.</p>
+</div>
+<div class="section" id="random-simulation-using-numpy">
+<h2>Random simulation using NumPy<a class="headerlink" href="#random-simulation-using-numpy" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Mf52Tcn44XY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>If you took my Math 9 class, this type of computation should feel familiar to you.  We use random simulations to estimate a probability.  The key formula we use is that the probability is estimated as “number of successes” divided by “number of experiments”.</p>
+<p>Pay attention to how the computations are done using NumPy.  Several important techniques are introduced in this video:</p>
 <ul class="simple">
-<li><p>Nothing to install.</p></li>
-<li><p>Most (if not all) Python libraries we need are already part of Deepnote.</p></li>
-<li><p>Easy to collaborate.</p></li>
-<li><p>Easy to upload datasets.</p></li>
+<li><p>accessing a column of a matrix;</p></li>
+<li><p>finding which rows in a matrix satisfy a given condition;</p></li>
+<li><p>counting how many rows in a matrix satisfy a given condition.</p></li>
 </ul>
-<p>Some disadvantages:</p>
-<ul class="simple">
-<li><p>Less control over the environment.</p></li>
-<li><p>Because there are limited computing resources available to us, the performance may be less reliable at some times.</p></li>
-<li><p>Some functionality may be different between Deepnote and Jupyter notebooks.</p></li>
-</ul>
-<div class="section" id="getting-a-deepnote-account">
-<h2>Getting a Deepnote account<a class="headerlink" href="#getting-a-deepnote-account" title="Permalink to this headline">¶</a></h2>
-<p>You should receive an email to your UCI account inviting you to join the <em>UCI Math 10 W22</em> Deepnote team account.  Follow the instructions there.</p>
 </div>
 </div>
 
@@ -331,7 +367,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./GettingStarted"
+            path: "./Week2"
         },
         predefinedOutput: true
     }
@@ -343,17 +379,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Installation.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Week2-Intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Installation (optional)</p>
+            <p class="prev-next-title">Week 2</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Week1/Week1-Intro.html" title="next page">
+    <a class='right-next' id="next-link" href="rng.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Week 1</p>
+        <p class="prev-next-title">Random numbers in NumPy</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
