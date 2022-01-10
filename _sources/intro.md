@@ -2,10 +2,7 @@
 
 **Introduction to Programming for Data Science**
 
-**Update 12/29/2021**: Not much is posted yet, but material will be posted throughout the course.
-
-Use the Navigation menu on the left to find the course content. 
-
+Use the Navigation menu on the left to find the course content. More material will be posted throughout the course.
 
 **Course-level Learning Outcomes**
 
