@@ -22,3 +22,5 @@ The goal of this course is to introduce programming in Python, with an emphasis 
 
 I originally duplicated the University of Washington's [Visualization Curriculum](https://uwdata.github.io/visualization-curriculum/intro.html).
 I thank the authors for making this material available not just to use, but to edit via their [GitHub source code](https://github.com/uwdata/visualization-curriculum).
+
+Here is [information about the cars dataset](http://lib.stat.cmu.edu/datasets/cars.desc).  I took this dataset from the [Vega Datasets](https://github.com/altair-viz/vega_datasets) Python library.

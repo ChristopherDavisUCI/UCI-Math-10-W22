@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Getting Started &#8212; UC Irvine Math 10 W22</title>
+    <title>Week 3 Videos &#8212; UC Irvine Math 10 W22</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installation (optional)" href="Installation.html" />
-    <link rel="prev" title="UC Irvine, Math 10, Winter 2022" href="../intro.html" />
+    <link rel="prev" title="Week 3" href="Week3-Intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -98,23 +97,23 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../GettingStarted/GettingStarted-Intro.html">
    Getting Started
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Installation.html">
+    <a class="reference internal" href="../GettingStarted/Installation.html">
      Installation (optional)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Deepnote.html">
+    <a class="reference internal" href="../GettingStarted/Deepnote.html">
      Deepnote
     </a>
    </li>
@@ -179,18 +178,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week3/Week3-Intro.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week3-Intro.html">
    Week 3
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week3/Week3-Videos.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Week 3 Videos
     </a>
    </li>
@@ -237,7 +236,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/GettingStarted/GettingStarted-Intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Week3/Week3-Videos.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -275,6 +274,39 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-a-csv-file">
+   Reading a csv file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distinct-values">
+   Distinct values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#missing-values-1">
+   Missing values 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logic">
+   Logic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#missing-values-2">
+   Missing values 2
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -282,23 +314,76 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Getting Started</h1>
+                <h1>Week 3 Videos</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-a-csv-file">
+   Reading a csv file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distinct-values">
+   Distinct values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#missing-values-1">
+   Missing values 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logic">
+   Logic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#missing-values-2">
+   Missing values 2
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>Use the Navigation menu on the left to find the course content.</p>
-<p><strong>Optional</strong>: Installing Python on your personal computer is optional.  If you want to install Python, here are sample <a class="reference internal" href="Installation.html"><span class="doc std std-doc">installation instructions</span></a> that will help you both install Python as well as all the Python libraries we will use in Math 10.</p>
-<p><strong>Deepnote</strong>: We will primarily use the cloud-based notebooks on Deepnote for this quarter of Math 10.  Here is an <a class="reference internal" href="Deepnote.html"><span class="doc std std-doc">introduction to Deepnote</span></a>.</p>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-3-videos">
+<h1>Week 3 Videos<a class="headerlink" href="#week-3-videos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="reading-a-csv-file">
+<h2>Reading a csv file<a class="headerlink" href="#reading-a-csv-file" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o7i0Pwdit-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>How to read data from a csv file and store it as a pandas DataFrame, and some of the first steps you can take to investigate that DataFrame.</p>
+</div>
+<div class="section" id="distinct-values">
+<h2>Distinct values<a class="headerlink" href="#distinct-values" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KE1gcW-0hQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Various ways to find all the distinct values in a column of a DataFrame.</p>
+</div>
+<div class="section" id="missing-values-1">
+<h2>Missing values 1<a class="headerlink" href="#missing-values-1" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QaYxV4aw27g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>An important concept in data science, especially when dealing with real-world datasets, is the concept of missing data.  This video introduces some ways to locate missing data in a DataFrame.</p>
+</div>
+<div class="section" id="logic">
+<h2>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wPm4Tw4suMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Introduction to the logical operators <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> in Python, and their counterparts <code class="docutils literal notranslate"><span class="pre">~</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code> which should be used with NumPy or pandas.</p>
+</div>
+<div class="section" id="missing-values-2">
+<h2>Missing values 2<a class="headerlink" href="#missing-values-2" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jr0lhJl_gcw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>A more sophisticated way to detect missing values, and an introduction to the important <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument, which can be used to indicate whether the rows or the columns should be searched.</p>
 </div>
 </div>
 
@@ -315,7 +400,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./GettingStarted"
+            path: "./Week3"
         },
         predefinedOutput: true
     }
@@ -327,19 +412,12 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Week3-Intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">UC Irvine, Math 10, Winter 2022</p>
+            <p class="prev-next-title">Week 3</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="Installation.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installation (optional)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
