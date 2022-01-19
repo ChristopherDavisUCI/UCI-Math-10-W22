@@ -209,6 +209,11 @@
      Quiz 2 Practice Exercises
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/visualization.html">
+     Visualization in Python
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -487,14 +492,14 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 8,  5,  7,  9],
-       [ 2,  6,  2, 10],
-       [ 9,  8,  4,  5],
-       [ 8,  9,  8,  3],
-       [ 1,  7,  6,  3],
-       [ 6,  9,  7, 10],
-       [ 3,  5, 10, 10],
-       [ 9,  5,  5, 10]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 8,  4,  5, 10],
+       [ 5,  5,  4,  3],
+       [ 7,  8,  4, 10],
+       [10,  3,  5,  3],
+       [ 2,  7,  9,  9],
+       [ 3,  1,  3,  6],
+       [ 4,  6,  1,  6],
+       [10, 10,  7,  2]])
 </pre></div>
 </div>
 </div>
@@ -507,7 +512,7 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True, False,  True, False, False, False, False,  True])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True, False, False,  True, False,  True, False, False])
 </pre></div>
 </div>
 </div>
@@ -520,7 +525,7 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False, False, False, False, False, False])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False,  True, False, False, False, False, False,  True])
 </pre></div>
 </div>
 </div>
@@ -594,7 +599,7 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True, False,  True, False, False, False, False,  True])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True, False, False,  True, False,  True, False, False])
 </pre></div>
 </div>
 </div>
@@ -649,7 +654,7 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4500809
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4498473
 </pre></div>
 </div>
 </div>
@@ -663,7 +668,7 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4499668
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4498131
 </pre></div>
 </div>
 </div>
@@ -740,59 +745,59 @@ integers(...) method of numpy.random._generator.Generator instance
   <tbody>
     <tr>
       <th>0</th>
-      <td>5</td>
+      <td>6</td>
+      <td>6</td>
       <td>3</td>
       <td>7</td>
-      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
       <td>6</td>
-      <td>1</td>
-      <td>7</td>
-      <td>6</td>
+      <td>10</td>
+      <td>9</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>5</td>
       <td>10</td>
-      <td>4</td>
-      <td>8</td>
       <td>10</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>2</td>
+      <td>4</td>
       <td>3</td>
       <td>8</td>
-      <td>8</td>
-      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>6</td>
-      <td>3</td>
-      <td>1</td>
-      <td>6</td>
+      <td>2</td>
+      <td>2</td>
+      <td>9</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>6</td>
-      <td>10</td>
-      <td>3</td>
-      <td>7</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>3</td>
       <td>5</td>
-      <td>7</td>
-      <td>3</td>
+      <td>9</td>
+      <td>6</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>6</td>
-      <td>1</td>
-      <td>7</td>
       <td>5</td>
+      <td>6</td>
+      <td>2</td>
+      <td>7</td>
     </tr>
   </tbody>
 </table>
@@ -807,14 +812,14 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     5
-1     6
-2    10
-3     3
-4     6
-5     6
-6     3
-7     6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    6
+1    6
+2    5
+3    2
+4    2
+5    2
+6    5
+7    5
 Name: 0, dtype: int64
 </pre></div>
 </div>
@@ -841,14 +846,14 @@ Name: 0, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     True
-1     True
-2     True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
+1    False
+2    False
 3    False
-4     True
+4    False
 5    False
 6    False
-7     True
+7    False
 dtype: bool
 </pre></div>
 </div>
@@ -862,7 +867,7 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
@@ -901,7 +906,7 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.625
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 </pre></div>
 </div>
 </div>
@@ -916,7 +921,7 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.625
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 </pre></div>
 </div>
 </div>
@@ -931,7 +936,7 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4501159
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4499847
 </pre></div>
 </div>
 </div>
@@ -951,14 +956,14 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 6,  8,  3,  4],
-       [ 6,  1,  1,  9],
-       [ 1,  1,  1,  4],
-       [10,  6,  1,  6],
-       [ 3, 10, 10,  5],
-       [ 8,  6,  3,  2],
-       [ 3,  2,  5,  7],
-       [ 8,  8,  1,  5]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 8,  6,  9,  1],
+       [ 6,  7,  5,  3],
+       [ 7,  7,  6,  1],
+       [ 6,  1,  1,  4],
+       [ 3,  1,  6,  6],
+       [10,  2,  8,  3],
+       [ 4,  9,  4,  4],
+       [ 7,  6,  2,  2]])
 </pre></div>
 </div>
 </div>
@@ -997,59 +1002,59 @@ dtype: bool
   <tbody>
     <tr>
       <th>0</th>
-      <td>6</td>
       <td>8</td>
-      <td>3</td>
-      <td>4</td>
+      <td>6</td>
+      <td>9</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
       <td>6</td>
-      <td>1</td>
-      <td>1</td>
-      <td>9</td>
+      <td>7</td>
+      <td>5</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>7</td>
+      <td>7</td>
+      <td>6</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
       <td>1</td>
       <td>1</td>
       <td>4</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>10</td>
-      <td>6</td>
-      <td>1</td>
-      <td>6</td>
-    </tr>
-    <tr>
       <th>4</th>
       <td>3</td>
-      <td>10</td>
-      <td>10</td>
-      <td>5</td>
+      <td>1</td>
+      <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8</td>
-      <td>6</td>
-      <td>3</td>
+      <td>10</td>
       <td>2</td>
+      <td>8</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>3</td>
-      <td>2</td>
-      <td>5</td>
-      <td>7</td>
+      <td>4</td>
+      <td>9</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>8</td>
-      <td>8</td>
-      <td>1</td>
-      <td>5</td>
+      <td>7</td>
+      <td>6</td>
+      <td>2</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -1097,59 +1102,59 @@ dtype: bool
   <tbody>
     <tr>
       <th>0</th>
-      <td>6</td>
       <td>8</td>
-      <td>3</td>
-      <td>4</td>
+      <td>6</td>
+      <td>9</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
       <td>6</td>
-      <td>1</td>
-      <td>1</td>
-      <td>9</td>
+      <td>7</td>
+      <td>5</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>7</td>
+      <td>7</td>
+      <td>6</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
       <td>1</td>
       <td>1</td>
       <td>4</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>10</td>
-      <td>6</td>
-      <td>1</td>
-      <td>6</td>
-    </tr>
-    <tr>
       <th>4</th>
       <td>3</td>
-      <td>10</td>
-      <td>10</td>
-      <td>5</td>
+      <td>1</td>
+      <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8</td>
-      <td>6</td>
-      <td>3</td>
+      <td>10</td>
       <td>2</td>
+      <td>8</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>3</td>
-      <td>2</td>
-      <td>5</td>
-      <td>7</td>
+      <td>4</td>
+      <td>9</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>8</td>
-      <td>8</td>
-      <td>1</td>
-      <td>5</td>
+      <td>7</td>
+      <td>6</td>
+      <td>2</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -1163,14 +1168,14 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     8
-1     1
-2     1
-3     6
-4    10
-5     6
-6     2
-7     8
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    6
+1    7
+2    7
+3    1
+4    1
+5    2
+6    9
+7    6
 Name: b, dtype: int64
 </pre></div>
 </div>
@@ -1183,14 +1188,14 @@ Name: b, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     8
-1     1
-2     1
-3     6
-4    10
-5     6
-6     2
-7     8
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    6
+1    7
+2    7
+3    1
+4    1
+5    2
+6    9
+7    6
 Name: b, dtype: int64
 </pre></div>
 </div>
@@ -1205,14 +1210,14 @@ Name: b, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     8
-1     1
-2     1
-3     6
-4    10
-5     6
-6     2
-7     8
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    6
+1    7
+2    7
+3    1
+4    1
+5    2
+6    9
+7    6
 Name: b, dtype: int64
 </pre></div>
 </div>
@@ -1226,8 +1231,8 @@ Name: b, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1    1
-2    1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1    5
+2    6
 3    1
 Name: m, dtype: int64
 </pre></div>
@@ -1242,10 +1247,10 @@ Name: m, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1     1
-2     1
-3     1
-4    10
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1    5
+2    6
+3    1
+4    6
 Name: m, dtype: int64
 </pre></div>
 </div>
@@ -1286,59 +1291,59 @@ Name: m, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>6</td>
       <td>8</td>
-      <td>3</td>
-      <td>4</td>
+      <td>6</td>
+      <td>9</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
       <td>6</td>
-      <td>1</td>
-      <td>1</td>
-      <td>9</td>
+      <td>7</td>
+      <td>5</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>7</td>
+      <td>7</td>
+      <td>6</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
       <td>1</td>
       <td>1</td>
       <td>4</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>10</td>
-      <td>6</td>
-      <td>1</td>
-      <td>6</td>
-    </tr>
-    <tr>
       <th>4</th>
       <td>3</td>
-      <td>10</td>
-      <td>10</td>
-      <td>5</td>
+      <td>1</td>
+      <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8</td>
-      <td>6</td>
-      <td>3</td>
+      <td>10</td>
       <td>2</td>
+      <td>8</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>3</td>
-      <td>2</td>
-      <td>5</td>
-      <td>7</td>
+      <td>4</td>
+      <td>9</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>8</td>
-      <td>8</td>
-      <td>1</td>
-      <td>5</td>
+      <td>7</td>
+      <td>6</td>
+      <td>2</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -1385,59 +1390,59 @@ Name: m, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>6</td>
       <td>8</td>
-      <td>3</td>
-      <td>4</td>
+      <td>6</td>
+      <td>9</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
       <td>6</td>
-      <td>1</td>
+      <td>7</td>
       <td>-1000</td>
-      <td>9</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>7</td>
+      <td>7</td>
+      <td>-1000</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
       <td>1</td>
       <td>-1000</td>
       <td>4</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>10</td>
-      <td>6</td>
-      <td>-1000</td>
-      <td>6</td>
-    </tr>
-    <tr>
       <th>4</th>
       <td>3</td>
-      <td>10</td>
-      <td>10</td>
-      <td>5</td>
+      <td>1</td>
+      <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8</td>
-      <td>6</td>
-      <td>3</td>
+      <td>10</td>
       <td>2</td>
+      <td>8</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>3</td>
-      <td>2</td>
-      <td>5</td>
-      <td>7</td>
+      <td>4</td>
+      <td>9</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>8</td>
-      <td>8</td>
-      <td>1</td>
-      <td>5</td>
+      <td>7</td>
+      <td>6</td>
+      <td>2</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -1452,14 +1457,14 @@ Name: m, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[    6,     8,     3,     4],
-       [    6,     1, -1000,     9],
-       [    1,     1, -1000,     4],
-       [   10,     6, -1000,     6],
-       [    3,    10,    10,     5],
-       [    8,     6,     3,     2],
-       [    3,     2,     5,     7],
-       [    8,     8,     1,     5]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[    8,     6,     9,     1],
+       [    6,     7, -1000,     3],
+       [    7,     7, -1000,     1],
+       [    6,     1, -1000,     4],
+       [    3,     1,     6,     6],
+       [   10,     2,     8,     3],
+       [    4,     9,     4,     4],
+       [    7,     6,     2,     2]])
 </pre></div>
 </div>
 </div>
@@ -1478,14 +1483,14 @@ Name: m, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[    6,     8,     3,     4],
-       [    3,     1, -1000,     9],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[    8,     6,     9,     1],
+       [    3,     7, -1000,     3],
+       [    3,     7, -1000,     1],
        [    3,     1, -1000,     4],
-       [    3,     6, -1000,     6],
-       [    3,    10,    10,     5],
-       [    8,     6,     3,     2],
-       [    3,     2,     5,     7],
-       [    8,     8,     1,     5]])
+       [    3,     1,     6,     6],
+       [   10,     2,     8,     3],
+       [    4,     9,     4,     4],
+       [    7,     6,     2,     2]])
 </pre></div>
 </div>
 </div>
@@ -1505,14 +1510,14 @@ Name: m, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[    6,     8,     3,     4],
-       [    3,     1, -1000,     9],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[    8,     6,     9,     1],
+       [    3,     7, -1000,     3],
+       [    3,     7, -1000,     1],
        [    3,     1, -1000,     4],
-       [    3,     6, -1000,     6],
-       [    3,    10,    10,     5],
-       [    8,   100,     3,     2],
-       [    3,   200,     5,     7],
-       [    8,   300,     1,     5]])
+       [    3,     1,     6,     6],
+       [   10,   100,     8,     3],
+       [    4,   200,     4,     4],
+       [    7,   300,     2,     2]])
 </pre></div>
 </div>
 </div>
