@@ -17,3 +17,9 @@ Creating a responsive bar chart using Altair.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/flh44Pwmdo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Working with datetime values in pandas and Altair.
+
+## map and lambda functions
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P8wXQ6gG0kY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Using `map` and a `lambda` function to apply a function to every element in a pandas Series.
