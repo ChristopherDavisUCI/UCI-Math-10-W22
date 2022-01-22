@@ -119,6 +119,11 @@
      Deepnote
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/MarkdownIntro.html">
+     Markdown Introduction
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -139,6 +144,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../Week1/Week1-Wednesday.html">
      Wednesday Lecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Homework1.html">
+     Homework 1
     </a>
    </li>
   </ul>
@@ -166,6 +176,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="BooleanArray.html">
      Boolean arrays in NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Homework2.html">
+     Homework 2
     </a>
    </li>
    <li class="toctree-l2">
@@ -509,15 +524,15 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 1],
-       [1, 2],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 2],
        [4, 2],
-       [4, 1],
-       [2, 3],
-       [4, 4],
-       [2, 1],
+       [3, 1],
+       [3, 1],
        [1, 2],
+       [3, 4],
        [3, 3],
+       [3, 4],
+       [3, 1],
        [4, 1]])
 </pre></div>
 </div>
@@ -531,16 +546,16 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4, 5],
+       [4, 4],
+       [1, 3],
+       [4, 2],
        [4, 3],
-       [4, 5],
-       [2, 1],
-       [5, 2],
-       [1, 2],
-       [2, 2],
-       [3, 5],
-       [2, 4],
-       [3, 4]])
+       [1, 3],
+       [3, 2],
+       [5, 4],
+       [5, 3],
+       [4, 3]])
 </pre></div>
 </div>
 </div>
@@ -552,16 +567,16 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 1],
-       [5, 2],
-       [2, 2],
-       [4, 4],
-       [4, 5],
-       [4, 4],
-       [4, 5],
-       [3, 1],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 3],
+       [2, 3],
+       [2, 3],
+       [4, 2],
+       [3, 3],
        [1, 3],
-       [2, 2]])
+       [1, 2],
+       [2, 5],
+       [4, 4],
+       [5, 3]])
 </pre></div>
 </div>
 </div>
@@ -577,16 +592,16 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.56314615, 0.30499734],
-       [0.45735789, 0.2888474 ],
-       [0.50182154, 0.82827861],
-       [0.81277982, 0.69295809],
-       [0.3214816 , 0.30647986],
-       [0.54311975, 0.04186896],
-       [0.0912619 , 0.95338059],
-       [0.52814073, 0.64961516],
-       [0.07093363, 0.56534102],
-       [0.1242893 , 0.12231373]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.03989354, 0.00436748],
+       [0.8787551 , 0.00156714],
+       [0.01430267, 0.72718988],
+       [0.12969535, 0.83009961],
+       [0.34873389, 0.64315271],
+       [0.69281842, 0.53204329],
+       [0.11550434, 0.72923429],
+       [0.2340188 , 0.9249788 ],
+       [0.6179745 , 0.52034311],
+       [0.61507834, 0.80813922]])
 </pre></div>
 </div>
 </div>
@@ -599,16 +614,16 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[12.04483952, 29.81701705],
-       [ 8.8700011 , 18.83020434],
-       [22.95603731,  5.36714645],
-       [ 2.03750944,  7.68055806],
-       [21.8913052 ,  5.37206045],
-       [19.11082425, 25.35993409],
-       [ 9.698582  , 26.27534951],
-       [21.18626711,  8.70652988],
-       [19.40064179, 15.95346207],
-       [25.81989422, 24.79132113]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 9.2811999 , 14.35791214],
+       [14.98623188,  7.76957055],
+       [16.19281364,  6.28354404],
+       [14.22055576,  9.85342271],
+       [19.95150717,  7.57089747],
+       [17.97987548,  7.39371381],
+       [19.21171989, 10.28744844],
+       [14.14728854,  3.794728  ],
+       [21.94998799,  2.89756036],
+       [ 0.81685024, 27.91515893]])
 </pre></div>
 </div>
 </div>
@@ -621,16 +636,16 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 6.564292  , 31.00267227],
-       [11.38872877, 32.39805795],
-       [29.93458347, 27.44897222],
-       [16.45774481, 13.24801174],
-       [14.60736086, 21.1928789 ],
-       [12.10831829, 10.87415183],
-       [30.18074446, 32.25385212],
-       [27.05698069, 30.45451907],
-       [16.13412864, 10.9081016 ],
-       [ 9.32543189, 13.4340771 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[26.05533545, 29.17041768],
+       [19.86325844, 13.45831558],
+       [30.60120253, 34.11799058],
+       [ 6.8852215 , 20.13330884],
+       [19.64199326, 13.10803369],
+       [26.38054479, 33.02298898],
+       [28.51245601, 20.48193334],
+       [12.62725241, 33.96441524],
+       [18.53012667,  5.21966991],
+       [18.96454118,  5.28371649]])
 </pre></div>
 </div>
 </div>
