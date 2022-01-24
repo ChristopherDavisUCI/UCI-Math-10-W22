@@ -23,4 +23,10 @@ The goal of this course is to introduce programming in Python, with an emphasis 
 I originally duplicated the University of Washington's [Visualization Curriculum](https://uwdata.github.io/visualization-curriculum/intro.html).
 I thank the authors for making this material available not just to use, but to edit via their [GitHub source code](https://github.com/uwdata/visualization-curriculum).
 
+**Datasets**
+
 Here is [information about the cars dataset](http://lib.stat.cmu.edu/datasets/cars.desc).  I took this dataset from the [Vega Datasets](https://github.com/altair-viz/vega_datasets) Python library.
+
+The unemployment dataset was adapted from Vega Datasets.  Some columns were removed and some other columns were renamed.
+
+The Spotify dataset was originally taken from (a possibly earlier version of) this [Kaggle dataset](https://www.kaggle.com/sashankpillai/spotify-top-200-charts-20202021) that was uploaded by Sashank Pillai.
