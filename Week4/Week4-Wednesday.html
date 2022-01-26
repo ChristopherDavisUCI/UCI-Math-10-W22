@@ -411,75 +411,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Leaving out the useful na_values keyword argument.</span>
 <span class="c1"># We will have to do some cleaning of this dataset by hand.</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;spotify_dataset.csv&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">1461189394.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Leaving out the useful na_values keyword argument.</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># We will have to do some cleaning of this dataset by hand.</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;spotify_dataset.csv&quot;</span><span class="p">)</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span> 
-<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span> 
-<span class="ne">--&gt; </span><span class="mi">586</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> 
-<span class="g g-Whitespace">    </span><span class="mi">588</span> 
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span> 
-<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">482</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span> 
-<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">809</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">810</span> 
-<span class="ne">--&gt; </span><span class="mi">811</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">812</span> 
-<span class="g g-Whitespace">    </span><span class="mi">813</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1038</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1039</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1040</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1041</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1042</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span> 
-<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="c1"># open handles</span>
-<span class="ne">---&gt; </span><span class="mi">51</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span> 
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="n">Let</span> <span class="n">the</span> <span class="n">readers</span> <span class="nb">open</span> <span class="n">IOHandles</span> <span class="n">after</span> <span class="n">they</span> <span class="n">are</span> <span class="n">done</span> <span class="k">with</span> <span class="n">their</span> <span class="n">potential</span> <span class="n">raises</span><span class="o">.</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">222</span><span class="s2">         self.handles = get_handle(</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span><span class="s2">             src,</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="s2">             &quot;r&quot;,</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span><span class="s2">         if ioargs.encoding and &quot;b&quot; not in ioargs.mode:</span>
-<span class="g g-Whitespace">    </span><span class="mi">701</span><span class="s2">             # Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">702</span><span class="s2">             handle = open(</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span><span class="s2">                 handle,</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2">                 ioargs.mode,</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;spotify_dataset.csv&#39;
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/spotify_dataset.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -491,15 +423,172 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">964094849.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.8</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.127</td>
+      <td>0.359</td>
+      <td>134.002</td>
+      <td>211560</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>STAY (with Justin Bieber)</td>
+      <td>47,248,719</td>
+      <td>The Kid LAROI</td>
+      <td>2230022</td>
+      <td>5HCyWlXZPP0y6Gqq8TgA20</td>
+      <td>['australian hip hop']</td>
+      <td>...</td>
+      <td>0.591</td>
+      <td>0.764</td>
+      <td>-5.484</td>
+      <td>0.0483</td>
+      <td>0.0383</td>
+      <td>0.103</td>
+      <td>169.928</td>
+      <td>141806</td>
+      <td>0.478</td>
+      <td>C#/Db</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.154</td>
+      <td>0.335</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.364</td>
+      <td>126.026</td>
+      <td>231041</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -508,12 +597,30 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">1008660192.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index                         int64
+Highest Charting Position     int64
+Number of Times Charted       int64
+Week of Highest Charting     object
+Song Name                    object
+Streams                      object
+Artist                       object
+Artist Followers             object
+Song ID                      object
+Genre                        object
+Release Date                 object
+Weeks Charted                object
+Popularity                   object
+Danceability                 object
+Energy                       object
+Loudness                     object
+Speechiness                  object
+Acousticness                 object
+Liveness                     object
+Tempo                        object
+Duration (ms)                object
+Valence                      object
+Chord                        object
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -526,11 +633,27 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">287173585.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/_libs/lib.pyx</span> in <span class="ni">pandas._libs.lib.maybe_convert_numeric</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Unable to parse string &quot; &quot;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23932</span><span class="o">/</span><span class="mf">287173585.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Energy&quot;</span><span class="p">])</span>
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/core/tools/numeric.py</span> in <span class="ni">to_numeric</span><span class="nt">(arg, errors, downcast)</span>
+<span class="nn">    181         coerce_numeric = errors not</span> in <span class="nt">(&quot;ignore&quot;, &quot;raise&quot;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">183</span>             <span class="n">values</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">maybe_convert_numeric</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>                 <span class="n">values</span><span class="p">,</span> <span class="nb">set</span><span class="p">(),</span> <span class="n">coerce_numeric</span><span class="o">=</span><span class="n">coerce_numeric</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>             <span class="p">)</span>
+
+<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/_libs/lib.pyx</span> in <span class="ni">pandas._libs.lib.maybe_convert_numeric</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Unable to parse string &quot; &quot; at position 35
 </pre></div>
 </div>
 </div>
@@ -542,15 +665,316 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">1461333529.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.8</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.127</td>
+      <td>0.359</td>
+      <td>134.002</td>
+      <td>211560</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>STAY (with Justin Bieber)</td>
+      <td>47,248,719</td>
+      <td>The Kid LAROI</td>
+      <td>2230022</td>
+      <td>5HCyWlXZPP0y6Gqq8TgA20</td>
+      <td>['australian hip hop']</td>
+      <td>...</td>
+      <td>0.591</td>
+      <td>0.764</td>
+      <td>-5.484</td>
+      <td>0.0483</td>
+      <td>0.0383</td>
+      <td>0.103</td>
+      <td>169.928</td>
+      <td>141806</td>
+      <td>0.478</td>
+      <td>C#/Db</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.154</td>
+      <td>0.335</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.364</td>
+      <td>126.026</td>
+      <td>231041</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1551</th>
+      <td>1552</td>
+      <td>195</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>New Rules</td>
+      <td>4,630,675</td>
+      <td>Dua Lipa</td>
+      <td>27167675</td>
+      <td>2ekn2ttSfGqwhhate0LSR0</td>
+      <td>['dance pop', 'pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.762</td>
+      <td>0.7</td>
+      <td>-6.021</td>
+      <td>0.0694</td>
+      <td>0.00261</td>
+      <td>0.153</td>
+      <td>116.073</td>
+      <td>209320</td>
+      <td>0.608</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>1552</th>
+      <td>1553</td>
+      <td>196</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Cheirosa - Ao Vivo</td>
+      <td>4,623,030</td>
+      <td>Jorge &amp; Mateus</td>
+      <td>15019109</td>
+      <td>2PWjKmjyTZeDpmOUa3a5da</td>
+      <td>['sertanejo', 'sertanejo universitario']</td>
+      <td>...</td>
+      <td>0.528</td>
+      <td>0.87</td>
+      <td>-3.123</td>
+      <td>0.0851</td>
+      <td>0.24</td>
+      <td>0.333</td>
+      <td>152.37</td>
+      <td>181930</td>
+      <td>0.714</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1553</th>
+      <td>1554</td>
+      <td>197</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Havana (feat. Young Thug)</td>
+      <td>4,620,876</td>
+      <td>Camila Cabello</td>
+      <td>22698747</td>
+      <td>1rfofaqEpACxVEHIZBJe6W</td>
+      <td>['dance pop', 'electropop', 'pop', 'post-teen ...</td>
+      <td>...</td>
+      <td>0.765</td>
+      <td>0.523</td>
+      <td>-4.333</td>
+      <td>0.03</td>
+      <td>0.184</td>
+      <td>0.132</td>
+      <td>104.988</td>
+      <td>217307</td>
+      <td>0.394</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <th>1554</th>
+      <td>1555</td>
+      <td>198</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Surtada - Remix Brega Funk</td>
+      <td>4,607,385</td>
+      <td>Dadá Boladão, Tati Zaqui, OIK</td>
+      <td>208630</td>
+      <td>5F8ffc8KWKNawllr5WsW0r</td>
+      <td>['brega funk', 'funk carioca']</td>
+      <td>...</td>
+      <td>0.832</td>
+      <td>0.55</td>
+      <td>-7.026</td>
+      <td>0.0587</td>
+      <td>0.249</td>
+      <td>0.182</td>
+      <td>154.064</td>
+      <td>152784</td>
+      <td>0.881</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>1555</th>
+      <td>1556</td>
+      <td>199</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Lover (Remix) [feat. Shawn Mendes]</td>
+      <td>4,595,450</td>
+      <td>Taylor Swift</td>
+      <td>42227614</td>
+      <td>3i9UVldZOE0aD0JnyfAZZ0</td>
+      <td>['pop', 'post-teen pop']</td>
+      <td>...</td>
+      <td>0.448</td>
+      <td>0.603</td>
+      <td>-7.176</td>
+      <td>0.064</td>
+      <td>0.433</td>
+      <td>0.0862</td>
+      <td>205.272</td>
+      <td>221307</td>
+      <td>0.422</td>
+      <td>G</td>
+    </tr>
+  </tbody>
+</table>
+<p>1556 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -559,15 +983,172 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">964094849.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.8</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.127</td>
+      <td>0.359</td>
+      <td>134.002</td>
+      <td>211560</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>STAY (with Justin Bieber)</td>
+      <td>47,248,719</td>
+      <td>The Kid LAROI</td>
+      <td>2230022</td>
+      <td>5HCyWlXZPP0y6Gqq8TgA20</td>
+      <td>['australian hip hop']</td>
+      <td>...</td>
+      <td>0.591</td>
+      <td>0.764</td>
+      <td>-5.484</td>
+      <td>0.0483</td>
+      <td>0.0383</td>
+      <td>0.103</td>
+      <td>169.928</td>
+      <td>141806</td>
+      <td>0.478</td>
+      <td>C#/Db</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.154</td>
+      <td>0.335</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.364</td>
+      <td>126.026</td>
+      <td>231041</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -576,15 +1157,316 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">1343061360.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Hello</td>
+      <td>Hello</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.8</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.127</td>
+      <td>0.359</td>
+      <td>134.002</td>
+      <td>211560</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>STAY (with Justin Bieber)</td>
+      <td>47,248,719</td>
+      <td>The Kid LAROI</td>
+      <td>2230022</td>
+      <td>5HCyWlXZPP0y6Gqq8TgA20</td>
+      <td>['australian hip hop']</td>
+      <td>...</td>
+      <td>0.591</td>
+      <td>0.764</td>
+      <td>-5.484</td>
+      <td>0.0483</td>
+      <td>0.0383</td>
+      <td>0.103</td>
+      <td>169.928</td>
+      <td>141806</td>
+      <td>0.478</td>
+      <td>C#/Db</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Hello</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.154</td>
+      <td>0.335</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.364</td>
+      <td>126.026</td>
+      <td>231041</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>Hello</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1551</th>
+      <td>1552</td>
+      <td>195</td>
+      <td>Hello</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>New Rules</td>
+      <td>4,630,675</td>
+      <td>Dua Lipa</td>
+      <td>27167675</td>
+      <td>2ekn2ttSfGqwhhate0LSR0</td>
+      <td>['dance pop', 'pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.762</td>
+      <td>0.7</td>
+      <td>-6.021</td>
+      <td>0.0694</td>
+      <td>0.00261</td>
+      <td>0.153</td>
+      <td>116.073</td>
+      <td>209320</td>
+      <td>0.608</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>1552</th>
+      <td>1553</td>
+      <td>196</td>
+      <td>Hello</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Cheirosa - Ao Vivo</td>
+      <td>4,623,030</td>
+      <td>Jorge &amp; Mateus</td>
+      <td>15019109</td>
+      <td>2PWjKmjyTZeDpmOUa3a5da</td>
+      <td>['sertanejo', 'sertanejo universitario']</td>
+      <td>...</td>
+      <td>0.528</td>
+      <td>0.87</td>
+      <td>-3.123</td>
+      <td>0.0851</td>
+      <td>0.24</td>
+      <td>0.333</td>
+      <td>152.37</td>
+      <td>181930</td>
+      <td>0.714</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1553</th>
+      <td>1554</td>
+      <td>197</td>
+      <td>Hello</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Havana (feat. Young Thug)</td>
+      <td>4,620,876</td>
+      <td>Camila Cabello</td>
+      <td>22698747</td>
+      <td>1rfofaqEpACxVEHIZBJe6W</td>
+      <td>['dance pop', 'electropop', 'pop', 'post-teen ...</td>
+      <td>...</td>
+      <td>0.765</td>
+      <td>0.523</td>
+      <td>-4.333</td>
+      <td>0.03</td>
+      <td>0.184</td>
+      <td>0.132</td>
+      <td>104.988</td>
+      <td>217307</td>
+      <td>0.394</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <th>1554</th>
+      <td>1555</td>
+      <td>198</td>
+      <td>Hello</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Surtada - Remix Brega Funk</td>
+      <td>4,607,385</td>
+      <td>Dadá Boladão, Tati Zaqui, OIK</td>
+      <td>208630</td>
+      <td>5F8ffc8KWKNawllr5WsW0r</td>
+      <td>['brega funk', 'funk carioca']</td>
+      <td>...</td>
+      <td>0.832</td>
+      <td>0.55</td>
+      <td>-7.026</td>
+      <td>0.0587</td>
+      <td>0.249</td>
+      <td>0.182</td>
+      <td>154.064</td>
+      <td>152784</td>
+      <td>0.881</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>1555</th>
+      <td>1556</td>
+      <td>199</td>
+      <td>Hello</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Lover (Remix) [feat. Shawn Mendes]</td>
+      <td>4,595,450</td>
+      <td>Taylor Swift</td>
+      <td>42227614</td>
+      <td>3i9UVldZOE0aD0JnyfAZZ0</td>
+      <td>['pop', 'post-teen pop']</td>
+      <td>...</td>
+      <td>0.448</td>
+      <td>0.603</td>
+      <td>-7.176</td>
+      <td>0.064</td>
+      <td>0.433</td>
+      <td>0.0862</td>
+      <td>205.272</td>
+      <td>221307</td>
+      <td>0.422</td>
+      <td>G</td>
+    </tr>
+  </tbody>
+</table>
+<p>1556 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -593,29 +1475,320 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">2072215307.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;100&quot;</span><span class="p">,</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.8</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.127</td>
+      <td>0.359</td>
+      <td>134.002</td>
+      <td>211560</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>STAY (with Justin Bieber)</td>
+      <td>47,248,719</td>
+      <td>The Kid LAROI</td>
+      <td>2230022</td>
+      <td>5HCyWlXZPP0y6Gqq8TgA20</td>
+      <td>['australian hip hop']</td>
+      <td>...</td>
+      <td>0.591</td>
+      <td>0.764</td>
+      <td>-5.484</td>
+      <td>0.0483</td>
+      <td>0.0383</td>
+      <td>0.103</td>
+      <td>169.928</td>
+      <td>141806</td>
+      <td>0.478</td>
+      <td>C#/Db</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.154</td>
+      <td>0.335</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.364</td>
+      <td>126.026</td>
+      <td>231041</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1551</th>
+      <td>1552</td>
+      <td>195</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>New Rules</td>
+      <td>4,630,675</td>
+      <td>Dua Lipa</td>
+      <td>27167675</td>
+      <td>2ekn2ttSfGqwhhate0LSR0</td>
+      <td>['dance pop', 'pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.762</td>
+      <td>0.7</td>
+      <td>-6.021</td>
+      <td>0.0694</td>
+      <td>0.00261</td>
+      <td>0.153</td>
+      <td>116.073</td>
+      <td>209320</td>
+      <td>0.608</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>1552</th>
+      <td>1553</td>
+      <td>196</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Cheirosa - Ao Vivo</td>
+      <td>4,623,030</td>
+      <td>Jorge &amp; Mateus</td>
+      <td>15019109</td>
+      <td>2PWjKmjyTZeDpmOUa3a5da</td>
+      <td>['sertanejo', 'sertanejo universitario']</td>
+      <td>...</td>
+      <td>0.528</td>
+      <td>0.87</td>
+      <td>-3.123</td>
+      <td>0.0851</td>
+      <td>0.24</td>
+      <td>0.333</td>
+      <td>152.37</td>
+      <td>181930</td>
+      <td>0.714</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1553</th>
+      <td>1554</td>
+      <td>197</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Havana (feat. Young Thug)</td>
+      <td>4,620,876</td>
+      <td>Camila Cabello</td>
+      <td>22698747</td>
+      <td>1rfofaqEpACxVEHIZBJe6W</td>
+      <td>['dance pop', 'electropop', 'pop', 'post-teen ...</td>
+      <td>...</td>
+      <td>0.765</td>
+      <td>0.523</td>
+      <td>-4.333</td>
+      <td>0.03</td>
+      <td>0.184</td>
+      <td>0.132</td>
+      <td>104.988</td>
+      <td>217307</td>
+      <td>0.394</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <th>1554</th>
+      <td>1555</td>
+      <td>198</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Surtada - Remix Brega Funk</td>
+      <td>4,607,385</td>
+      <td>Dadá Boladão, Tati Zaqui, OIK</td>
+      <td>208630</td>
+      <td>5F8ffc8KWKNawllr5WsW0r</td>
+      <td>['brega funk', 'funk carioca']</td>
+      <td>...</td>
+      <td>0.832</td>
+      <td>0.55</td>
+      <td>-7.026</td>
+      <td>0.0587</td>
+      <td>0.249</td>
+      <td>0.182</td>
+      <td>154.064</td>
+      <td>152784</td>
+      <td>0.881</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>1555</th>
+      <td>1556</td>
+      <td>199</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Lover (Remix) [feat. Shawn Mendes]</td>
+      <td>4,595,450</td>
+      <td>Taylor Swift</td>
+      <td>42227614</td>
+      <td>3i9UVldZOE0aD0JnyfAZZ0</td>
+      <td>['pop', 'post-teen pop']</td>
+      <td>...</td>
+      <td>0.448</td>
+      <td>0.603</td>
+      <td>-7.176</td>
+      <td>0.064</td>
+      <td>0.433</td>
+      <td>0.0862</td>
+      <td>205.272</td>
+      <td>221307</td>
+      <td>0.422</td>
+      <td>G</td>
+    </tr>
+  </tbody>
+</table>
+<p>1556 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">2761269086.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -629,12 +1802,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">3166590909.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Energy</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       0.800
+1       0.764
+2       0.664
+3       0.897
+4       0.704
+        ...  
+1551    0.700
+1552    0.870
+1553    0.523
+1554    0.550
+1555    0.603
+Name: Energy, Length: 1556, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -683,12 +1862,74 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">2454822254.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">help</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">applymap</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method applymap in module pandas.core.frame:
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+applymap(func: &#39;PythonFuncType&#39;, na_action: &#39;str | None&#39; = None, **kwargs) -&gt; &#39;DataFrame&#39; method of pandas.core.frame.DataFrame instance
+    Apply a function to a Dataframe elementwise.
+    
+    This method applies a function that accepts and returns a scalar
+    to every element of a DataFrame.
+    
+    Parameters
+    ----------
+    func : callable
+        Python function, returns a single value from a single value.
+    na_action : {None, &#39;ignore&#39;}, default None
+        If ‘ignore’, propagate NaN values, without passing them to func.
+    
+        .. versionadded:: 1.2
+    
+    **kwargs
+        Additional keyword arguments to pass as keywords arguments to
+        `func`.
+    
+        .. versionadded:: 1.3.0
+    
+    Returns
+    -------
+    DataFrame
+        Transformed DataFrame.
+    
+    See Also
+    --------
+    DataFrame.apply : Apply a function along input axis of DataFrame.
+    
+    Examples
+    --------
+    &gt;&gt;&gt; df = pd.DataFrame([[1, 2.12], [3.356, 4.567]])
+    &gt;&gt;&gt; df
+           0      1
+    0  1.000  2.120
+    1  3.356  4.567
+    
+    &gt;&gt;&gt; df.applymap(lambda x: len(str(x)))
+       0  1
+    0  3  4
+    1  5  5
+    
+    Like Series.map, NA values can be ignored:
+    
+    &gt;&gt;&gt; df_copy = df.copy()
+    &gt;&gt;&gt; df_copy.iloc[0, 0] = pd.NA
+    &gt;&gt;&gt; df_copy.applymap(lambda x: len(str(x)), na_action=&#39;ignore&#39;)
+          0  1
+    0  &lt;NA&gt;  4
+    1     5  5
+    
+    Note that a vectorized version of `func` often exists, which will
+    be much faster. You could square each number elementwise.
+    
+    &gt;&gt;&gt; df.applymap(lambda x: x**2)
+               0          1
+    0   1.000000   4.494400
+    1  11.262736  20.857489
+    
+    But it&#39;s better to avoid applymap in that case.
+    
+    &gt;&gt;&gt; df ** 2
+               0          1
+    0   1.000000   4.494400
+    1  11.262736  20.857489
 </pre></div>
 </div>
 </div>
@@ -700,17 +1941,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">3397543695.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Apply this function to every entry in the DataFrame</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">rep_blank</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -719,12 +1949,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">287173585.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Energy&quot;</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       0.800
+1       0.764
+2       0.664
+3       0.897
+4       0.704
+        ...  
+1551    0.700
+1552    0.870
+1553    0.523
+1554    0.550
+1555    0.603
+Name: Energy, Length: 1556, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -739,73 +1975,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;spotify_dataset.csv&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">3731775361.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;spotify_dataset.csv&quot;</span><span class="p">)</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span> 
-<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span> 
-<span class="ne">--&gt; </span><span class="mi">586</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> 
-<span class="g g-Whitespace">    </span><span class="mi">588</span> 
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span> 
-<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">482</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span> 
-<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">809</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">810</span> 
-<span class="ne">--&gt; </span><span class="mi">811</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">812</span> 
-<span class="g g-Whitespace">    </span><span class="mi">813</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1038</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1039</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1040</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1041</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1042</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span> 
-<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="c1"># open handles</span>
-<span class="ne">---&gt; </span><span class="mi">51</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span> 
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="n">Let</span> <span class="n">the</span> <span class="n">readers</span> <span class="nb">open</span> <span class="n">IOHandles</span> <span class="n">after</span> <span class="n">they</span> <span class="n">are</span> <span class="n">done</span> <span class="k">with</span> <span class="n">their</span> <span class="n">potential</span> <span class="n">raises</span><span class="o">.</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">222</span><span class="s2">         self.handles = get_handle(</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span><span class="s2">             src,</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="s2">             &quot;r&quot;,</span>
-
-<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span><span class="s2">         if ioargs.encoding and &quot;b&quot; not in ioargs.mode:</span>
-<span class="g g-Whitespace">    </span><span class="mi">701</span><span class="s2">             # Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">702</span><span class="s2">             handle = open(</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span><span class="s2">                 handle,</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2">                 ioargs.mode,</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;spotify_dataset.csv&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/spotify_dataset.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -818,11 +1988,27 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">287173585.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/_libs/lib.pyx</span> in <span class="ni">pandas._libs.lib.maybe_convert_numeric</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Unable to parse string &quot; &quot;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23932</span><span class="o">/</span><span class="mf">287173585.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Energy&quot;</span><span class="p">])</span>
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/core/tools/numeric.py</span> in <span class="ni">to_numeric</span><span class="nt">(arg, errors, downcast)</span>
+<span class="nn">    181         coerce_numeric = errors not</span> in <span class="nt">(&quot;ignore&quot;, &quot;raise&quot;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">183</span>             <span class="n">values</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">maybe_convert_numeric</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>                 <span class="n">values</span><span class="p">,</span> <span class="nb">set</span><span class="p">(),</span> <span class="n">coerce_numeric</span><span class="o">=</span><span class="n">coerce_numeric</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>             <span class="p">)</span>
+
+<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/_libs/lib.pyx</span> in <span class="ni">pandas._libs.lib.maybe_convert_numeric</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Unable to parse string &quot; &quot; at position 35
 </pre></div>
 </div>
 </div>
@@ -847,7 +2033,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8j/gshrlmtn7dg4qtztj4d4t_w40000gn/T/ipykernel_23714/1990719709.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8j/gshrlmtn7dg4qtztj4d4t_w40000gn/T/ipykernel_23932/1990719709.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">df</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
                                             <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -865,16 +2051,316 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">4154026836.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># more Pythonic</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot; &quot;</span> <span class="k">else</span> <span class="n">s</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.8</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.127</td>
+      <td>0.359</td>
+      <td>134.002</td>
+      <td>211560</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>STAY (with Justin Bieber)</td>
+      <td>47,248,719</td>
+      <td>The Kid LAROI</td>
+      <td>2230022</td>
+      <td>5HCyWlXZPP0y6Gqq8TgA20</td>
+      <td>['australian hip hop']</td>
+      <td>...</td>
+      <td>0.591</td>
+      <td>0.764</td>
+      <td>-5.484</td>
+      <td>0.0483</td>
+      <td>0.0383</td>
+      <td>0.103</td>
+      <td>169.928</td>
+      <td>141806</td>
+      <td>0.478</td>
+      <td>C#/Db</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.154</td>
+      <td>0.335</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.364</td>
+      <td>126.026</td>
+      <td>231041</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1551</th>
+      <td>1552</td>
+      <td>195</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>New Rules</td>
+      <td>4,630,675</td>
+      <td>Dua Lipa</td>
+      <td>27167675</td>
+      <td>2ekn2ttSfGqwhhate0LSR0</td>
+      <td>['dance pop', 'pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.762</td>
+      <td>0.7</td>
+      <td>-6.021</td>
+      <td>0.0694</td>
+      <td>0.00261</td>
+      <td>0.153</td>
+      <td>116.073</td>
+      <td>209320</td>
+      <td>0.608</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>1552</th>
+      <td>1553</td>
+      <td>196</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Cheirosa - Ao Vivo</td>
+      <td>4,623,030</td>
+      <td>Jorge &amp; Mateus</td>
+      <td>15019109</td>
+      <td>2PWjKmjyTZeDpmOUa3a5da</td>
+      <td>['sertanejo', 'sertanejo universitario']</td>
+      <td>...</td>
+      <td>0.528</td>
+      <td>0.87</td>
+      <td>-3.123</td>
+      <td>0.0851</td>
+      <td>0.24</td>
+      <td>0.333</td>
+      <td>152.37</td>
+      <td>181930</td>
+      <td>0.714</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1553</th>
+      <td>1554</td>
+      <td>197</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Havana (feat. Young Thug)</td>
+      <td>4,620,876</td>
+      <td>Camila Cabello</td>
+      <td>22698747</td>
+      <td>1rfofaqEpACxVEHIZBJe6W</td>
+      <td>['dance pop', 'electropop', 'pop', 'post-teen ...</td>
+      <td>...</td>
+      <td>0.765</td>
+      <td>0.523</td>
+      <td>-4.333</td>
+      <td>0.03</td>
+      <td>0.184</td>
+      <td>0.132</td>
+      <td>104.988</td>
+      <td>217307</td>
+      <td>0.394</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <th>1554</th>
+      <td>1555</td>
+      <td>198</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Surtada - Remix Brega Funk</td>
+      <td>4,607,385</td>
+      <td>Dadá Boladão, Tati Zaqui, OIK</td>
+      <td>208630</td>
+      <td>5F8ffc8KWKNawllr5WsW0r</td>
+      <td>['brega funk', 'funk carioca']</td>
+      <td>...</td>
+      <td>0.832</td>
+      <td>0.55</td>
+      <td>-7.026</td>
+      <td>0.0587</td>
+      <td>0.249</td>
+      <td>0.182</td>
+      <td>154.064</td>
+      <td>152784</td>
+      <td>0.881</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>1555</th>
+      <td>1556</td>
+      <td>199</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Lover (Remix) [feat. Shawn Mendes]</td>
+      <td>4,595,450</td>
+      <td>Taylor Swift</td>
+      <td>42227614</td>
+      <td>3i9UVldZOE0aD0JnyfAZZ0</td>
+      <td>['pop', 'post-teen pop']</td>
+      <td>...</td>
+      <td>0.448</td>
+      <td>0.603</td>
+      <td>-7.176</td>
+      <td>0.064</td>
+      <td>0.433</td>
+      <td>0.0862</td>
+      <td>205.272</td>
+      <td>221307</td>
+      <td>0.422</td>
+      <td>G</td>
+    </tr>
+  </tbody>
+</table>
+<p>1556 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -883,31 +2369,321 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">1265061574.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span> <span class="k">if</span> <span class="n">s</span> <span class="o">!=</span> <span class="s2">&quot; &quot;</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.8</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.127</td>
+      <td>0.359</td>
+      <td>134.002</td>
+      <td>211560</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>STAY (with Justin Bieber)</td>
+      <td>47,248,719</td>
+      <td>The Kid LAROI</td>
+      <td>2230022</td>
+      <td>5HCyWlXZPP0y6Gqq8TgA20</td>
+      <td>['australian hip hop']</td>
+      <td>...</td>
+      <td>0.591</td>
+      <td>0.764</td>
+      <td>-5.484</td>
+      <td>0.0483</td>
+      <td>0.0383</td>
+      <td>0.103</td>
+      <td>169.928</td>
+      <td>141806</td>
+      <td>0.478</td>
+      <td>C#/Db</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.154</td>
+      <td>0.335</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.364</td>
+      <td>126.026</td>
+      <td>231041</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1551</th>
+      <td>1552</td>
+      <td>195</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>New Rules</td>
+      <td>4,630,675</td>
+      <td>Dua Lipa</td>
+      <td>27167675</td>
+      <td>2ekn2ttSfGqwhhate0LSR0</td>
+      <td>['dance pop', 'pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.762</td>
+      <td>0.7</td>
+      <td>-6.021</td>
+      <td>0.0694</td>
+      <td>0.00261</td>
+      <td>0.153</td>
+      <td>116.073</td>
+      <td>209320</td>
+      <td>0.608</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>1552</th>
+      <td>1553</td>
+      <td>196</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Cheirosa - Ao Vivo</td>
+      <td>4,623,030</td>
+      <td>Jorge &amp; Mateus</td>
+      <td>15019109</td>
+      <td>2PWjKmjyTZeDpmOUa3a5da</td>
+      <td>['sertanejo', 'sertanejo universitario']</td>
+      <td>...</td>
+      <td>0.528</td>
+      <td>0.87</td>
+      <td>-3.123</td>
+      <td>0.0851</td>
+      <td>0.24</td>
+      <td>0.333</td>
+      <td>152.37</td>
+      <td>181930</td>
+      <td>0.714</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1553</th>
+      <td>1554</td>
+      <td>197</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Havana (feat. Young Thug)</td>
+      <td>4,620,876</td>
+      <td>Camila Cabello</td>
+      <td>22698747</td>
+      <td>1rfofaqEpACxVEHIZBJe6W</td>
+      <td>['dance pop', 'electropop', 'pop', 'post-teen ...</td>
+      <td>...</td>
+      <td>0.765</td>
+      <td>0.523</td>
+      <td>-4.333</td>
+      <td>0.03</td>
+      <td>0.184</td>
+      <td>0.132</td>
+      <td>104.988</td>
+      <td>217307</td>
+      <td>0.394</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <th>1554</th>
+      <td>1555</td>
+      <td>198</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Surtada - Remix Brega Funk</td>
+      <td>4,607,385</td>
+      <td>Dadá Boladão, Tati Zaqui, OIK</td>
+      <td>208630</td>
+      <td>5F8ffc8KWKNawllr5WsW0r</td>
+      <td>['brega funk', 'funk carioca']</td>
+      <td>...</td>
+      <td>0.832</td>
+      <td>0.55</td>
+      <td>-7.026</td>
+      <td>0.0587</td>
+      <td>0.249</td>
+      <td>0.182</td>
+      <td>154.064</td>
+      <td>152784</td>
+      <td>0.881</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>1555</th>
+      <td>1556</td>
+      <td>199</td>
+      <td>1</td>
+      <td>2019-12-27--2020-01-03</td>
+      <td>Lover (Remix) [feat. Shawn Mendes]</td>
+      <td>4,595,450</td>
+      <td>Taylor Swift</td>
+      <td>42227614</td>
+      <td>3i9UVldZOE0aD0JnyfAZZ0</td>
+      <td>['pop', 'post-teen pop']</td>
+      <td>...</td>
+      <td>0.448</td>
+      <td>0.603</td>
+      <td>-7.176</td>
+      <td>0.064</td>
+      <td>0.433</td>
+      <td>0.0862</td>
+      <td>205.272</td>
+      <td>221307</td>
+      <td>0.422</td>
+      <td>G</td>
+    </tr>
+  </tbody>
+</table>
+<p>1556 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># more Pythonic</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot; &quot;</span> <span class="k">else</span> <span class="n">s</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">2864167753.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># more Pythonic</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot; &quot;</span> <span class="k">else</span> <span class="n">s</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -919,12 +2695,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">3166590909.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Energy</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       0.800
+1       0.764
+2       0.664
+3       0.897
+4       0.704
+        ...  
+1551    0.700
+1552    0.870
+1553    0.523
+1554    0.550
+1555    0.603
+Name: Energy, Length: 1556, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -936,12 +2718,30 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">1008660192.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index                         int64
+Highest Charting Position     int64
+Number of Times Charted       int64
+Week of Highest Charting     object
+Song Name                    object
+Streams                      object
+Artist                       object
+Artist Followers             object
+Song ID                      object
+Genre                        object
+Release Date                 object
+Weeks Charted                object
+Popularity                   object
+Danceability                 object
+Energy                       object
+Loudness                     object
+Speechiness                  object
+Acousticness                 object
+Liveness                     object
+Tempo                        object
+Duration (ms)                object
+Valence                      object
+Chord                        object
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -950,17 +2750,6 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How can we get the columns from Popularity to Valence (inclusive)?</span>
 <span class="n">df_sub</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;Popularity&quot;</span><span class="p">:</span><span class="s2">&quot;Valence&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">404005166.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># How can we get the columns from Popularity to Valence (inclusive)?</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df_sub</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;Popularity&quot;</span><span class="p">:</span><span class="s2">&quot;Valence&quot;</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -973,18 +2762,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">3388988556.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># applymap: its input is a single entry</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># apply: its input is an entire row or an entire column</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">df_sub</span> <span class="o">=</span> <span class="n">df_sub</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;df_sub&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -993,12 +2770,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">395925238.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_sub</span><span class="o">.</span><span class="n">dtypes</span>
-
-<span class="ne">NameError</span>: name &#39;df_sub&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Popularity       float64
+Danceability     float64
+Energy           float64
+Loudness         float64
+Speechiness      float64
+Acousticness     float64
+Liveness         float64
+Tempo            float64
+Duration (ms)    float64
+Valence          float64
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -1006,16 +2788,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;Popularity&quot;</span><span class="p">:</span><span class="s2">&quot;Valence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sub</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">399138373.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;Popularity&quot;</span><span class="p">:</span><span class="s2">&quot;Valence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sub</span>
-
-<span class="ne">NameError</span>: name &#39;df_sub&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1027,12 +2799,30 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">1008660192.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index                          int64
+Highest Charting Position      int64
+Number of Times Charted        int64
+Week of Highest Charting      object
+Song Name                     object
+Streams                       object
+Artist                        object
+Artist Followers              object
+Song ID                       object
+Genre                         object
+Release Date                  object
+Weeks Charted                 object
+Popularity                   float64
+Danceability                 float64
+Energy                       float64
+Loudness                     float64
+Speechiness                  float64
+Acousticness                 float64
+Liveness                     float64
+Tempo                        float64
+Duration (ms)                float64
+Valence                      float64
+Chord                         object
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -1045,11 +2835,27 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">2208871995.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/_libs/lib.pyx</span> in <span class="ni">pandas._libs.lib.maybe_convert_numeric</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Unable to parse string &quot;48,633,449&quot;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23932</span><span class="o">/</span><span class="mf">2208871995.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Streams</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/core/tools/numeric.py</span> in <span class="ni">to_numeric</span><span class="nt">(arg, errors, downcast)</span>
+<span class="nn">    181         coerce_numeric = errors not</span> in <span class="nt">(&quot;ignore&quot;, &quot;raise&quot;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">183</span>             <span class="n">values</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">maybe_convert_numeric</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>                 <span class="n">values</span><span class="p">,</span> <span class="nb">set</span><span class="p">(),</span> <span class="n">coerce_numeric</span><span class="o">=</span><span class="n">coerce_numeric</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>             <span class="p">)</span>
+
+<span class="nn">~/miniconda3/envs/math11/lib/python3.9/site-packages/pandas/_libs/lib.pyx</span> in <span class="ni">pandas._libs.lib.maybe_convert_numeric</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Unable to parse string &quot;48,633,449&quot; at position 0
 </pre></div>
 </div>
 </div>
@@ -1061,12 +2867,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">3797414989.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Streams</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)))</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       48633449
+1       47248719
+2       40162559
+3       37799456
+4       33948454
+          ...   
+1551     4630675
+1552     4623030
+1553     4620876
+1554     4607385
+1555     4595450
+Name: Streams, Length: 1556, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1078,31 +2890,177 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">964094849.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.800</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.1270</td>
+      <td>0.3590</td>
+      <td>134.002</td>
+      <td>211560.0</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>STAY (with Justin Bieber)</td>
+      <td>47,248,719</td>
+      <td>The Kid LAROI</td>
+      <td>2230022</td>
+      <td>5HCyWlXZPP0y6Gqq8TgA20</td>
+      <td>['australian hip hop']</td>
+      <td>...</td>
+      <td>0.591</td>
+      <td>0.764</td>
+      <td>-5.484</td>
+      <td>0.0483</td>
+      <td>0.0383</td>
+      <td>0.1030</td>
+      <td>169.928</td>
+      <td>141806.0</td>
+      <td>0.478</td>
+      <td>C#/Db</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.1540</td>
+      <td>0.3350</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147.0</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.3640</td>
+      <td>126.026</td>
+      <td>231041.0</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000.0</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try to swap 3rd row with 1st row</span>
 <span class="n">temp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">3144909637.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Try to swap 3rd row with 1st row</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1114,12 +3072,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">2624366830.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">type</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;temp&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
 </pre></div>
 </div>
 </div>
@@ -1130,16 +3083,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">484765708.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1148,15 +3091,172 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">964094849.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.800</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.1270</td>
+      <td>0.3590</td>
+      <td>134.002</td>
+      <td>211560.0</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.3640</td>
+      <td>126.026</td>
+      <td>231041.0</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.1540</td>
+      <td>0.3350</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147.0</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.3640</td>
+      <td>126.026</td>
+      <td>231041.0</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000.0</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1164,16 +3264,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">1453855921.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
-
-<span class="ne">NameError</span>: name &#39;temp&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1182,15 +3272,172 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23714</span><span class="o">/</span><span class="mf">964094849.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.800</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.1270</td>
+      <td>0.3590</td>
+      <td>134.002</td>
+      <td>211560.0</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.3640</td>
+      <td>126.026</td>
+      <td>231041.0</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.1540</td>
+      <td>0.3350</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147.0</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>STAY (with Justin Bieber)</td>
+      <td>47,248,719</td>
+      <td>The Kid LAROI</td>
+      <td>2230022</td>
+      <td>5HCyWlXZPP0y6Gqq8TgA20</td>
+      <td>['australian hip hop']</td>
+      <td>...</td>
+      <td>0.591</td>
+      <td>0.764</td>
+      <td>-5.484</td>
+      <td>0.0483</td>
+      <td>0.0383</td>
+      <td>0.1030</td>
+      <td>169.928</td>
+      <td>141806.0</td>
+      <td>0.478</td>
+      <td>C#/Db</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000.0</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
