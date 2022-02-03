@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Machine Learning &#8212; UC Irvine Math 10 W22</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 6" href="../Week6/Week6-Intro.html" />
+    <link rel="prev" title="Introduction to scikit-learn" href="Week5-Wednesday.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/digitsyellow.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10 W22</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   UC Irvine, Math 10, Winter 2022
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../GettingStarted/GettingStarted-Intro.html">
+   Getting Started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/Installation.html">
+     Installation (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/Deepnote.html">
+     Deepnote
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/MarkdownIntro.html">
+     Markdown Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week1/Week1-Intro.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/forloop1.html">
+     Making a for loop more Pythonic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Wednesday.html">
+     Wednesday Lecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Homework1.html">
+     Homework 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week2/Week2-Intro.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Videos.html">
+     Week 2 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/rng.html">
+     Random numbers in NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/BooleanArray.html">
+     Boolean arrays in NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Homework2.html">
+     Homework 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Quiz1-Practice.html">
+     Quiz 1 Practice Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Wednesday.html">
+     NumPy and pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week3/Week3-Intro.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Videos.html">
+     Week 3 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/intro_csv.html">
+     Reading a csv file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Homework3.html">
+     Homework 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Quiz2-Practice.html">
+     Quiz 2 Practice Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/visualization.html">
+     Visualization in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week4/Week4-Intro.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Videos.html">
+     Week 4 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Video-notebooks.html">
+     Week 4 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Homework4.html">
+     Homework 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/spotify.html">
+     Spotify dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Wednesday.html">
+     More practice with the Spotify dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Friday.html">
+     Review
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week5-Intro.html">
+   Week 5
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week5-Wednesday.html">
+     Introduction to scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction to Machine Learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Videos.html">
+     Week 6 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Video-notebooks.html">
+     Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Homework5.html">
+     Homework 5
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/Week5/intro-ML.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Week5/intro-ML.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ChristopherDavisUCI/UCI-Math-10-W22"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ChristopherDavisUCI/UCI-Math-10-W22/main?urlpath=tree/Week5/intro-ML.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-definition-of-machine-learning">
+   A definition of Machine Learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-vs-unsupervised-learning">
+   Supervised vs unsupervised learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression-vs-classification">
+   Regression vs classification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cost-functions-or-loss-functions">
+   Cost functions (or loss functions)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-variable-linear-regression">
+   Single variable linear regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-cost-function-for-single-variable-linear-regression">
+     A cost function for single variable linear regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-best-line">
+     The “best” line
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-for-multi-variable-linear-regression">
+   Setup for multi-variable linear regression
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Machine Learning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-definition-of-machine-learning">
+   A definition of Machine Learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-vs-unsupervised-learning">
+   Supervised vs unsupervised learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression-vs-classification">
+   Regression vs classification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cost-functions-or-loss-functions">
+   Cost functions (or loss functions)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-variable-linear-regression">
+   Single variable linear regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-cost-function-for-single-variable-linear-regression">
+     A cost function for single variable linear regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-best-line">
+     The “best” line
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-for-multi-variable-linear-regression">
+   Setup for multi-variable linear regression
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-machine-learning">
+<h1>Introduction to Machine Learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this headline">¶</a></h1>
+<p>We give a brief introduction to machine learning, and to some of the most commonly used terms in the subject.</p>
+<p>Two recommended references, both freely available from on campus or using VPN:</p>
+<ul class="simple">
+<li><p><em>Introduction to Statistical Learning</em>, by James, Witten, Hastie, and Tibshirani. <a class="reference external" href="https://link.springer.com/book/10.1007/978-1-4614-7138-7">Available from SpringerLink</a>.</p></li>
+<li><p><em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition</em>, by Aurélien Géron.  <a class="reference external" href="https://www.oreilly.com/library/view/temporary-access/">Available from O’Reilly</a>.</p></li>
+</ul>
+<div class="section" id="a-definition-of-machine-learning">
+<h2>A definition of Machine Learning<a class="headerlink" href="#a-definition-of-machine-learning" title="Permalink to this headline">¶</a></h2>
+<p>To define machine learning, we will use this quote from <em>Hands-On Machine Learning</em>:</p>
+<ul class="simple">
+<li><p><strong>Machine Learning</strong> is the science (and art) of programming computers so they can learn from data.</p></li>
+</ul>
+<p>The reason for the word <em>learning</em> is that, as more data is provided, the algorithm can update (and hopefully become more accurate).  This updating is what is meant by learning.</p>
+</div>
+<div class="section" id="supervised-vs-unsupervised-learning">
+<h2>Supervised vs unsupervised learning<a class="headerlink" href="#supervised-vs-unsupervised-learning" title="Permalink to this headline">¶</a></h2>
+<p>There are two basic categories of machine learning: supervised learning and unsupervised learning.  In <strong>supervised learning</strong>, there is some specific quantity (or label) that is trying to be assigned, while in <strong>unsupervised learning</strong>, there isn’t.  The reason for the names is that, with supervised learning, the algorithm is trained using labeled data.  The algorithm receives <em>supervision</em> in the form of correct answers for some of the data.  An algorithm for unsupervised learning will also receive data, but it is unlabeled data.</p>
+<p>The most fundamental example of supervised learning is <strong>linear regression</strong>.  With regards to linear regression, we are provided with one or more input variables <span class="math notranslate nohighlight">\(X\)</span>, which are traditionally called <em>predictors</em>, and an output variable <span class="math notranslate nohighlight">\(y\)</span>, called the <em>target</em>, and we try to model the target as a linear (plus a constant) function of the input variables.</p>
+<p>The most famous example of unsupervised learning is <strong>clustering</strong>, where we feed in data and the algorithm is supposed to divide that data into different clusters.  We do not provide any initial labels (for example, we don’t say something like, “these points should be in cluster 1, while these others should be in cluster 2”).  That is the sense in which this would be an unsupervised learning algorithm.</p>
+<p>In Winter 2022 Math 10, I believe we will cover supervised learning algorithms and not any unsupervised learning algorithms.</p>
+</div>
+<div class="section" id="regression-vs-classification">
+<h2>Regression vs classification<a class="headerlink" href="#regression-vs-classification" title="Permalink to this headline">¶</a></h2>
+<p>Within the supervised learning category, there is a further important distinction between regression problems and classification problems.  In a <strong>regression</strong> problem, the target is assumed to be some continuous quantitative value.  (Even if the target is something like “number of deaths”, I would still count that as a regression problem.  It might not be continuous in the sense that there can never be a fractional death, but there is still a clear ordering and if our model outputs something like 100.4 deaths, that is natural enough to interpret.)</p>
+<p>In a <strong>classification</strong> problem, the target is assumed to take values in some discrete set of categories.  For example, if we are trying to predict the musical genre of a song, this would be thought of as a classification problem.</p>
+</div>
+<div class="section" id="cost-functions-or-loss-functions">
+<h2>Cost functions (or loss functions)<a class="headerlink" href="#cost-functions-or-loss-functions" title="Permalink to this headline">¶</a></h2>
+<p>In our supervised machine learning examples, we will usually choose a type of model (like a linear function), and then we will use scikit-learn to estimate the parameters for that model.  scikit-learn will attempt to find the parameters that minimize a <em>cost function</em>, which measures the performance of the model, with higher values being worse.  (I use the terms <em>cost function</em> and <em>loss function</em> interchangeably.)</p>
+<p>Here is an example of a cost function in the context of linear regression.</p>
+</div>
+<div class="section" id="single-variable-linear-regression">
+<h2>Single variable linear regression<a class="headerlink" href="#single-variable-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>Consider the following data from our usual Spotify dataset, which shows Acousticness vs Energy.</p>
+<p><img alt="Acousticness vs Energy" src="../_images/SpotifyLR.png" /></p>
+<p>Certainly there is no line that perfectly models this data, but it can still be valuable to search for a line that approximates the relationship illustrated by this scatter-plot.  For example, if we can approximate this data using a <span class="math notranslate nohighlight">\(y = mx + b\)</span> line, then if <span class="math notranslate nohighlight">\(m\)</span> is negative, that tells us that in general, as acousticness increases, the energy tends to decrease.</p>
+<p>The question then becomes, how to find a line that does a good job of approximating the data.  Given two lines, how do we decide which of the lines better approximates the data?  We decide this by defining a cost function (or loss function).  The cost function provides a measure of how well a given line approximates the data.  The smaller the cost function, the better the approximation, with a cost function value of 0 typically representing a perfect fit.</p>
+<div class="section" id="a-cost-function-for-single-variable-linear-regression">
+<h3>A cost function for single variable linear regression<a class="headerlink" href="#a-cost-function-for-single-variable-linear-regression" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(m\)</span> denote the number of data points, and let <span class="math notranslate nohighlight">\((x^{(i)}, y^{(i)})\)</span> denote the <span class="math notranslate nohighlight">\(i\)</span>-th data point.  (We do not use subscripts here because they will serve a different purpose in multi-variable linear regression.)  Let <span class="math notranslate nohighlight">\(y = \theta_0 + \theta_1 x\)</span> denote a linear (degree one) equation, and we want to measure how well this line fits the data.  We define the <em>Mean Squared Error</em> (MSE) cost function by</p>
+<div class="math notranslate nohighlight">
+\[
+J = \frac{1}{m} \sum_{i = 1}^m \bigg(y^{(i)} - (\theta_0 + \theta_1 x^{(i)})\bigg)^2
+\]</div>
+<p>This cost function represents the average value of the squares of the vertical distances between the data points and the line.</p>
+<p>If the cost function were to equal zero, that would mean that every data point lies on the line.</p>
+<p>Another common choice is the <em>Mean Absolute Error</em> (MAE) cost function, defined by</p>
+<div class="math notranslate nohighlight">
+\[
+J = \frac{1}{m} \sum_{i = 1}^m \bigg|y^{(i)} - (\theta_0 + \theta_1 x^{(i)})\bigg|
+\]</div>
+</div>
+<div class="section" id="the-best-line">
+<h3>The “best” line<a class="headerlink" href="#the-best-line" title="Permalink to this headline">¶</a></h3>
+<p>It turns out there is a “best” linear approximation to the data, in the sense that there is a line for which the Mean Squared Error cost function is minimized.  (In rare cases there might be more than one best line, where the best lines all produce the same value of <span class="math notranslate nohighlight">\(J\)</span>.)</p>
+<p>(I expect there is also a best line with respect to the Mean Absolute Error, but I haven’t thought of how to justify this.)</p>
+<p>In the Fall 2021 version of Math 10, I spent a lot of time trying to explain the formula for the best line, but such formulas don’t exist for more complicated machine learning models, so I think I will skip that this quarter.</p>
+</div>
+</div>
+<div class="section" id="setup-for-multi-variable-linear-regression">
+<h2>Setup for multi-variable linear regression<a class="headerlink" href="#setup-for-multi-variable-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>There is also a version of linear regression for more than one input variable.  Here is the setup for <span class="math notranslate nohighlight">\(n\)</span> input variables.</p>
+<p>For <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, m\)</span>, we have an input <span class="math notranslate nohighlight">\(\vec{x}^{\,(i)} \in \mathbb{R}^{n}\)</span> and an output <span class="math notranslate nohighlight">\(y^{(i)} \in \mathbb{R}\)</span>.</p>
+<p>Given elements <span class="math notranslate nohighlight">\(\theta_0, \theta_1, \ldots, \theta_n \in \mathbb{R}\)</span>, we get a corresponding map <span class="math notranslate nohighlight">\(\mathbb{R}^n \rightarrow \mathbb{R}\)</span> given by</p>
+<div class="math notranslate nohighlight">
+\[
+(x_1, x_2, \ldots, x_n) \mapsto \theta_0 + \theta_1 x_1 + \cdots  + \theta_n x_n.
+\]</div>
+<p>We want to find the values of <span class="math notranslate nohighlight">\(\theta_i\)</span> which best model <span class="math notranslate nohighlight">\(\vec{x}^{\,(i)} \leadsto y^{(i)}\)</span>.</p>
+<p>By “best”, we mean the loss function is as small as possible, where for example the Mean Squared Error loss function is given by</p>
+<div class="math notranslate nohighlight">
+\[
+J = \frac{1}{m} \sum_{i = 1}^m \bigg(y^{(i)} - (\theta_0 + \theta_1 x_1^{(i)} + \cdots  + \theta_n x_n^{(i)})\bigg)^2.
+\]</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Week5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Week5-Wednesday.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction to scikit-learn</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Week6/Week6-Intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 6</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Christopher Davis<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
