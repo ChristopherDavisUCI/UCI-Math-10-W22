@@ -592,17 +592,8 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_92642</span><span class="o">/</span><span class="mf">3756583844.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">wed</span> <span class="o">=</span> <span class="n">ThreeBlue</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;ThreeBlue&#39; is not defined
-</pre></div>
 </div>
-</div>
-</div>
+<p>In class (see the YuJa recording above), we gradually built up to the following code.  It was designed to match the 3Blue1Brown video’s neural network.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ThreeBlue</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
@@ -634,6 +625,7 @@
 </div>
 </div>
 </div>
+<p>Here are the weights and biases for this neural network.  When we talk about fitting or training a neural network, we mean adjust the weights and biases to try to minimize some loss function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
@@ -670,6 +662,7 @@ torch.Size([10])
 </div>
 </div>
 </div>
+<p>Notice that this is the same 13002 number which appeared in the 3Blue1Brown videos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">()])</span>
@@ -682,6 +675,7 @@ torch.Size([10])
 </div>
 </div>
 </div>
+<p>You can even do the same thing without the square brackets.  This is secretly using a <em>generator expression</em> instead of a list comprehension.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
@@ -705,15 +699,18 @@ torch.Size([10])
   (flatten): Flatten(start_dim=1, end_dim=-1)
   (layers): Sequential(
     (0): Linear(in_features=784, out_features=16, bias=True)
-    (1): Linear(in_features=16, out_features=16, bias=True)
-    (2): Linear(in_features=16, out_features=10, bias=True)
+    (1): Sigmoid()
+    (2): Linear(in_features=16, out_features=16, bias=True)
     (3): Sigmoid()
+    (4): Linear(in_features=16, out_features=10, bias=True)
+    (5): Sigmoid()
   )
 )
 </pre></div>
 </div>
 </div>
 </div>
+<p>In the line that begins <code class="docutils literal notranslate"><span class="pre">self.layers</span> <span class="pre">=</span> </code> above, we were specifying that each ThreeBlue object should have a <code class="docutils literal notranslate"><span class="pre">layers</span></code> attribute.  Here is that attribute for the case of <code class="docutils literal notranslate"><span class="pre">wed</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="o">.</span><span class="n">layers</span>
@@ -723,10 +720,25 @@ torch.Size([10])
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential(
   (0): Linear(in_features=784, out_features=16, bias=True)
-  (1): Linear(in_features=16, out_features=16, bias=True)
-  (2): Linear(in_features=16, out_features=10, bias=True)
+  (1): Sigmoid()
+  (2): Linear(in_features=16, out_features=16, bias=True)
   (3): Sigmoid()
+  (4): Linear(in_features=16, out_features=10, bias=True)
+  (5): Sigmoid()
 )
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can access for example the second element of <code class="docutils literal notranslate"><span class="pre">wed.layers</span></code> using subscripting, <code class="docutils literal notranslate"><span class="pre">wed.layers[2]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear(in_features=16, out_features=16, bias=True)
 </pre></div>
 </div>
 </div>
@@ -738,7 +750,7 @@ torch.Size([10])
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([10, 16])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([16, 16])
 </pre></div>
 </div>
 </div>
@@ -750,85 +762,12 @@ torch.Size([10])
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([10])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([16])
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-55.2283, -56.4610,  54.5960,  ...,  -3.8436,  57.0099,  69.1157],
-        [-33.1065, -24.6902,  22.6003,  ...,  10.9671,  21.9622,  97.5362],
-        [-61.3301,  -8.5647, -27.5800,  ..., -41.4074,   2.2047,  66.7116],
-        ...,
-        [-40.8012, -53.5293, -59.4709,  ..., -31.5671, -49.3599,  82.7872],
-        [ 10.5128,  -4.7770,  14.8668,  ...,   5.6984,  58.1751,   7.1557],
-        [ -7.9452, -10.8654, -14.2437,  ...,  27.7169,  49.4617,  40.3107]],
-       grad_fn=&lt;AddmmBackward0&gt;)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="o">/</span><span class="mi">255</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.1932, -0.2259,  0.2297,  ..., -0.0067,  0.2211,  0.2962],
-        [-0.1065, -0.1013,  0.1042,  ...,  0.0514,  0.0836,  0.4076],
-        [-0.2171, -0.0381, -0.0926,  ..., -0.1540,  0.0061,  0.2868],
-        ...,
-        [-0.1366, -0.2144, -0.2176,  ..., -0.1154, -0.1961,  0.3498],
-        [ 0.0646, -0.0232,  0.0739,  ...,  0.0307,  0.2256,  0.0532],
-        [-0.0078, -0.0471, -0.0403,  ...,  0.1171,  0.1915,  0.1832]],
-       grad_fn=&lt;AddmmBackward0&gt;)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([60000, 28, 28])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="o">/</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([60000, 28, 28])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="o">/</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([60000, 10])
-</pre></div>
-</div>
-</div>
-</div>
+<p>On Monday, we were having to divide by 255 each time we input data to our neural network.  Today, we’ve put that step directly into the <code class="docutils literal notranslate"><span class="pre">forward</span></code> method of the neural network; it’s the line <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x/255</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
@@ -836,12 +775,12 @@ torch.Size([10])
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5288, 0.5101, 0.4396, 0.4913, 0.4751, 0.5183, 0.4840, 0.4438, 0.4579,
-         0.5159],
-        [0.5285, 0.4803, 0.4635, 0.4609, 0.3703, 0.4872, 0.4798, 0.4920, 0.4342,
-         0.5217],
-        [0.4437, 0.4366, 0.4977, 0.4573, 0.5392, 0.5174, 0.5090, 0.5097, 0.3944,
-         0.5027]], grad_fn=&lt;SliceBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5128, 0.3936, 0.5649, 0.5723, 0.5577, 0.5520, 0.5960, 0.5789, 0.4498,
+         0.5246],
+        [0.5123, 0.3924, 0.5644, 0.5736, 0.5568, 0.5522, 0.5969, 0.5799, 0.4494,
+         0.5249],
+        [0.5124, 0.3922, 0.5646, 0.5733, 0.5572, 0.5532, 0.5970, 0.5803, 0.4490,
+         0.5274]], grad_fn=&lt;SliceBackward0&gt;)
 </pre></div>
 </div>
 </div>
@@ -865,6 +804,7 @@ torch.Size([10])
 </div>
 </div>
 </div>
+<p>To match the 3Blue1Brown video, we are going to convert the targets, which are integers like <code class="docutils literal notranslate"><span class="pre">5</span></code>, into length 10 vectors like <code class="docutils literal notranslate"><span class="pre">[0,0,0,0,0,1,0,0,0,0]</span></code>.  This procedure is called <em>one-hot encoding</em>, and it also exists in scikit-learn.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.nn.functional</span> <span class="kn">import</span> <span class="n">one_hot</span>
@@ -905,6 +845,7 @@ torch.Size([10])
 </div>
 </div>
 </div>
+<p>Using Mean-Squared Error on the probabilities for this classification problem is not considered the best approach, but it is easy to understand, and we will follow this approach for now to match the 3Blue1Brown video.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
@@ -912,6 +853,7 @@ torch.Size([10])
 </div>
 </div>
 </div>
+<p>Here is the performance of the randomly initialized model.  The output of this sort of loss function is not so easy to analyze in isolation.  The important thing is that if we can lower this number, then the model is performing better (on the training data).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_fn</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
@@ -919,11 +861,12 @@ torch.Size([10])
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.3006, grad_fn=&lt;MseLossBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.2792, grad_fn=&lt;MseLossBackward0&gt;)
 </pre></div>
 </div>
 </div>
 </div>
+<p>Here we try to find better weights and biases using <em>gradient descent</em>.  Try to get comfortable with these steps (they can take some time to internalize).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
@@ -931,6 +874,7 @@ torch.Size([10])
 </div>
 </div>
 </div>
+<p>There aren’t yet any gradients associated with the parameters of the model (the weights and biases).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
@@ -956,6 +900,7 @@ None
 </div>
 </div>
 </div>
+<p>Still no gradients.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
@@ -981,6 +926,7 @@ None
 </div>
 </div>
 </div>
+<p>The line <code class="docutils literal notranslate"><span class="pre">loss.backward()</span></code> told PyTorch to compute the gradients of the loss calculation with respect to the 13002 weights and biases.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
@@ -996,70 +942,105 @@ None
         [0., 0., 0.,  ..., 0., 0., 0.],
         [0., 0., 0.,  ..., 0., 0., 0.],
         [0., 0., 0.,  ..., 0., 0., 0.]])
-tensor([ 3.1897e-04, -8.1853e-04, -1.6588e-04, -1.8961e-04, -8.2379e-05,
-         8.7279e-04, -2.6662e-04,  1.0267e-04,  3.3947e-04,  5.7145e-04,
-         5.8615e-04, -6.6343e-05,  1.0942e-03,  4.5065e-04,  4.0523e-04,
-        -7.4472e-05])
-tensor([[ 0.0005,  0.0004,  0.0004,  0.0005,  0.0004,  0.0004,  0.0004,  0.0005,
-          0.0004,  0.0004,  0.0004,  0.0005,  0.0004,  0.0004,  0.0004,  0.0004],
-        [-0.0014, -0.0014, -0.0014, -0.0015, -0.0013, -0.0013, -0.0013, -0.0015,
-         -0.0014, -0.0014, -0.0014, -0.0016, -0.0013, -0.0012, -0.0015, -0.0014],
-        [ 0.0006,  0.0006,  0.0006,  0.0007,  0.0005,  0.0006,  0.0006,  0.0006,
-          0.0006,  0.0006,  0.0006,  0.0007,  0.0006,  0.0005,  0.0006,  0.0006],
-        [ 0.0038,  0.0037,  0.0037,  0.0042,  0.0035,  0.0036,  0.0036,  0.0040,
-          0.0038,  0.0039,  0.0039,  0.0042,  0.0035,  0.0034,  0.0040,  0.0039],
-        [ 0.0004,  0.0004,  0.0004,  0.0004,  0.0004,  0.0004,  0.0004,  0.0004,
-          0.0004,  0.0004,  0.0004,  0.0005,  0.0004,  0.0003,  0.0004,  0.0004],
-        [-0.0006, -0.0005, -0.0006, -0.0007, -0.0005, -0.0005, -0.0005, -0.0006,
-         -0.0006, -0.0006, -0.0006, -0.0006, -0.0005, -0.0005, -0.0006, -0.0006],
-        [ 0.0002,  0.0001,  0.0002,  0.0002,  0.0001,  0.0001,  0.0001,  0.0002,
-          0.0001,  0.0001,  0.0001,  0.0002,  0.0001,  0.0001,  0.0002,  0.0001],
-        [ 0.0024,  0.0022,  0.0023,  0.0026,  0.0021,  0.0022,  0.0022,  0.0025,
-          0.0023,  0.0024,  0.0024,  0.0026,  0.0022,  0.0021,  0.0024,  0.0024],
-        [-0.0022, -0.0021, -0.0021, -0.0024, -0.0020, -0.0021, -0.0021, -0.0023,
-         -0.0022, -0.0023, -0.0022, -0.0025, -0.0021, -0.0020, -0.0023, -0.0022],
-        [ 0.0014,  0.0014,  0.0014,  0.0016,  0.0013,  0.0013,  0.0013,  0.0015,
-          0.0014,  0.0015,  0.0014,  0.0016,  0.0013,  0.0013,  0.0015,  0.0014],
-        [ 0.0029,  0.0028,  0.0028,  0.0032,  0.0027,  0.0027,  0.0027,  0.0030,
-          0.0029,  0.0030,  0.0029,  0.0032,  0.0027,  0.0026,  0.0031,  0.0029],
-        [-0.0004, -0.0004, -0.0004, -0.0005, -0.0004, -0.0004, -0.0004, -0.0004,
-         -0.0004, -0.0004, -0.0004, -0.0005, -0.0004, -0.0004, -0.0004, -0.0004],
-        [-0.0009, -0.0009, -0.0009, -0.0010, -0.0009, -0.0009, -0.0009, -0.0010,
-         -0.0009, -0.0010, -0.0010, -0.0010, -0.0009, -0.0008, -0.0010, -0.0010],
-        [ 0.0024,  0.0023,  0.0023,  0.0026,  0.0022,  0.0023,  0.0022,  0.0025,
-          0.0024,  0.0025,  0.0024,  0.0026,  0.0022,  0.0021,  0.0025,  0.0024],
-        [-0.0007, -0.0007, -0.0007, -0.0008, -0.0007, -0.0007, -0.0007, -0.0008,
-         -0.0007, -0.0007, -0.0007, -0.0008, -0.0007, -0.0006, -0.0007, -0.0007],
-        [ 0.0009,  0.0009,  0.0009,  0.0010,  0.0008,  0.0009,  0.0008,  0.0010,
-          0.0009,  0.0009,  0.0009,  0.0010,  0.0008,  0.0008,  0.0010,  0.0009]])
-tensor([ 0.0009, -0.0028,  0.0012,  0.0076,  0.0008, -0.0011,  0.0003,  0.0046,
-        -0.0044,  0.0028,  0.0058, -0.0008, -0.0019,  0.0048, -0.0014,  0.0018])
-tensor([[0.0147, 0.0116, 0.0109, 0.0135, 0.0081, 0.0108, 0.0107, 0.0146, 0.0119,
-         0.0133, 0.0130, 0.0118, 0.0112, 0.0156, 0.0125, 0.0109],
-        [0.0131, 0.0103, 0.0097, 0.0119, 0.0071, 0.0095, 0.0095, 0.0129, 0.0106,
-         0.0118, 0.0115, 0.0105, 0.0099, 0.0139, 0.0112, 0.0096],
-        [0.0134, 0.0106, 0.0099, 0.0123, 0.0074, 0.0098, 0.0097, 0.0133, 0.0108,
-         0.0121, 0.0118, 0.0107, 0.0102, 0.0143, 0.0114, 0.0099],
-        [0.0155, 0.0122, 0.0114, 0.0141, 0.0085, 0.0113, 0.0112, 0.0153, 0.0125,
-         0.0140, 0.0136, 0.0124, 0.0118, 0.0164, 0.0131, 0.0114],
-        [0.0118, 0.0093, 0.0087, 0.0108, 0.0065, 0.0086, 0.0086, 0.0117, 0.0096,
-         0.0107, 0.0104, 0.0094, 0.0090, 0.0126, 0.0100, 0.0087],
-        [0.0104, 0.0082, 0.0077, 0.0095, 0.0057, 0.0076, 0.0075, 0.0103, 0.0084,
-         0.0094, 0.0092, 0.0083, 0.0079, 0.0111, 0.0089, 0.0077],
-        [0.0142, 0.0112, 0.0104, 0.0129, 0.0078, 0.0103, 0.0103, 0.0140, 0.0114,
-         0.0128, 0.0125, 0.0113, 0.0108, 0.0151, 0.0120, 0.0104],
-        [0.0108, 0.0085, 0.0080, 0.0098, 0.0059, 0.0078, 0.0078, 0.0106, 0.0087,
-         0.0097, 0.0095, 0.0086, 0.0082, 0.0114, 0.0091, 0.0079],
-        [0.0125, 0.0098, 0.0092, 0.0114, 0.0068, 0.0091, 0.0090, 0.0123, 0.0101,
-         0.0113, 0.0110, 0.0100, 0.0095, 0.0133, 0.0106, 0.0092],
-        [0.0156, 0.0123, 0.0115, 0.0143, 0.0085, 0.0113, 0.0113, 0.0154, 0.0126,
-         0.0141, 0.0138, 0.0124, 0.0119, 0.0166, 0.0132, 0.0115]])
-tensor([0.0239, 0.0212, 0.0217, 0.0251, 0.0192, 0.0169, 0.0229, 0.0174, 0.0202,
-        0.0253])
+tensor([-1.8313e-04,  6.0323e-05, -7.9682e-05,  1.3652e-04,  2.8588e-04,
+         5.4873e-05,  5.6339e-04, -4.3447e-04,  8.5402e-05,  4.7174e-05,
+         2.8684e-04,  2.4752e-04,  3.4093e-04,  1.2426e-04,  7.8342e-05,
+         3.8503e-04])
+tensor([[ 1.5513e-03,  1.4997e-03,  1.4607e-03,  1.5071e-03,  1.4121e-03,
+          1.5751e-03,  1.5298e-03,  1.5007e-03,  1.4708e-03,  1.5008e-03,
+          1.6073e-03,  1.6327e-03,  1.5269e-03,  1.4076e-03,  1.5441e-03,
+          1.3184e-03],
+        [ 2.4013e-03,  2.3361e-03,  2.2776e-03,  2.3523e-03,  2.1835e-03,
+          2.4395e-03,  2.3866e-03,  2.3222e-03,  2.2672e-03,  2.3256e-03,
+          2.4822e-03,  2.5124e-03,  2.3493e-03,  2.1990e-03,  2.4188e-03,
+          2.0566e-03],
+        [-2.2165e-06, -9.6794e-06, -2.1568e-05, -1.9828e-05, -1.8939e-05,
+         -9.7146e-06, -1.5075e-05, -4.0656e-05, -1.7720e-05,  3.4108e-09,
+         -3.3992e-05, -3.1905e-05, -2.0933e-05, -1.9765e-05, -2.4898e-05,
+         -2.6694e-05],
+        [-2.8100e-04, -2.8200e-04, -2.7381e-04, -2.9060e-04, -2.6077e-04,
+         -2.7536e-04, -2.9915e-04, -2.7826e-04, -2.6433e-04, -2.5710e-04,
+         -2.9216e-04, -2.8800e-04, -2.8381e-04, -2.6977e-04, -3.0117e-04,
+         -2.5156e-04],
+        [ 1.0721e-03,  1.0468e-03,  1.0277e-03,  1.0680e-03,  9.8862e-04,
+          1.0792e-03,  1.0801e-03,  1.0512e-03,  1.0151e-03,  1.0319e-03,
+          1.1056e-03,  1.1206e-03,  1.0652e-03,  1.0057e-03,  1.1023e-03,
+          9.3069e-04],
+        [ 5.5203e-04,  5.5129e-04,  5.4008e-04,  5.5955e-04,  5.1289e-04,
+          5.7207e-04,  5.5648e-04,  5.5705e-04,  5.2402e-04,  5.2216e-04,
+          5.8920e-04,  5.9263e-04,  5.4806e-04,  5.1084e-04,  5.7347e-04,
+          4.7725e-04],
+        [-1.0829e-03, -1.0391e-03, -1.0199e-03, -1.0541e-03, -9.7853e-04,
+         -1.0998e-03, -1.0704e-03, -1.0504e-03, -1.0328e-03, -1.0516e-03,
+         -1.1339e-03, -1.1448e-03, -1.0772e-03, -9.9053e-04, -1.0844e-03,
+         -9.3149e-04],
+        [ 4.0089e-04,  3.7560e-04,  3.5750e-04,  3.7532e-04,  3.4274e-04,
+          3.7918e-04,  3.9848e-04,  3.5818e-04,  3.5726e-04,  3.8072e-04,
+          3.8984e-04,  3.9334e-04,  3.8159e-04,  3.6648e-04,  4.0230e-04,
+          3.4276e-04],
+        [ 1.0015e-04,  1.1278e-04,  1.0807e-04,  1.1097e-04,  1.0148e-04,
+          9.9824e-05,  1.1656e-04,  1.0273e-04,  9.4862e-05,  9.2009e-05,
+          9.2207e-05,  8.7203e-05,  9.4461e-05,  1.0173e-04,  1.1096e-04,
+          9.0506e-05],
+        [-2.7376e-04, -2.6440e-04, -2.5965e-04, -2.7287e-04, -2.4827e-04,
+         -2.6744e-04, -2.7625e-04, -2.6334e-04, -2.5119e-04, -2.5872e-04,
+         -2.7264e-04, -2.7600e-04, -2.7239e-04, -2.6221e-04, -2.8732e-04,
+         -2.3753e-04],
+        [-3.0894e-05, -4.6069e-05, -5.6068e-05, -6.0372e-05, -4.7414e-05,
+         -3.2222e-05, -5.3234e-05, -5.4248e-05, -3.5233e-05, -2.8325e-05,
+         -4.0417e-05, -3.6876e-05, -3.9883e-05, -5.7270e-05, -6.4234e-05,
+         -5.3041e-05],
+        [-2.0521e-03, -1.9898e-03, -1.9339e-03, -2.0009e-03, -1.8605e-03,
+         -2.0647e-03, -2.0414e-03, -1.9682e-03, -1.9259e-03, -1.9836e-03,
+         -2.1029e-03, -2.1329e-03, -2.0004e-03, -1.8793e-03, -2.0647e-03,
+         -1.7582e-03],
+        [-1.1316e-03, -1.1034e-03, -1.0669e-03, -1.1025e-03, -1.0163e-03,
+         -1.1266e-03, -1.1373e-03, -1.0711e-03, -1.0502e-03, -1.0853e-03,
+         -1.1463e-03, -1.1481e-03, -1.0907e-03, -1.0356e-03, -1.1419e-03,
+         -9.8145e-04],
+        [ 6.4383e-04,  6.2033e-04,  5.9793e-04,  6.2632e-04,  5.6714e-04,
+          6.3456e-04,  6.4794e-04,  6.0152e-04,  5.9248e-04,  6.1108e-04,
+          6.5407e-04,  6.5323e-04,  6.2586e-04,  5.9097e-04,  6.5470e-04,
+          5.5457e-04],
+        [ 6.4822e-04,  6.2109e-04,  6.1811e-04,  6.3792e-04,  5.9188e-04,
+          6.5852e-04,  6.3653e-04,  6.2957e-04,  6.1760e-04,  6.3564e-04,
+          6.8030e-04,  6.9065e-04,  6.4661e-04,  5.9874e-04,  6.5402e-04,
+          5.7052e-04],
+        [ 1.0332e-03,  1.0129e-03,  9.8541e-04,  1.0194e-03,  9.3670e-04,
+          1.0267e-03,  1.0482e-03,  9.8933e-04,  9.5952e-04,  9.9341e-04,
+          1.0564e-03,  1.0607e-03,  9.9555e-04,  9.5971e-04,  1.0609e-03,
+          9.1640e-04]])
+tensor([ 2.9285e-03,  4.5277e-03, -4.0536e-05, -5.2834e-04,  2.0315e-03,
+         1.0567e-03, -2.0450e-03,  7.2072e-04,  1.9550e-04, -5.0986e-04,
+        -8.0033e-05, -3.8523e-03, -2.1089e-03,  1.1834e-03,  1.2280e-03,
+         1.9357e-03])
+tensor([[0.0107, 0.0118, 0.0100, 0.0125, 0.0115, 0.0129, 0.0104, 0.0088, 0.0129,
+         0.0120, 0.0106, 0.0071, 0.0137, 0.0115, 0.0074, 0.0090],
+        [0.0069, 0.0076, 0.0065, 0.0081, 0.0075, 0.0083, 0.0067, 0.0057, 0.0084,
+         0.0078, 0.0068, 0.0045, 0.0089, 0.0075, 0.0048, 0.0058],
+        [0.0119, 0.0130, 0.0111, 0.0138, 0.0128, 0.0143, 0.0115, 0.0098, 0.0143,
+         0.0133, 0.0117, 0.0078, 0.0152, 0.0128, 0.0082, 0.0100],
+        [0.0119, 0.0131, 0.0112, 0.0139, 0.0129, 0.0143, 0.0115, 0.0098, 0.0144,
+         0.0134, 0.0118, 0.0079, 0.0153, 0.0128, 0.0083, 0.0101],
+        [0.0118, 0.0129, 0.0110, 0.0137, 0.0127, 0.0141, 0.0114, 0.0097, 0.0142,
+         0.0132, 0.0116, 0.0078, 0.0151, 0.0126, 0.0081, 0.0099],
+        [0.0118, 0.0130, 0.0111, 0.0138, 0.0128, 0.0142, 0.0115, 0.0097, 0.0143,
+         0.0133, 0.0117, 0.0078, 0.0152, 0.0127, 0.0082, 0.0100],
+        [0.0124, 0.0136, 0.0116, 0.0145, 0.0134, 0.0149, 0.0120, 0.0102, 0.0150,
+         0.0139, 0.0122, 0.0082, 0.0159, 0.0133, 0.0086, 0.0105],
+        [0.0120, 0.0132, 0.0112, 0.0140, 0.0130, 0.0144, 0.0116, 0.0099, 0.0145,
+         0.0135, 0.0118, 0.0079, 0.0154, 0.0129, 0.0083, 0.0101],
+        [0.0090, 0.0099, 0.0084, 0.0105, 0.0097, 0.0109, 0.0087, 0.0074, 0.0109,
+         0.0101, 0.0089, 0.0059, 0.0116, 0.0097, 0.0062, 0.0076],
+        [0.0110, 0.0121, 0.0103, 0.0129, 0.0119, 0.0133, 0.0107, 0.0091, 0.0133,
+         0.0124, 0.0109, 0.0073, 0.0141, 0.0118, 0.0076, 0.0093]])
+tensor([0.0207, 0.0134, 0.0229, 0.0230, 0.0227, 0.0229, 0.0240, 0.0232, 0.0174,
+        0.0213])
 </pre></div>
 </div>
 </div>
 </div>
+<p>The next line adjusts the weights and biases by adding a multiple of the negative gradient.  (We are trying to minimize the loss, and the gradient points in the direction of fastest ascent, and the negative gradient points in the direction of fastest descent.)  The multiple we use is determined by the <em>learning rate</em> <code class="docutils literal notranslate"><span class="pre">lr</span></code> that we specified when we created the optimizer above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
@@ -1074,12 +1055,130 @@ tensor([0.0239, 0.0212, 0.0217, 0.0251, 0.0192, 0.0169, 0.0229, 0.0174, 0.0202,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5898, 0.5361, 0.5328, 0.7045, 0.4790, 0.4328, 0.5631, 0.4541, 0.4985,
-         0.6916],
-        [0.5903, 0.5355, 0.5326, 0.7043, 0.4787, 0.4321, 0.5617, 0.4532, 0.4974,
-         0.6917],
-        [0.5899, 0.5350, 0.5340, 0.7043, 0.4788, 0.4327, 0.5630, 0.4531, 0.4975,
-         0.6917]], grad_fn=&lt;SliceBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5100, 0.3918, 0.5617, 0.5692, 0.5546, 0.5489, 0.5928, 0.5757, 0.4474,
+         0.5216],
+        [0.5095, 0.3906, 0.5612, 0.5705, 0.5537, 0.5491, 0.5936, 0.5768, 0.4471,
+         0.5219],
+        [0.5096, 0.3905, 0.5614, 0.5701, 0.5540, 0.5501, 0.5938, 0.5771, 0.4466,
+         0.5244]], grad_fn=&lt;SliceBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now want to repeat that procedure.  Here we will repeat it 10 times, but often we will want to repeat it many more times.  What we hope is that the loss value is decreasing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">one_hot</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.2767, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2741, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2717, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2692, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2668, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2644, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2620, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2597, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2574, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2551, grad_fn=&lt;MseLossBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>An important thing to point out is that if we run the same code again, we won’t be starting back at the beginning.  Each time we run this training procedure, it will begin where the last training procedure left off.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">one_hot</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span> == 0:
+        <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.2528, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2484, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2441, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2399, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2358, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2318, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2280, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2242, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2206, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2170, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2136, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2102, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2069, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2038, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2007, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1977, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1948, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1920, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1893, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1866, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1840, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1815, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1791, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1768, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1745, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1723, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1701, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1681, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1661, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1641, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1622, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1604, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1586, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1568, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1552, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1535, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1520, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1504, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1489, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1475, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1461, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1447, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1434, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1421, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1409, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1397, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1385, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1374, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1363, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1352, grad_fn=&lt;MseLossBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how the loss is steadily decreasing.  That’s the best result we can hope for.  If we were to choose a learning rate that was much too big, the performance would be very different.  Here we set <code class="docutils literal notranslate"><span class="pre">lr=500</span></code> which is much too big.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span> <span class="o">=</span> <span class="n">ThreeBlue</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1100,179 +1199,22 @@ tensor([0.0239, 0.0212, 0.0217, 0.0251, 0.0192, 0.0169, 0.0229, 0.0174, 0.0202,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.2980, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2955, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2930, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2905, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2881, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2856, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2832, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2808, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2785, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2762, grad_fn=&lt;MseLossBackward0&gt;)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
-    <span class="n">y_true</span> <span class="o">=</span> <span class="n">one_hot</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
-    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span> == 0:
-        <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.1072, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1069, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1066, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1064, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1061, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1058, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1056, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1053, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1050, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1048, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1045, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1043, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1041, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1038, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1036, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1034, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1032, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1030, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1028, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1026, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1024, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1022, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1020, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1018, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1016, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1014, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1013, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1011, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1009, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1008, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1006, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1004, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1003, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.1001, grad_fn=&lt;MseLossBackward0&gt;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.2877, grad_fn=&lt;MseLossBackward0&gt;)
 tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0998, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0997, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0996, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0994, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0993, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0991, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0990, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0989, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0988, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0986, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0985, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0984, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0983, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0982, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.0980, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
-</pre></div>
+<p>Here it improves for one iteration of gradient descent, and then it seems to get stuck.</p>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span> <span class="o">=</span> <span class="n">ThreeBlue</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
-    <span class="n">y_true</span> <span class="o">=</span> <span class="n">one_hot</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
-    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span> == 0:
-        <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-tensor(0.2433, grad_fn=&lt;MseLossBackward0&gt;)
-</pre></div>
-</div>
-</div>
-</div>
-<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=7aba66cf-2a09-47de-a62a-78713e9a79bd' target="_blank">
-<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
-Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></div>
 
     <script type="text/x-thebe-config">
     {
