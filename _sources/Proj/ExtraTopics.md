@@ -17,6 +17,10 @@ If you want to use a Python library that isn't by default installed in Deepnote,
 
 Browse [Kaggle](www.kaggle.com).  Go to a competition or dataset you find interesting, and then click on the *Code* tab near the top.  You will reach a page like this one about [Fashion-MNIST](https://www.kaggle.com/zalando-research/fashionmnist/code).  You can browse through the Kaggle notebooks for ideas.
 
+## pandas groupby
+
+A very useful tool in Math 10, which unfortunately we did not cover this quarter, is `groupby`, which gives a way to break a DataFrame up into different groups.  Here are examples from the pandas [user guide](https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html).
+
 ## pandas styler
 
 ![pandas styler](../images/styler.png)
