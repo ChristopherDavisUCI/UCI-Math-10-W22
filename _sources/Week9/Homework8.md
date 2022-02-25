@@ -1,9 +1,11 @@
 # Homework 8
 
 ## Overview
-Get started on the course project:
+Goal of this homework: Get started on the course project.
 
-1.  Use the Project Template from Deepnote.
+Specific instructions:
+
+1.  Use the Project Template from Deepnote; it is in the Course Project category on Deepnote.
 1.  Share the project on Deepnote with both Chris and Thurman.
 1.  Find a dataset to use for the project and load it into the Deepnote notebook in the "Main portion of the project" section.  (This needs to be a dataset that was **not** already used in Math 10.)
 1.  What aspect of this dataset are you planning to explore?  Describe this in the "Introduction" section.
