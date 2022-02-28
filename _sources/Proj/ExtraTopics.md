@@ -59,6 +59,5 @@ Here are a few other libraries that you might find interesting.  (Most of these 
 * [sympy](https://www.sympy.org/en/index.html) for symbolic computation, like what you did in Math 9 using Mathematica.
 * [Pillow](https://pillow.readthedocs.io/en/stable/index.html) for image processing.
 * [re](https://docs.python.org/3/library/re.html) for advanced string methods using regular expressions.
-* [Seaborn](https://seaborn.pydata.org/) It's like a cross between Altair and Matplotlib.
-* [Plotly](https://plotly.com/python/plotly-express/) It's like a cross between Altair and Streamlit.
+* [Seaborn](https://seaborn.pydata.org/) and [Plotly](https://plotly.com/python/plotly-express/).  We introduced these plotting libraries briefly together with Altair early in Winter 2022.  Their syntax is similar to Altair.
 * [Keras](https://keras.io/) The main rival to PyTorch for neural networks.
