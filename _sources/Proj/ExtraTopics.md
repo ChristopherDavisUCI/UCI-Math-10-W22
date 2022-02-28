@@ -15,7 +15,7 @@ If you want to use a Python library that isn't by default installed in Deepnote,
 
 ## Kaggle
 
-Browse [Kaggle](www.kaggle.com).  Go to a competition or dataset you find interesting, and then click on the *Code* tab near the top.  You will reach a page like this one about [Fashion-MNIST](https://www.kaggle.com/zalando-research/fashionmnist/code).  You can browse through the Kaggle notebooks for ideas.
+Browse [Kaggle](https://www.kaggle.com/).  Go to a competition or dataset you find interesting, and then click on the *Code* tab near the top.  You will reach a page like this one about [Fashion-MNIST](https://www.kaggle.com/zalando-research/fashionmnist/code).  You can browse through the Kaggle notebooks for ideas.
 
 ## pandas groupby
 
