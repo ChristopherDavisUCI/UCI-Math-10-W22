@@ -19,7 +19,7 @@ Browse [Kaggle](www.kaggle.com).  Go to a competition or dataset you find intere
 
 ## pandas groupby
 
-A very useful tool in Math 10, which unfortunately we did not cover this quarter, is `groupby`, which gives a way to break a DataFrame up into different groups.  Here are examples from the pandas [user guide](https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html).
+A very useful tool in pandas, which unfortunately we did not cover this quarter, is `groupby`, which gives a way to break a DataFrame up into different groups.  Here are examples from the pandas [user guide](https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html).
 
 ## pandas styler
 
@@ -32,20 +32,24 @@ See these examples in the [pandas documentation](https://pandas.pydata.org/panda
 
 [Random forests](https://scikit-learn.org/stable/modules/ensemble.html#forests-of-randomized-trees). This is maybe the machine learning method I see most often in Kaggle competitions.
 
+## Clustering
+
+All the Machine Learning we did in Math 10 during Winter 2022 was *supervised learning*.  One of the main examples of *unsupervised learning* is [clustering](https://scikit-learn.org/stable/modules/clustering.html), where the model divides the data into different clusters.
+
 ## Principal Component Analysis in scikit-learn
 
 ![faces with pca](../images/pca.png)
 
-[Principal component analysis](https://scikit-learn.org/stable/modules/decomposition.html#pca).  We saw clustering as our only example of unsupervised learning.  Another type of unsupervised learning is *dimensionality reduction*.  PCA is a famous example.
+[Principal component analysis](https://scikit-learn.org/stable/modules/decomposition.html#pca).  Another type of unsupervised learning is *dimensionality reduction*.  Principal Component Analysis (PCA) is a famous example, and it involves advanced linear algebra.  The above image shows a visual example of the result of PCA.
 
 ## PyTorch extras
 
-* Try some other optimizers (especially `Adam`) or loss functions, or go into more details about the ones we used.  (What is `momentum in stochastic gradient descent?  Why is it useful?  How does Softmax work?  How does Log Likelihood work?)
+* Try some other optimizers (especially `Adam`) or loss functions, or go into more details about the ones we used.  (What is `momentum` in stochastic gradient descent?  Why is it useful?  How does Softmax work?  How does Log Likelihood work?)
 * Instead of a fully connected neural network, like what we did in class, try to make a *convolutional* neural network.
 
 ## More Machine Learning options
 
-I don't know much about these, but some very popular tools in Machine learning include the following.  (Just getting some of them to run in Deepnote could already be impressive, I haven't tried.)
+I don't know much about these, but some very popular tools in Machine learning include the following.  (Just getting some of them to run in Deepnote could already be impressive; I haven't tried, so I don't know how straighforward that is.)
 
 * [XGBoost](https://xgboost.readthedocs.io/en/stable/python/python_intro.html)
 * [LightGBM](https://lightgbm.readthedocs.io/en/latest/Python-Intro.html)

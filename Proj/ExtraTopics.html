@@ -561,6 +561,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering">
+   Clustering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#principal-component-analysis-in-scikit-learn">
    Principal Component Analysis in scikit-learn
   </a>
@@ -626,6 +631,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering">
+   Clustering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#principal-component-analysis-in-scikit-learn">
    Principal Component Analysis in scikit-learn
   </a>
@@ -671,7 +681,7 @@
 </div>
 <div class="section" id="pandas-groupby">
 <h2>pandas groupby<a class="headerlink" href="#pandas-groupby" title="Permalink to this headline">¶</a></h2>
-<p>A very useful tool in Math 10, which unfortunately we did not cover this quarter, is <code class="docutils literal notranslate"><span class="pre">groupby</span></code>, which gives a way to break a DataFrame up into different groups.  Here are examples from the pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html">user guide</a>.</p>
+<p>A very useful tool in pandas, which unfortunately we did not cover this quarter, is <code class="docutils literal notranslate"><span class="pre">groupby</span></code>, which gives a way to break a DataFrame up into different groups.  Here are examples from the pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html">user guide</a>.</p>
 </div>
 <div class="section" id="pandas-styler">
 <h2>pandas styler<a class="headerlink" href="#pandas-styler" title="Permalink to this headline">¶</a></h2>
@@ -682,21 +692,25 @@
 <h2>Random forests in scikit-learn<a class="headerlink" href="#random-forests-in-scikit-learn" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://scikit-learn.org/stable/modules/ensemble.html#forests-of-randomized-trees">Random forests</a>. This is maybe the machine learning method I see most often in Kaggle competitions.</p>
 </div>
+<div class="section" id="clustering">
+<h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h2>
+<p>All the Machine Learning we did in Math 10 during Winter 2022 was <em>supervised learning</em>.  One of the main examples of <em>unsupervised learning</em> is <a class="reference external" href="https://scikit-learn.org/stable/modules/clustering.html">clustering</a>, where the model divides the data into different clusters.</p>
+</div>
 <div class="section" id="principal-component-analysis-in-scikit-learn">
 <h2>Principal Component Analysis in scikit-learn<a class="headerlink" href="#principal-component-analysis-in-scikit-learn" title="Permalink to this headline">¶</a></h2>
 <p><img alt="faces with pca" src="../_images/pca.png" /></p>
-<p><a class="reference external" href="https://scikit-learn.org/stable/modules/decomposition.html#pca">Principal component analysis</a>.  We saw clustering as our only example of unsupervised learning.  Another type of unsupervised learning is <em>dimensionality reduction</em>.  PCA is a famous example.</p>
+<p><a class="reference external" href="https://scikit-learn.org/stable/modules/decomposition.html#pca">Principal component analysis</a>.  Another type of unsupervised learning is <em>dimensionality reduction</em>.  Principal Component Analysis (PCA) is a famous example, and it involves advanced linear algebra.  The above image shows a visual example of the result of PCA.</p>
 </div>
 <div class="section" id="pytorch-extras">
 <h2>PyTorch extras<a class="headerlink" href="#pytorch-extras" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Try some other optimizers (especially <code class="docutils literal notranslate"><span class="pre">Adam</span></code>) or loss functions, or go into more details about the ones we used.  (What is `momentum in stochastic gradient descent?  Why is it useful?  How does Softmax work?  How does Log Likelihood work?)</p></li>
+<li><p>Try some other optimizers (especially <code class="docutils literal notranslate"><span class="pre">Adam</span></code>) or loss functions, or go into more details about the ones we used.  (What is <code class="docutils literal notranslate"><span class="pre">momentum</span></code> in stochastic gradient descent?  Why is it useful?  How does Softmax work?  How does Log Likelihood work?)</p></li>
 <li><p>Instead of a fully connected neural network, like what we did in class, try to make a <em>convolutional</em> neural network.</p></li>
 </ul>
 </div>
 <div class="section" id="more-machine-learning-options">
 <h2>More Machine Learning options<a class="headerlink" href="#more-machine-learning-options" title="Permalink to this headline">¶</a></h2>
-<p>I don’t know much about these, but some very popular tools in Machine learning include the following.  (Just getting some of them to run in Deepnote could already be impressive, I haven’t tried.)</p>
+<p>I don’t know much about these, but some very popular tools in Machine learning include the following.  (Just getting some of them to run in Deepnote could already be impressive; I haven’t tried, so I don’t know how straighforward that is.)</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://xgboost.readthedocs.io/en/stable/python/python_intro.html">XGBoost</a></p></li>
 <li><p><a class="reference external" href="https://lightgbm.readthedocs.io/en/latest/Python-Intro.html">LightGBM</a></p></li>
