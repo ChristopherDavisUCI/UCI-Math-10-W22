@@ -26,10 +26,11 @@ Here is some general advice about the project.
 * Don't spend too much time searching for the perfect dataset or the perfect idea.  Having a great dataset is less important for the project than exploring the dataset in an interesting way.
 * Keep your statements reasonable.  It's perfectly fine to conclude something like, "Therefore, we did not find a connection between A and B."
 * What I most want from your project is to see what you've learned in Math 10.  If you were already an expert on Python before the class and you write a project based on different material, that probably won't get a good grade, even if it's very advanced.
+* Include many markdown cells (possibly very short, just one sentence) explaining what you are doing.
 * I already wrote it above but it's worth repeating.  Please err on the side of referencing everything.  If your project is based on an idea you saw somewhere else, that's totally fine, but include a clear link in your project to the original source.
 ## Frequently asked questions
 Is there a length requirement?
-* There is no specific length requirement, but as a rough estimate, spending approximately 20 productive hours on the project would be a good amount.  (The word "productive" is important.  Time browsing tutorials or datasets is not productive in this sense if you don't end up using that material.)
+* There is no specific length requirement, but as a rough estimate, spending approximately 20 productive hours on the project would be a good amount.  (The word "productive" is important.  Time spent browsing tutorials or datasets is not productive in this sense if you don't end up using that material.)
 
 What should I focus on?
 * The primary content should be from one or more of the Math 10 tools (NumPy, pandas, Altair, scikit-learn, PyTorch).  If you like pandas much more than Altair, for example, then it's okay to go more in-depth in the use of pandas, and less in-depth in the use of Altair.
