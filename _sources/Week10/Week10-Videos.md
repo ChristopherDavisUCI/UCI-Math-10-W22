@@ -20,7 +20,7 @@ An important piece of coding style that I've neglected to emphasize so far in Ma
 
 ## Alternatives to Deepnote (5:00)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/v1QhpDY5-nU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/44nJ-6N2tX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Deepnote has worked well in Math 10, but it's important to be aware of some of the more widely used alternatives, especially:
 * [Jupyter notebook and Jupyter lab](https://jupyter.org/) which run on your computer.
