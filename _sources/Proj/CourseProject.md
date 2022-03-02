@@ -8,7 +8,7 @@ The following are requirements to receive a passing score on the course project.
 * Due date: Monday, March 14th 2022, 11:59pm California time.
 * This is an individual project (not a group project).
 * Use the *Project Template* available in the *Project* category on Deepnote.
-* Share the project with both Chris and Thurman on Deepnote.  (This has the same deadline as the overall project.)
+* Share the project with both Chris and Thurman on Deepnote.  (Please give us `View` access, which is the default setting, or higher. This has the same deadline as the overall project.)
 * For the submission on Canvas, upload the ipynb file.
 * The primary focus of the project must be on something involving data, and primarily using one or more datasets that weren't covered in Math 10.  (You can either use datasets that are for example built in to PyTorch or Seaborn, or you can upload the dataset to Deepnote yourself.)
 * The project should clearly build on the Math 10 material.  If you're an expert in Python material that was not covered in Math 10, you are of course welcome to use that, but the project should use the topics of Math 10 in an essential way (see the rubric below).

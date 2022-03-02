@@ -6,7 +6,7 @@ Goal of this homework: Get started on the course project.
 Specific instructions:
 
 1.  Use the Project Template from Deepnote; it is in the Course Project category on Deepnote.
-1.  Share the project on Deepnote with both Chris and Thurman.
+1.  Share the project on Deepnote with both Chris and Thurman.  (Please give us `View` access, which is the default setting, or higher.)
 1.  Find a dataset to use for the project and load it into the Deepnote notebook in the "Main portion of the project" section.  (This needs to be a dataset that was **not** already used in Math 10.)
 1.  What aspect of this dataset are you planning to explore?  Describe this in the "Introduction" section.
 1.  Perform some initial analysis of the dataset using scikit-learn or PyTorch (you don't need to use both, but you can if you want).  Put this in the "Main portion of the project" section.
