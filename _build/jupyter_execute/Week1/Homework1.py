@@ -3,6 +3,8 @@
 
 # # Homework 1
 # 
+# **Update** 1/3/22: I was wrong in class when I said you should duplicate this into the team space.  I think you need to duplicate it into your personal workspace.  You can then share with collaborators at the top right (give them *edit* access if you want them to be able to edit the code).
+# 
 # Due: 5pm Friday, Week 1, uploaded on Canvas.
 # 
 # Here are the main goals of this homework:
@@ -22,7 +24,7 @@
 
 # ## Exercise 3
 # 
-# Read Subsection 8.1 and Subsection 8.2 of the attached article, *50 Years of Data Science*.  These sections describe six proposed divisions of "Greater Data Science".  If you were to rank these six divisions, from "Most important to study in Math 10" to "Least important to study in Math 10", how would you rank them?
+# Read Subsection 8.1 and Subsection 8.2 of the attached article, *50 Years of Data Science*.  (To access this article, click the Folder icon on the left, and then you should see this pdf file listed.)  These sections describe six proposed divisions of "Greater Data Science".  If you were to rank these six divisions, from "Most important to study in Math 10" to "Least important to study in Math 10", how would you rank them?
 # 
 # Give your personal ranking, from most important to least important, and then give a few sentences of description of why you chose that ranking.  (Two total sentences is plenty.  For example, you could say why you think the top two are the most important, or why the bottom two are least important.  You should not try to mention all six divisions in these sentences, just whatever you feel you have something to say about.)
 
@@ -38,7 +40,7 @@
 # 
 # Here is another way to count objects, that is specific to the Python library pandas.  Go to the *Files* section on Canvas, then to the *data* folder, and download the csv file called `spotify_dataset.csv`.  Upload that file here in Deepnote, by clicking on the folder icon on the leeft side, and then the plus icon, and then *upload file*.  After the file is uploaded, run the following cell.  It should display the top 5 rows of the dataset.
 
-# In[1]:
+# In[ ]:
 
 
 import pandas as pd
@@ -63,7 +65,3 @@ df.head()
 # ## How to submit this homework
 # 
 # Go to the Files section on the left, click on the ... next to Homework1.ipynb, and choose *export as .ipynb*.  That IPython notebook is what you should upload on Canvas.
-
-# <a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=9e797310-a62a-4b4e-a010-2ed014f71979' target="_blank">
-# <img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
-# Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a>

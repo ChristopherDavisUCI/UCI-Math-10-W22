@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 8 Wednesday &#8212; UC Irvine Math 10 W22</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 8 Friday" href="Week8-Friday.html" />
+    <link rel="prev" title="Homework 7" href="Homework7.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/digitsyellow.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10 W22</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   UC Irvine, Math 10, Winter 2022
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../GettingStarted/GettingStarted-Intro.html">
+   Getting Started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/Installation.html">
+     Installation (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/Deepnote.html">
+     Deepnote
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/MarkdownIntro.html">
+     Markdown Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week1/Week1-Intro.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/forloop1.html">
+     Making a for loop more Pythonic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Wednesday.html">
+     Wednesday Lecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Homework1.html">
+     Homework 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week2/Week2-Intro.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Videos.html">
+     Week 2 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/rng.html">
+     Random numbers in NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/BooleanArray.html">
+     Boolean arrays in NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Homework2.html">
+     Homework 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Quiz1-Practice.html">
+     Quiz 1 Practice Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Wednesday.html">
+     NumPy and pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week3/Week3-Intro.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Videos.html">
+     Week 3 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/intro_csv.html">
+     Reading a csv file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Homework3.html">
+     Homework 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Quiz2-Practice.html">
+     Quiz 2 Practice Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/visualization.html">
+     Visualization in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week4/Week4-Intro.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Videos.html">
+     Week 4 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Video-notebooks.html">
+     Week 4 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Homework4.html">
+     Homework 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/spotify.html">
+     Spotify dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Wednesday.html">
+     More practice with the Spotify dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Friday.html">
+     Review
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week5/Week5-Intro.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Wednesday.html">
+     Introduction to scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/intro-ML.html">
+     Introduction to Machine Learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Videos.html">
+     Week 6 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Video-notebooks.html">
+     Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Homework5.html">
+     Homework 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Wednesday.html">
+     K-Nearest Neighbors Regressor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week7/Week7-Intro.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Videos.html">
+     Week 7 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Video-notebooks.html">
+     Week 7 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Homework6.html">
+     Homework 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Monday.html">
+     PyTorch and Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Wednesday.html">
+     PyTorch and Neural Networks 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/neural.html">
+     Neural networks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week8-Intro.html">
+   Week 8
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week8-Videos.html">
+     Week 8 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week8-Video-notebooks.html">
+     Week 8 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Homework7.html">
+     Homework 7
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Week 8 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week8-Friday.html">
+     Week 8 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week9/Week9-Intro.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Monday.html">
+     Linear regression worksheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Homework8.html">
+     Homework 8
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week10/Week10-Intro.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Videos.html">
+     Week 10 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Video-notebooks.html">
+     Week 10 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Homework9.html">
+     Homework 9
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/ExtraTopics.html">
+     Possible extra topics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects.html">
+     Student Projects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Week8/Week8-Wednesday.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ChristopherDavisUCI/UCI-Math-10-W22"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ChristopherDavisUCI/UCI-Math-10-W22/main?urlpath=tree/Week8/Week8-Wednesday.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-descent">
+   Gradient descent
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 8 Wednesday</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-descent">
+   Gradient descent
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-8-wednesday">
+<h1>Week 8 Wednesday<a class="headerlink" href="#week-8-wednesday" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=4446584&amp;node=14938258&amp;a=1900985263&amp;autoplay=1">Yuja recording</a></p>
+<p>Before the recording, at the board we went over some different components related to Neural Networks and PyTorch, and especially we went over an example of performing gradient descent.</p>
+<p>The goal of today’s class is to get more comfortable with the various components involved in building and training a neural network using PyTorch.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="nn">torchvision.transforms</span> <span class="kn">import</span> <span class="n">ToTensor</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="gradient-descent">
+<h2>Gradient descent<a class="headerlink" href="#gradient-descent" title="Permalink to this headline">¶</a></h2>
+<p>Gradient descent can be used to try to find a minimum of any differentiable function.  (Often it will only find a local minimum, not a global minimum, even if a global minimum exists.)  We usually use gradient descent for very complicated functions, but here we give an example of performing gradient descent to attempt to find a minimum of the function</p>
+<div class="math notranslate nohighlight">
+\[
+f(x,y) = (x-3)^2 + (y+2)^2 + 8.
+\]</div>
+<p>We call this function <code class="docutils literal notranslate"><span class="pre">loss_fn</span></code> so that the syntax is the same as what we’re used to in PyTorch.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">8</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>To perform gradient descent, you need to begin with an initial guess.  We guess (10,10) and then gradually adjust this, hoping to move towards a minimum.  Notice the decimal point after 10… this is a shortcut for telling PyTorch that these should be treated as floats.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">10.</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([10., 10.], requires_grad=True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_fn</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>201
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_fn</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(201., grad_fn=&lt;AddBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">loss_fn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>function
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because we specified <code class="docutils literal notranslate"><span class="pre">requires_grad=True</span></code> as a keyword argument, we will be able to find gradients of computations involving <code class="docutils literal notranslate"><span class="pre">a</span></code>.  There isn’t any gradient yet because we haven’t computed one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">grad</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we define a stochastic gradient descent optimizer like usual in PyTorch.  The first input is usually something like <code class="docutils literal notranslate"><span class="pre">model.parameters()</span></code>.  Here we try to use <code class="docutils literal notranslate"><span class="pre">a</span></code> as the first argument.  That is almost right, but we need to put it in a list (or some other type of <em>iterable</em>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">lr</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">lr</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/torch/lib/python3.8/site-packages/torch/optim/sgd.py:95,</span> in <span class="ni">SGD.__init__</span><span class="nt">(self, params, lr, momentum, dampening, weight_decay, nesterov)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="k">if</span> <span class="n">nesterov</span> <span class="ow">and</span> <span class="p">(</span><span class="n">momentum</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">dampening</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Nesterov momentum requires a momentum and zero dampening&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">95</span> <span class="nb">super</span><span class="p">(</span><span class="n">SGD</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">defaults</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/torch/lib/python3.8/site-packages/torch/optim/optimizer.py:40,</span> in <span class="ni">Optimizer.__init__</span><span class="nt">(self, params, defaults)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hook_for_profile</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">40</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;params argument given to the optimizer should be &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>                     <span class="s2">&quot;an iterable of Tensors or dicts, but got &quot;</span> <span class="o">+</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>                     <span class="n">torch</span><span class="o">.</span><span class="n">typename</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_groups</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="ne">TypeError</span>: params argument given to the optimizer should be an iterable of Tensors or dicts, but got torch.FloatTensor
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">([</span><span class="n">a</span><span class="p">],</span> <span class="n">lr</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This next <code class="docutils literal notranslate"><span class="pre">optimizer.zero_grad()</span></code> is not important yet, but it is good to be in the habit, because otherwise multiple gradient computations will accumulate, and we want to start over each time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Tensor
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we compute the gradient.  This typically uses an algorithm called <em>backpropagation</em>, which is where the name <code class="docutils literal notranslate"><span class="pre">backward</span></code> comes from.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([10., 10.], requires_grad=True)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now the <code class="docutils literal notranslate"><span class="pre">grad</span></code> attribute of <code class="docutils literal notranslate"><span class="pre">a</span></code> has a value.  You should be able to compute this value by hand in this case, since our <code class="docutils literal notranslate"><span class="pre">loss_fn</span></code> is so simple.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">grad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([14., 24.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we replace add a multiple (the learning rate <code class="docutils literal notranslate"><span class="pre">lr</span></code>) of the negative gradient to <code class="docutils literal notranslate"><span class="pre">a</span></code>.  Again, you should be able to compute this by hand in this case.  The formula is</p>
+<div class="math notranslate nohighlight">
+\[
+a \leadsto a - lr \cdot \nabla
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([8.6000, 7.6000], requires_grad=True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">8</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> is approaching the minimum (3,-2), and notice how <code class="docutils literal notranslate"><span class="pre">loss</span></code> is approaching the minimum of our <code class="docutils literal notranslate"><span class="pre">loss_fn</span></code>, which is 8.  (The only reason we’re using the terms <code class="docutils literal notranslate"><span class="pre">loss</span></code> and <code class="docutils literal notranslate"><span class="pre">loss_fn</span></code> is because those are the terms we usually use in PyTorch.  In this case, <code class="docutils literal notranslate"><span class="pre">loss_fn</span></code> is just an ordinary two-variable function like from Math 2D which we are trying to minimize.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">10.</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">([</span><span class="n">a</span><span class="p">],</span> <span class="n">lr</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Epoch &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 0
+tensor([8.6000, 7.6000], requires_grad=True)
+tensor(201., grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 1
+tensor([7.4800, 5.6800], requires_grad=True)
+tensor(131.5200, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 2
+tensor([6.5840, 4.1440], requires_grad=True)
+tensor(87.0528, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 3
+tensor([5.8672, 2.9152], requires_grad=True)
+tensor(58.5938, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 4
+tensor([5.2938, 1.9322], requires_grad=True)
+tensor(40.3800, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 5
+tensor([4.8350, 1.1457], requires_grad=True)
+tensor(28.7232, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 6
+tensor([4.4680, 0.5166], requires_grad=True)
+tensor(21.2629, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 7
+tensor([4.1744, 0.0133], requires_grad=True)
+tensor(16.4882, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 8
+tensor([ 3.9395, -0.3894], requires_grad=True)
+tensor(13.4325, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 9
+tensor([ 3.7516, -0.7115], requires_grad=True)
+tensor(11.4768, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 10
+tensor([ 3.6013, -0.9692], requires_grad=True)
+tensor(10.2251, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 11
+tensor([ 3.4810, -1.1754], requires_grad=True)
+tensor(9.4241, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 12
+tensor([ 3.3848, -1.3403], requires_grad=True)
+tensor(8.9114, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 13
+tensor([ 3.3079, -1.4722], requires_grad=True)
+tensor(8.5833, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 14
+tensor([ 3.2463, -1.5778], requires_grad=True)
+tensor(8.3733, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 15
+tensor([ 3.1970, -1.6622], requires_grad=True)
+tensor(8.2389, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 16
+tensor([ 3.1576, -1.7298], requires_grad=True)
+tensor(8.1529, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 17
+tensor([ 3.1261, -1.7838], requires_grad=True)
+tensor(8.0979, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 18
+tensor([ 3.1009, -1.8271], requires_grad=True)
+tensor(8.0626, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 19
+tensor([ 3.0807, -1.8616], requires_grad=True)
+tensor(8.0401, grad_fn=&lt;AddBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want <code class="docutils literal notranslate"><span class="pre">a</span></code> to approach the minimum (3,-2) faster, we can make the learning rate bigger, but here is an example of what can go wrong if we make the learning rate too big.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">10.</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">([</span><span class="n">a</span><span class="p">],</span> <span class="n">lr</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Epoch &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 0
+tensor([-130., -230.], requires_grad=True)
+tensor(201., grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 1
+tensor([2530., 4330.], requires_grad=True)
+tensor(69681., grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 2
+tensor([-48010., -82310.], requires_grad=True)
+tensor(25151960., grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 3
+tensor([ 912250., 1563850.], requires_grad=True)
+tensor(9.0799e+09, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 4
+tensor([-17332690., -29713190.], requires_grad=True)
+tensor(3.2778e+12, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 5
+tensor([3.2932e+08, 5.6455e+08], requires_grad=True)
+tensor(1.1833e+15, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 6
+tensor([-6.2571e+09, -1.0726e+10], requires_grad=True)
+tensor(4.2717e+17, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 7
+tensor([1.1888e+11, 2.0380e+11], requires_grad=True)
+tensor(1.5421e+20, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 8
+tensor([-2.2588e+12, -3.8723e+12], requires_grad=True)
+tensor(5.5669e+22, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 9
+tensor([4.2917e+13, 7.3573e+13], requires_grad=True)
+tensor(2.0097e+25, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 10
+tensor([-8.1543e+14, -1.3979e+15], requires_grad=True)
+tensor(7.2549e+27, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 11
+tensor([1.5493e+16, 2.6560e+16], requires_grad=True)
+tensor(2.6190e+30, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 12
+tensor([-2.9437e+17, -5.0464e+17], requires_grad=True)
+tensor(9.4546e+32, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 13
+tensor([5.5930e+18, 9.5881e+18], requires_grad=True)
+tensor(3.4131e+35, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 14
+tensor([-1.0627e+20, -1.8217e+20], requires_grad=True)
+tensor(1.2321e+38, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 15
+tensor([2.0191e+21, 3.4613e+21], requires_grad=True)
+tensor(inf, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 16
+tensor([-3.8363e+22, -6.5765e+22], requires_grad=True)
+tensor(inf, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 17
+tensor([7.2889e+23, 1.2495e+24], requires_grad=True)
+tensor(inf, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 18
+tensor([-1.3849e+25, -2.3741e+25], requires_grad=True)
+tensor(inf, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 19
+tensor([2.6313e+26, 4.5108e+26], requires_grad=True)
+tensor(inf, grad_fn=&lt;AddBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is an example for what seems to be a good choice of <code class="docutils literal notranslate"><span class="pre">lr</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">10.</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">([</span><span class="n">a</span><span class="p">],</span> <span class="n">lr</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Epoch &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 0
+tensor([6.5000, 4.0000], requires_grad=True)
+tensor(201., grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 1
+tensor([4.7500, 1.0000], requires_grad=True)
+tensor(56.2500, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 2
+tensor([ 3.8750, -0.5000], requires_grad=True)
+tensor(20.0625, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 3
+tensor([ 3.4375, -1.2500], requires_grad=True)
+tensor(11.0156, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 4
+tensor([ 3.2188, -1.6250], requires_grad=True)
+tensor(8.7539, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 5
+tensor([ 3.1094, -1.8125], requires_grad=True)
+tensor(8.1885, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 6
+tensor([ 3.0547, -1.9062], requires_grad=True)
+tensor(8.0471, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 7
+tensor([ 3.0273, -1.9531], requires_grad=True)
+tensor(8.0118, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 8
+tensor([ 3.0137, -1.9766], requires_grad=True)
+tensor(8.0029, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 9
+tensor([ 3.0068, -1.9883], requires_grad=True)
+tensor(8.0007, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 10
+tensor([ 3.0034, -1.9941], requires_grad=True)
+tensor(8.0002, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 11
+tensor([ 3.0017, -1.9971], requires_grad=True)
+tensor(8.0000, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 12
+tensor([ 3.0009, -1.9985], requires_grad=True)
+tensor(8.0000, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 13
+tensor([ 3.0004, -1.9993], requires_grad=True)
+tensor(8.0000, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 14
+tensor([ 3.0002, -1.9996], requires_grad=True)
+tensor(8.0000, grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 15
+tensor([ 3.0001, -1.9998], requires_grad=True)
+tensor(8., grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 16
+tensor([ 3.0001, -1.9999], requires_grad=True)
+tensor(8., grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 17
+tensor([ 3.0000, -2.0000], requires_grad=True)
+tensor(8., grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 18
+tensor([ 3.0000, -2.0000], requires_grad=True)
+tensor(8., grad_fn=&lt;AddBackward0&gt;)
+
+Epoch 19
+tensor([ 3.0000, -2.0000], requires_grad=True)
+tensor(8., grad_fn=&lt;AddBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Week8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Homework7.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Homework 7</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Week8-Friday.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 8 Friday</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Christopher Davis<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

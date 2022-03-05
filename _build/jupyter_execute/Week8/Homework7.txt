@@ -1,0 +1,77 @@
+from tqdm.std import tqdm, trange
+from tqdm import notebook
+notebook.tqdm = tqdm
+notebook.trange = trange
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+import torch
+from torch import nn
+from torchvision import datasets
+from torchvision.transforms import ToTensor
+from torch.utils.data import DataLoader
+
+# Load the data
+training_data = datasets.CIFAR10(
+    root="data",
+    train=True,
+    download=True,
+    transform=ToTensor(),
+)
+
+test_data = datasets.CIFAR10(
+    root="data",
+    train=False,
+    download=True,
+    transform=ToTensor(),
+)
+
+training_data.classes
+
+nrows = 3
+ncols = 6
+fig, ax = plt.subplots(nrows, ncols)
+ax_list = ax.reshape(-1)
+for i in range(nrows*ncols):
+    ax_list[i].imshow(training_data.data[i])
+    ax_list[i].set_title(test_data.classes[training_data.targets[i]])
+plt.tight_layout()
+
+batch_size = 64
+
+train_dataloader = DataLoader(training_data, batch_size=batch_size)
+test_dataloader = DataLoader(test_data, batch_size=batch_size)
+
+X, y = next(iter(train_dataloader))
+print("Shape of X:")
+print(X.shape)
+
+print("")
+
+print("Shape of y:")
+print(y.shape)
+
+epochs = ???
+
+for i in range(epochs):
+    for X,y in train_dataloader:
+        y_pred = ???
+        y_true = ???
+        loss = ???
+        optimizer.zero_grad()
+        ??? compute the gradient
+        ??? adjust the weights and biases
+    print("Training loss:") # We only print one loss per epoch
+    print(loss)
+
+    for X,y in test_dataloader:
+        y_pred = ??? Same as above
+        y_true = ??? Same as above
+        loss = ??? Same as above, be sure not to perform gradient descent in this part
+        print("Test loss:")
+        print(loss)
+        break # We only compute and print one test loss per epoch
+
+    print("")

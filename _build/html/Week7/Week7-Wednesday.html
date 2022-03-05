@@ -1,0 +1,1365 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PyTorch and Neural Networks 2 &#8212; UC Irvine Math 10 W22</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Neural networks" href="neural.html" />
+    <link rel="prev" title="PyTorch and Neural Networks" href="Week7-Monday.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/digitsyellow.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10 W22</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   UC Irvine, Math 10, Winter 2022
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../GettingStarted/GettingStarted-Intro.html">
+   Getting Started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/Installation.html">
+     Installation (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/Deepnote.html">
+     Deepnote
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GettingStarted/MarkdownIntro.html">
+     Markdown Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week1/Week1-Intro.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/forloop1.html">
+     Making a for loop more Pythonic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Wednesday.html">
+     Wednesday Lecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Homework1.html">
+     Homework 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week2/Week2-Intro.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Videos.html">
+     Week 2 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/rng.html">
+     Random numbers in NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/BooleanArray.html">
+     Boolean arrays in NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Homework2.html">
+     Homework 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Quiz1-Practice.html">
+     Quiz 1 Practice Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Wednesday.html">
+     NumPy and pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week3/Week3-Intro.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Videos.html">
+     Week 3 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/intro_csv.html">
+     Reading a csv file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Homework3.html">
+     Homework 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Quiz2-Practice.html">
+     Quiz 2 Practice Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/visualization.html">
+     Visualization in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week4/Week4-Intro.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Videos.html">
+     Week 4 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Video-notebooks.html">
+     Week 4 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Homework4.html">
+     Homework 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/spotify.html">
+     Spotify dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Wednesday.html">
+     More practice with the Spotify dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Friday.html">
+     Review
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week5/Week5-Intro.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Wednesday.html">
+     Introduction to scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/intro-ML.html">
+     Introduction to Machine Learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Videos.html">
+     Week 6 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Video-notebooks.html">
+     Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Homework5.html">
+     Homework 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Wednesday.html">
+     K-Nearest Neighbors Regressor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week7-Intro.html">
+   Week 7
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week7-Videos.html">
+     Week 7 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week7-Video-notebooks.html">
+     Week 7 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Homework6.html">
+     Homework 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week7-Monday.html">
+     PyTorch and Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     PyTorch and Neural Networks 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="neural.html">
+     Neural networks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week8/Week8-Intro.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Videos.html">
+     Week 8 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Video-notebooks.html">
+     Week 8 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Homework7.html">
+     Homework 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Wednesday.html">
+     Week 8 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Friday.html">
+     Week 8 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week9/Week9-Intro.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Monday.html">
+     Linear regression worksheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Homework8.html">
+     Homework 8
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week10/Week10-Intro.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Videos.html">
+     Week 10 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Video-notebooks.html">
+     Week 10 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Homework9.html">
+     Homework 9
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/ExtraTopics.html">
+     Possible extra topics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects.html">
+     Student Projects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Week7/Week7-Wednesday.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ChristopherDavisUCI/UCI-Math-10-W22"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ChristopherDavisUCI/UCI-Math-10-W22/main?urlpath=tree/Week7/Week7-Wednesday.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>PyTorch and Neural Networks 2</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pytorch-and-neural-networks-2">
+<h1>PyTorch and Neural Networks 2<a class="headerlink" href="#pytorch-and-neural-networks-2" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=4417722&amp;node=14870050&amp;a=1646074732&amp;autoplay=1">YuJa recording of lecture</a></p>
+<p>Topics mentioned at the board (not in this notebook):</p>
+<ul class="simple">
+<li><p>Importance of using activation functions to break linearity.</p></li>
+<li><p>Common choices of activation functions: sigmoid and relu.</p></li>
+<li><p>Concept of <em>one hot encoding</em>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm.std</span> <span class="kn">import</span> <span class="n">tqdm</span><span class="p">,</span> <span class="n">trange</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">notebook</span>
+<span class="n">notebook</span><span class="o">.</span><span class="n">tqdm</span> <span class="o">=</span> <span class="n">tqdm</span>
+<span class="n">notebook</span><span class="o">.</span><span class="n">trange</span> <span class="o">=</span> <span class="n">trange</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">torchvision.transforms</span> <span class="kn">import</span> <span class="n">ToTensor</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the data</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span>
+    <span class="n">root</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+    <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">ToTensor</span><span class="p">(),</span>
+<span class="p">)</span>
+
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span>
+    <span class="n">root</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+    <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">ToTensor</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Second YouTube video on <em>Neural Networks</em> from 3Blue1Brown.  This video is on <em>gradient descent</em>.  Recommended clips:</p>
+<ul class="simple">
+<li><p>0:25-1:24</p></li>
+<li><p>3:18-4:05</p></li>
+<li><p>5:15-7:50</p></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IHZwWFHWa-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>This is what we finished with on Monday:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ThreeBlue</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">z</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We instantiate an object in this class as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span> <span class="o">=</span> <span class="n">ThreeBlue</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In class (see the YuJa recording above), we gradually built up to the following code.  It was designed to match the 3Blue1Brown video’s neural network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ThreeBlue</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="mi">255</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">z</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span> <span class="o">=</span> <span class="n">ThreeBlue</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are the weights and biases for this neural network.  When we talk about fitting or training a neural network, we mean adjust the weights and biases to try to minimize some loss function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([16, 784])
+torch.Size([16])
+torch.Size([16, 16])
+torch.Size([16])
+torch.Size([10, 16])
+torch.Size([10])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">numel</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12544
+16
+256
+16
+160
+10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that this is the same 13002 number which appeared in the 3Blue1Brown videos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">()])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13002
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can even do the same thing without the square brackets.  This is secretly using a <em>generator expression</em> instead of a list comprehension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13002
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ThreeBlue(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (layers): Sequential(
+    (0): Linear(in_features=784, out_features=16, bias=True)
+    (1): Sigmoid()
+    (2): Linear(in_features=16, out_features=16, bias=True)
+    (3): Sigmoid()
+    (4): Linear(in_features=16, out_features=10, bias=True)
+    (5): Sigmoid()
+  )
+)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the line that begins <code class="docutils literal notranslate"><span class="pre">self.layers</span> <span class="pre">=</span> </code> above, we were specifying that each ThreeBlue object should have a <code class="docutils literal notranslate"><span class="pre">layers</span></code> attribute.  Here is that attribute for the case of <code class="docutils literal notranslate"><span class="pre">wed</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="o">.</span><span class="n">layers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential(
+  (0): Linear(in_features=784, out_features=16, bias=True)
+  (1): Sigmoid()
+  (2): Linear(in_features=16, out_features=16, bias=True)
+  (3): Sigmoid()
+  (4): Linear(in_features=16, out_features=10, bias=True)
+  (5): Sigmoid()
+)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can access for example the second element of <code class="docutils literal notranslate"><span class="pre">wed.layers</span></code> using subscripting, <code class="docutils literal notranslate"><span class="pre">wed.layers[2]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear(in_features=16, out_features=16, bias=True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([16, 16])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([16])
+</pre></div>
+</div>
+</div>
+</div>
+<p>On Monday, we were having to divide by 255 each time we input data to our neural network.  Today, we’ve put that step directly into the <code class="docutils literal notranslate"><span class="pre">forward</span></code> method of the neural network; it’s the line <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x/255</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5128, 0.3936, 0.5649, 0.5723, 0.5577, 0.5520, 0.5960, 0.5789, 0.4498,
+         0.5246],
+        [0.5123, 0.3924, 0.5644, 0.5736, 0.5568, 0.5522, 0.5969, 0.5799, 0.4494,
+         0.5249],
+        [0.5124, 0.3922, 0.5646, 0.5733, 0.5572, 0.5532, 0.5970, 0.5803, 0.4490,
+         0.5274]], grad_fn=&lt;SliceBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">training_data</span><span class="o">.</span><span class="n">targets</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([5, 0, 4])
+</pre></div>
+</div>
+</div>
+</div>
+<p>To match the 3Blue1Brown video, we are going to convert the targets, which are integers like <code class="docutils literal notranslate"><span class="pre">5</span></code>, into length 10 vectors like <code class="docutils literal notranslate"><span class="pre">[0,0,0,0,0,1,0,0,0,0]</span></code>.  This procedure is called <em>one-hot encoding</em>, and it also exists in scikit-learn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.nn.functional</span> <span class="kn">import</span> <span class="n">one_hot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">one_hot</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">targets</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0., 0., 0., 0., 0., 1., 0., 0., 0., 0.],
+        [1., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
+        [0., 0., 0., 0., 1., 0., 0., 0., 0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_true</span> <span class="o">=</span> <span class="n">one_hot</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_true</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([60000, 10])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using Mean-Squared Error on the probabilities for this classification problem is not considered the best approach, but it is easy to understand, and we will follow this approach for now to match the 3Blue1Brown video.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the performance of the randomly initialized model.  The output of this sort of loss function is not so easy to analyze in isolation.  The important thing is that if we can lower this number, then the model is performing better (on the training data).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_fn</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.2792, grad_fn=&lt;MseLossBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we try to find better weights and biases using <em>gradient descent</em>.  Try to get comfortable with these steps (they can take some time to internalize).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There aren’t yet any gradients associated with the parameters of the model (the weights and biases).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+None
+None
+None
+None
+None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Still no gradients.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+None
+None
+None
+None
+None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The line <code class="docutils literal notranslate"><span class="pre">loss.backward()</span></code> told PyTorch to compute the gradients of the loss calculation with respect to the 13002 weights and biases.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        ...,
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.]])
+tensor([-1.8313e-04,  6.0323e-05, -7.9682e-05,  1.3652e-04,  2.8588e-04,
+         5.4873e-05,  5.6339e-04, -4.3447e-04,  8.5402e-05,  4.7174e-05,
+         2.8684e-04,  2.4752e-04,  3.4093e-04,  1.2426e-04,  7.8342e-05,
+         3.8503e-04])
+tensor([[ 1.5513e-03,  1.4997e-03,  1.4607e-03,  1.5071e-03,  1.4121e-03,
+          1.5751e-03,  1.5298e-03,  1.5007e-03,  1.4708e-03,  1.5008e-03,
+          1.6073e-03,  1.6327e-03,  1.5269e-03,  1.4076e-03,  1.5441e-03,
+          1.3184e-03],
+        [ 2.4013e-03,  2.3361e-03,  2.2776e-03,  2.3523e-03,  2.1835e-03,
+          2.4395e-03,  2.3866e-03,  2.3222e-03,  2.2672e-03,  2.3256e-03,
+          2.4822e-03,  2.5124e-03,  2.3493e-03,  2.1990e-03,  2.4188e-03,
+          2.0566e-03],
+        [-2.2165e-06, -9.6794e-06, -2.1568e-05, -1.9828e-05, -1.8939e-05,
+         -9.7146e-06, -1.5075e-05, -4.0656e-05, -1.7720e-05,  3.4108e-09,
+         -3.3992e-05, -3.1905e-05, -2.0933e-05, -1.9765e-05, -2.4898e-05,
+         -2.6694e-05],
+        [-2.8100e-04, -2.8200e-04, -2.7381e-04, -2.9060e-04, -2.6077e-04,
+         -2.7536e-04, -2.9915e-04, -2.7826e-04, -2.6433e-04, -2.5710e-04,
+         -2.9216e-04, -2.8800e-04, -2.8381e-04, -2.6977e-04, -3.0117e-04,
+         -2.5156e-04],
+        [ 1.0721e-03,  1.0468e-03,  1.0277e-03,  1.0680e-03,  9.8862e-04,
+          1.0792e-03,  1.0801e-03,  1.0512e-03,  1.0151e-03,  1.0319e-03,
+          1.1056e-03,  1.1206e-03,  1.0652e-03,  1.0057e-03,  1.1023e-03,
+          9.3069e-04],
+        [ 5.5203e-04,  5.5129e-04,  5.4008e-04,  5.5955e-04,  5.1289e-04,
+          5.7207e-04,  5.5648e-04,  5.5705e-04,  5.2402e-04,  5.2216e-04,
+          5.8920e-04,  5.9263e-04,  5.4806e-04,  5.1084e-04,  5.7347e-04,
+          4.7725e-04],
+        [-1.0829e-03, -1.0391e-03, -1.0199e-03, -1.0541e-03, -9.7853e-04,
+         -1.0998e-03, -1.0704e-03, -1.0504e-03, -1.0328e-03, -1.0516e-03,
+         -1.1339e-03, -1.1448e-03, -1.0772e-03, -9.9053e-04, -1.0844e-03,
+         -9.3149e-04],
+        [ 4.0089e-04,  3.7560e-04,  3.5750e-04,  3.7532e-04,  3.4274e-04,
+          3.7918e-04,  3.9848e-04,  3.5818e-04,  3.5726e-04,  3.8072e-04,
+          3.8984e-04,  3.9334e-04,  3.8159e-04,  3.6648e-04,  4.0230e-04,
+          3.4276e-04],
+        [ 1.0015e-04,  1.1278e-04,  1.0807e-04,  1.1097e-04,  1.0148e-04,
+          9.9824e-05,  1.1656e-04,  1.0273e-04,  9.4862e-05,  9.2009e-05,
+          9.2207e-05,  8.7203e-05,  9.4461e-05,  1.0173e-04,  1.1096e-04,
+          9.0506e-05],
+        [-2.7376e-04, -2.6440e-04, -2.5965e-04, -2.7287e-04, -2.4827e-04,
+         -2.6744e-04, -2.7625e-04, -2.6334e-04, -2.5119e-04, -2.5872e-04,
+         -2.7264e-04, -2.7600e-04, -2.7239e-04, -2.6221e-04, -2.8732e-04,
+         -2.3753e-04],
+        [-3.0894e-05, -4.6069e-05, -5.6068e-05, -6.0372e-05, -4.7414e-05,
+         -3.2222e-05, -5.3234e-05, -5.4248e-05, -3.5233e-05, -2.8325e-05,
+         -4.0417e-05, -3.6876e-05, -3.9883e-05, -5.7270e-05, -6.4234e-05,
+         -5.3041e-05],
+        [-2.0521e-03, -1.9898e-03, -1.9339e-03, -2.0009e-03, -1.8605e-03,
+         -2.0647e-03, -2.0414e-03, -1.9682e-03, -1.9259e-03, -1.9836e-03,
+         -2.1029e-03, -2.1329e-03, -2.0004e-03, -1.8793e-03, -2.0647e-03,
+         -1.7582e-03],
+        [-1.1316e-03, -1.1034e-03, -1.0669e-03, -1.1025e-03, -1.0163e-03,
+         -1.1266e-03, -1.1373e-03, -1.0711e-03, -1.0502e-03, -1.0853e-03,
+         -1.1463e-03, -1.1481e-03, -1.0907e-03, -1.0356e-03, -1.1419e-03,
+         -9.8145e-04],
+        [ 6.4383e-04,  6.2033e-04,  5.9793e-04,  6.2632e-04,  5.6714e-04,
+          6.3456e-04,  6.4794e-04,  6.0152e-04,  5.9248e-04,  6.1108e-04,
+          6.5407e-04,  6.5323e-04,  6.2586e-04,  5.9097e-04,  6.5470e-04,
+          5.5457e-04],
+        [ 6.4822e-04,  6.2109e-04,  6.1811e-04,  6.3792e-04,  5.9188e-04,
+          6.5852e-04,  6.3653e-04,  6.2957e-04,  6.1760e-04,  6.3564e-04,
+          6.8030e-04,  6.9065e-04,  6.4661e-04,  5.9874e-04,  6.5402e-04,
+          5.7052e-04],
+        [ 1.0332e-03,  1.0129e-03,  9.8541e-04,  1.0194e-03,  9.3670e-04,
+          1.0267e-03,  1.0482e-03,  9.8933e-04,  9.5952e-04,  9.9341e-04,
+          1.0564e-03,  1.0607e-03,  9.9555e-04,  9.5971e-04,  1.0609e-03,
+          9.1640e-04]])
+tensor([ 2.9285e-03,  4.5277e-03, -4.0536e-05, -5.2834e-04,  2.0315e-03,
+         1.0567e-03, -2.0450e-03,  7.2072e-04,  1.9550e-04, -5.0986e-04,
+        -8.0033e-05, -3.8523e-03, -2.1089e-03,  1.1834e-03,  1.2280e-03,
+         1.9357e-03])
+tensor([[0.0107, 0.0118, 0.0100, 0.0125, 0.0115, 0.0129, 0.0104, 0.0088, 0.0129,
+         0.0120, 0.0106, 0.0071, 0.0137, 0.0115, 0.0074, 0.0090],
+        [0.0069, 0.0076, 0.0065, 0.0081, 0.0075, 0.0083, 0.0067, 0.0057, 0.0084,
+         0.0078, 0.0068, 0.0045, 0.0089, 0.0075, 0.0048, 0.0058],
+        [0.0119, 0.0130, 0.0111, 0.0138, 0.0128, 0.0143, 0.0115, 0.0098, 0.0143,
+         0.0133, 0.0117, 0.0078, 0.0152, 0.0128, 0.0082, 0.0100],
+        [0.0119, 0.0131, 0.0112, 0.0139, 0.0129, 0.0143, 0.0115, 0.0098, 0.0144,
+         0.0134, 0.0118, 0.0079, 0.0153, 0.0128, 0.0083, 0.0101],
+        [0.0118, 0.0129, 0.0110, 0.0137, 0.0127, 0.0141, 0.0114, 0.0097, 0.0142,
+         0.0132, 0.0116, 0.0078, 0.0151, 0.0126, 0.0081, 0.0099],
+        [0.0118, 0.0130, 0.0111, 0.0138, 0.0128, 0.0142, 0.0115, 0.0097, 0.0143,
+         0.0133, 0.0117, 0.0078, 0.0152, 0.0127, 0.0082, 0.0100],
+        [0.0124, 0.0136, 0.0116, 0.0145, 0.0134, 0.0149, 0.0120, 0.0102, 0.0150,
+         0.0139, 0.0122, 0.0082, 0.0159, 0.0133, 0.0086, 0.0105],
+        [0.0120, 0.0132, 0.0112, 0.0140, 0.0130, 0.0144, 0.0116, 0.0099, 0.0145,
+         0.0135, 0.0118, 0.0079, 0.0154, 0.0129, 0.0083, 0.0101],
+        [0.0090, 0.0099, 0.0084, 0.0105, 0.0097, 0.0109, 0.0087, 0.0074, 0.0109,
+         0.0101, 0.0089, 0.0059, 0.0116, 0.0097, 0.0062, 0.0076],
+        [0.0110, 0.0121, 0.0103, 0.0129, 0.0119, 0.0133, 0.0107, 0.0091, 0.0133,
+         0.0124, 0.0109, 0.0073, 0.0141, 0.0118, 0.0076, 0.0093]])
+tensor([0.0207, 0.0134, 0.0229, 0.0230, 0.0227, 0.0229, 0.0240, 0.0232, 0.0174,
+        0.0213])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next line adjusts the weights and biases by adding a multiple of the negative gradient.  (We are trying to minimize the loss, and the gradient points in the direction of fastest ascent, and the negative gradient points in the direction of fastest descent.)  The multiple we use is determined by the <em>learning rate</em> <code class="docutils literal notranslate"><span class="pre">lr</span></code> that we specified when we created the optimizer above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5100, 0.3918, 0.5617, 0.5692, 0.5546, 0.5489, 0.5928, 0.5757, 0.4474,
+         0.5216],
+        [0.5095, 0.3906, 0.5612, 0.5705, 0.5537, 0.5491, 0.5936, 0.5768, 0.4471,
+         0.5219],
+        [0.5096, 0.3905, 0.5614, 0.5701, 0.5540, 0.5501, 0.5938, 0.5771, 0.4466,
+         0.5244]], grad_fn=&lt;SliceBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now want to repeat that procedure.  Here we will repeat it 10 times, but often we will want to repeat it many more times.  What we hope is that the loss value is decreasing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">one_hot</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.2767, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2741, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2717, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2692, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2668, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2644, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2620, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2597, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2574, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2551, grad_fn=&lt;MseLossBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>An important thing to point out is that if we run the same code again, we won’t be starting back at the beginning.  Each time we run this training procedure, it will begin where the last training procedure left off.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">one_hot</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span> == 0:
+        <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.2528, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2484, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2441, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2399, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2358, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2318, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2280, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2242, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2206, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2170, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2136, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2102, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2069, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2038, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.2007, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1977, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1948, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1920, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1893, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1866, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1840, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1815, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1791, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1768, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1745, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1723, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1701, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1681, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1661, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1641, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1622, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1604, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1586, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1568, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1552, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1535, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1520, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1504, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1489, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1475, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1461, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1447, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1434, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1421, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1409, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1397, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1385, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1374, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1363, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1352, grad_fn=&lt;MseLossBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how the loss is steadily decreasing.  That’s the best result we can hope for.  If we were to choose a learning rate that was much too big, the performance would be very different.  Here we set <code class="docutils literal notranslate"><span class="pre">lr=500</span></code> which is much too big.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wed</span> <span class="o">=</span> <span class="n">ThreeBlue</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">wed</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">one_hot</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">wed</span><span class="p">(</span><span class="n">training_data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.2877, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+tensor(0.1000, grad_fn=&lt;MseLossBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here it improves for one iteration of gradient descent, and then it seems to get stuck.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Week7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Week7-Monday.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">PyTorch and Neural Networks</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="neural.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Neural networks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Christopher Davis<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

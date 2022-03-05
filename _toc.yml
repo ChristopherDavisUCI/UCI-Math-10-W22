@@ -5,7 +5,71 @@ chapters:
     sections:
     - file: GettingStarted/Installation
     - file: GettingStarted/Deepnote
+    - file: GettingStarted/MarkdownIntro
   - file: Week1/Week1-Intro
     sections:
+    - file: Week1/forloop1
+    - file: Week1/Week1-Wednesday
     - file: Week1/Homework1
-
+  - file: Week2/Week2-Intro
+    sections:
+    - file: Week2/Week2-Videos
+    - file: Week2/rng
+    - file: Week2/BooleanArray
+    - file: Week2/Homework2
+    - file: Week2/Quiz1-Practice
+    - file: Week2/Week2-Wednesday
+  - file: Week3/Week3-Intro
+    sections:
+    - file: Week3/Week3-Videos
+    - file: Week3/intro_csv
+    - file: Week3/Homework3
+    - file: Week3/Quiz2-Practice
+    - file: Week3/visualization
+  - file: Week4/Week4-Intro
+    sections:
+    - file: Week4/Week4-Videos
+    - file: Week4/Video-notebooks
+    - file: Week4/Homework4
+    - file: Week4/spotify
+    - file: Week4/Week4-Wednesday
+    - file: Week4/Week4-Friday
+  - file: Week5/Week5-Intro
+    sections:
+    - file: Week5/Week5-Wednesday
+    - file: Week5/intro-ML
+  - file: Week6/Week6-Intro
+    sections:
+    - file: Week6/Week6-Videos
+    - file: Week6/Video-notebooks
+    - file: Week6/Homework5
+    - file: Week6/Week6-Wednesday
+  - file: Week7/Week7-Intro
+    sections:
+    - file: Week7/Week7-Videos
+    - file: Week7/Week7-Video-notebooks
+    - file: Week7/Homework6
+    - file: Week7/Week7-Monday
+    - file: Week7/Week7-Wednesday
+    - file: Week7/neural
+  - file: Week8/Week8-Intro
+    sections:
+    - file: Week8/Week8-Videos
+    - file: Week8/Week8-Video-notebooks
+    - file: Week8/Homework7
+    - file: Week8/Week8-Wednesday
+    - file: Week8/Week8-Friday
+  - file: Week9/Week9-Intro
+    sections:
+    - file: Week9/Week9-Monday
+    - file: Week9/Homework8
+  - file: Week10/Week10-Intro
+    sections:
+    - file: Week10/Week10-Videos
+    - file: Week10/Week10-Video-notebooks
+    - file: Week10/Homework9
+  - file: Proj/Proj-Intro
+    sections:
+    - file: Proj/CourseProject
+    - file: Proj/ExtraTopics
+    - file: Proj/StudentProjects
