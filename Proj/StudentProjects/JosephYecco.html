@@ -1,0 +1,1695 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examining Free Throw percentages in the NBA Playoffs &#8212; UC Irvine Math 10 W22</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project Title" href="JiaBaoZhen.html" />
+    <link rel="prev" title="Predicting match outcomes in professional Couter Strike: Global Offensive" href="RyanWei.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/digitsyellow.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10 W22</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   UC Irvine, Math 10, Winter 2022
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../GettingStarted/GettingStarted-Intro.html">
+   Getting Started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../GettingStarted/Installation.html">
+     Installation (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../GettingStarted/Deepnote.html">
+     Deepnote
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../GettingStarted/MarkdownIntro.html">
+     Markdown Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Week1/Week1-Intro.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week1/forloop1.html">
+     Making a for loop more Pythonic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week1/Week1-Wednesday.html">
+     Wednesday Lecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week1/Homework1.html">
+     Homework 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Week2/Week2-Intro.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week2/Week2-Videos.html">
+     Week 2 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week2/rng.html">
+     Random numbers in NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week2/BooleanArray.html">
+     Boolean arrays in NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week2/Homework2.html">
+     Homework 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week2/Quiz1-Practice.html">
+     Quiz 1 Practice Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week2/Week2-Wednesday.html">
+     NumPy and pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Week3/Week3-Intro.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week3/Week3-Videos.html">
+     Week 3 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week3/intro_csv.html">
+     Reading a csv file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week3/Homework3.html">
+     Homework 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week3/Quiz2-Practice.html">
+     Quiz 2 Practice Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week3/visualization.html">
+     Visualization in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Week4/Week4-Intro.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week4/Week4-Videos.html">
+     Week 4 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week4/Video-notebooks.html">
+     Week 4 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week4/Homework4.html">
+     Homework 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week4/spotify.html">
+     Spotify dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week4/Week4-Wednesday.html">
+     More practice with the Spotify dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week4/Week4-Friday.html">
+     Review
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Week5/Week5-Intro.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week5/Week5-Wednesday.html">
+     Introduction to scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week5/intro-ML.html">
+     Introduction to Machine Learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week6/Week6-Videos.html">
+     Week 6 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week6/Video-notebooks.html">
+     Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week6/Homework5.html">
+     Homework 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week6/Week6-Wednesday.html">
+     K-Nearest Neighbors Regressor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Week7/Week7-Intro.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week7/Week7-Videos.html">
+     Week 7 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week7/Week7-Video-notebooks.html">
+     Week 7 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week7/Homework6.html">
+     Homework 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week7/Week7-Monday.html">
+     PyTorch and Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week7/Week7-Wednesday.html">
+     PyTorch and Neural Networks 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week7/neural.html">
+     Neural networks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Week8/Week8-Intro.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week8/Week8-Videos.html">
+     Week 8 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week8/Week8-Video-notebooks.html">
+     Week 8 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week8/Homework7.html">
+     Homework 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week8/Week8-Wednesday.html">
+     Week 8 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week8/Week8-Friday.html">
+     Week 8 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Week9/Week9-Intro.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week9/Week9-Monday.html">
+     Linear regression worksheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week9/Homework8.html">
+     Homework 8
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Week10/Week10-Intro.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week10/Week10-Videos.html">
+     Week 10 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week10/Week10-Video-notebooks.html">
+     Week 10 Video notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week10/Week10-Monday.html">
+     Week 10, Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Week10/Homework9.html">
+     Homework 9
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CourseProject.html">
+     Course Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ExtraTopics.html">
+     Possible extra topics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../StudentProjects.html">
+   Student Projects
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="NoahAgudelo.html">
+     Frame Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="DanaAlbakri.html">
+     Movie’s Gross
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="TylerBrown.html">
+     Project Title
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MichaelChoi.html">
+     Credit Card Approval Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="AliciaChuang.html">
+     Board Games
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RemyClement.html">
+     Project Title
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ZianDong.html">
+     Project Title
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="BrigitteHarijanto.html">
+     Project Title
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="HuanTranHuu.html">
+     Diamond price
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RexKim.html">
+     Final Project NBA Players
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="LilyMcBeath.html">
+     Russian Federation Economic Indicators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="YufeiRen.html">
+     Project Title
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="NathanSamarasena.html">
+     Analyses on NICS Firearm Background Checks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="SiyuSun.html">
+     Project Title
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="SarahThayer.html">
+     Predict Position of Player with Seasonal Stats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="AlessandroTozcano.html">
+     “Strength is Strength”
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="JennyTran.html">
+     McDonald’s Menu Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="JiayuWang.html">
+     Netflix Stock Price Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RyanWei.html">
+     Predicting match outcomes in professional Couter Strike: Global Offensive
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Examining Free Throw percentages in the NBA Playoffs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="JiaBaoZhen.html">
+     Project Title
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Proj/StudentProjects/JosephYecco.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ChristopherDavisUCI/UCI-Math-10-W22"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ChristopherDavisUCI/UCI-Math-10-W22/main?urlpath=tree/Proj/StudentProjects/JosephYecco.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Examining Free Throw percentages in the NBA Playoffs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-portion">
+   Main Portion
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Examining Free Throw percentages in the NBA Playoffs</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Examining Free Throw percentages in the NBA Playoffs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-portion">
+   Main Portion
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="examining-free-throw-percentages-in-the-nba-playoffs">
+<h1>Examining Free Throw percentages in the NBA Playoffs<a class="headerlink" href="#examining-free-throw-percentages-in-the-nba-playoffs" title="Permalink to this headline">¶</a></h1>
+<p>Author: Joseph Yecco, 61517010</p>
+<p>Course Project, UC Irvine, Math 10, W22</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>When a player in the NBA is fouled during a shot attempt, and the shot attempt is unsuccessful, the player is awarded 2 or 3 free throws depending on the spot of the foul; they are awarded 1 free throw if the shot is successful. In this project, I aim to examine whether free throw percentage increases or decreases during the playoffs, and to determine if any of the variables in the data available would allow us to examine where this increase/decrease may stem from.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span><span class="p">,</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_openml</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">log_loss</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below are the two datasets we will use. The first is a dataframe containing records of over 600k free throws attempts between 2006-2016, while the second lists all NBA all-star selections from 2000-2016</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;free_throws.csv&#39;</span><span class="p">)</span>
+<span class="n">all_stars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;allstars.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="main-portion">
+<h1>Main Portion<a class="headerlink" href="#main-portion" title="Permalink to this headline">¶</a></h1>
+<p>Now we move on to the main portion of our project. First, lets only include players in our dataframe who have taken over 100 free throw attempts in the playoffs, so that we can have a sufficient sample size to justify their free throw percentage.(The below cell may take a few minutes to run)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_player_list</span> <span class="o">=</span> <span class="n">df0</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span> <span class="c1">#Lists all of the players in our dataframe</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">((</span><span class="n">df0</span><span class="p">[</span><span class="s2">&quot;player&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="n">total_player_list</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s2">&quot;playoffs&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;playoffs&quot;</span><span class="p">))</span><span class="o">&gt;</span><span class="mi">100</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">total_player_list</span><span class="p">))])</span>
+<span class="c1">#where function is used to find where in the list are players with over 100 playoff free throw attempts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_list</span> <span class="o">=</span> <span class="n">total_player_list</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> 
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df0</span><span class="p">[</span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">player_list</span><span class="p">)]</span> <span class="c1">#New dataframe only contains info for players with &gt;100 playoff attempts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>end_result</th>
+      <th>game</th>
+      <th>game_id</th>
+      <th>period</th>
+      <th>play</th>
+      <th>player</th>
+      <th>playoffs</th>
+      <th>score</th>
+      <th>season</th>
+      <th>shot_made</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>106 - 114</td>
+      <td>PHX - LAL</td>
+      <td>261031013.0</td>
+      <td>1.0</td>
+      <td>Andrew Bynum makes free throw 1 of 2</td>
+      <td>Andrew Bynum</td>
+      <td>regular</td>
+      <td>0 - 1</td>
+      <td>2006 - 2007</td>
+      <td>1</td>
+      <td>11:45</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>106 - 114</td>
+      <td>PHX - LAL</td>
+      <td>261031013.0</td>
+      <td>1.0</td>
+      <td>Andrew Bynum makes free throw 2 of 2</td>
+      <td>Andrew Bynum</td>
+      <td>regular</td>
+      <td>0 - 2</td>
+      <td>2006 - 2007</td>
+      <td>1</td>
+      <td>11:45</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>106 - 114</td>
+      <td>PHX - LAL</td>
+      <td>261031013.0</td>
+      <td>1.0</td>
+      <td>Andrew Bynum makes free throw 1 of 2</td>
+      <td>Andrew Bynum</td>
+      <td>regular</td>
+      <td>18 - 12</td>
+      <td>2006 - 2007</td>
+      <td>1</td>
+      <td>7:26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>106 - 114</td>
+      <td>PHX - LAL</td>
+      <td>261031013.0</td>
+      <td>1.0</td>
+      <td>Andrew Bynum misses free throw 2 of 2</td>
+      <td>Andrew Bynum</td>
+      <td>regular</td>
+      <td>18 - 12</td>
+      <td>2006 - 2007</td>
+      <td>0</td>
+      <td>7:26</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>106 - 114</td>
+      <td>PHX - LAL</td>
+      <td>261031013.0</td>
+      <td>1.0</td>
+      <td>Shawn Marion makes free throw 1 of 1</td>
+      <td>Shawn Marion</td>
+      <td>regular</td>
+      <td>21 - 12</td>
+      <td>2006 - 2007</td>
+      <td>1</td>
+      <td>7:18</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>618010</th>
+      <td>104 - 118</td>
+      <td>DAL - OKC</td>
+      <td>400874368.0</td>
+      <td>4.0</td>
+      <td>Russell Westbrook makes free throw 1 of 2</td>
+      <td>Russell Westbrook</td>
+      <td>playoffs</td>
+      <td>98 - 102</td>
+      <td>2015 - 2016</td>
+      <td>1</td>
+      <td>6:56</td>
+    </tr>
+    <tr>
+      <th>618011</th>
+      <td>104 - 118</td>
+      <td>DAL - OKC</td>
+      <td>400874368.0</td>
+      <td>4.0</td>
+      <td>Russell Westbrook makes free throw 2 of 2</td>
+      <td>Russell Westbrook</td>
+      <td>playoffs</td>
+      <td>98 - 103</td>
+      <td>2015 - 2016</td>
+      <td>1</td>
+      <td>6:56</td>
+    </tr>
+    <tr>
+      <th>618012</th>
+      <td>104 - 118</td>
+      <td>DAL - OKC</td>
+      <td>400874368.0</td>
+      <td>4.0</td>
+      <td>Kevin Durant makes technical free throw</td>
+      <td>Kevin Durant</td>
+      <td>playoffs</td>
+      <td>103 - 112</td>
+      <td>2015 - 2016</td>
+      <td>1</td>
+      <td>2:48</td>
+    </tr>
+    <tr>
+      <th>618013</th>
+      <td>104 - 118</td>
+      <td>DAL - OKC</td>
+      <td>400874368.0</td>
+      <td>4.0</td>
+      <td>Kevin Durant makes free throw 1 of 1</td>
+      <td>Kevin Durant</td>
+      <td>playoffs</td>
+      <td>103 - 113</td>
+      <td>2015 - 2016</td>
+      <td>1</td>
+      <td>2:48</td>
+    </tr>
+    <tr>
+      <th>618016</th>
+      <td>104 - 118</td>
+      <td>DAL - OKC</td>
+      <td>400874368.0</td>
+      <td>4.0</td>
+      <td>Kevin Durant makes technical free throw</td>
+      <td>Kevin Durant</td>
+      <td>playoffs</td>
+      <td>103 - 118</td>
+      <td>2015 - 2016</td>
+      <td>1</td>
+      <td>0:27</td>
+    </tr>
+  </tbody>
+</table>
+<p>261646 rows × 11 columns</p>
+</div></div></div>
+</div>
+<p>Below we create the main datatable which we will use for the rest of the project</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">main_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Player&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">player_list</span><span class="p">)</span>
+<span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Regular Season Attempts&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">((</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;player&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;playoffs&quot;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;regular&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_list</span><span class="p">])</span>
+<span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Regular Season Makes&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">((</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;player&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;shot_made&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;playoffs&quot;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;regular&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_list</span><span class="p">])</span>
+<span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Regular Percentage&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Regular Season Makes&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Regular Season Attempts&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Playoff Attempts&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">((</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;player&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;playoffs&quot;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;playoffs&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_list</span><span class="p">])</span>
+<span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Playoff Makes&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">((</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;player&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;shot_made&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;playoffs&quot;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;playoffs&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_list</span><span class="p">])</span>
+<span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Playoff Percentage&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Playoff Makes&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Playoff Attempts&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Change&quot;</span><span class="p">]</span> <span class="o">=</span>  <span class="p">(</span><span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Playoff Percentage&quot;</span><span class="p">]</span><span class="o">-</span><span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Regular Percentage&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;All Star&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">main_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">all_stars</span><span class="p">[</span><span class="s2">&quot;Player&quot;</span><span class="p">])</span>
+<span class="n">main_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Player</th>
+      <th>Regular Season Attempts</th>
+      <th>Regular Season Makes</th>
+      <th>Regular Percentage</th>
+      <th>Playoff Attempts</th>
+      <th>Playoff Makes</th>
+      <th>Playoff Percentage</th>
+      <th>Change</th>
+      <th>All Star</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>LeBron James</td>
+      <td>6318</td>
+      <td>4697</td>
+      <td>0.74</td>
+      <td>1683</td>
+      <td>1260</td>
+      <td>0.75</td>
+      <td>0.01</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Dwight Howard</td>
+      <td>6839</td>
+      <td>3821</td>
+      <td>0.56</td>
+      <td>889</td>
+      <td>481</td>
+      <td>0.54</td>
+      <td>-0.02</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Kevin Durant</td>
+      <td>5226</td>
+      <td>4611</td>
+      <td>0.88</td>
+      <td>804</td>
+      <td>682</td>
+      <td>0.85</td>
+      <td>-0.03</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Kobe Bryant</td>
+      <td>4829</td>
+      <td>4055</td>
+      <td>0.84</td>
+      <td>765</td>
+      <td>647</td>
+      <td>0.85</td>
+      <td>0.01</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Dwyane Wade</td>
+      <td>4885</td>
+      <td>3738</td>
+      <td>0.77</td>
+      <td>709</td>
+      <td>538</td>
+      <td>0.76</td>
+      <td>-0.01</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>Bradley Beal</td>
+      <td>683</td>
+      <td>532</td>
+      <td>0.78</td>
+      <td>108</td>
+      <td>88</td>
+      <td>0.81</td>
+      <td>0.03</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>Harrison Barnes</td>
+      <td>656</td>
+      <td>484</td>
+      <td>0.74</td>
+      <td>119</td>
+      <td>90</td>
+      <td>0.76</td>
+      <td>0.02</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>Mickael Pietrus</td>
+      <td>631</td>
+      <td>418</td>
+      <td>0.66</td>
+      <td>143</td>
+      <td>97</td>
+      <td>0.68</td>
+      <td>0.02</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>Delonte West</td>
+      <td>623</td>
+      <td>515</td>
+      <td>0.83</td>
+      <td>106</td>
+      <td>90</td>
+      <td>0.85</td>
+      <td>0.02</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>Rasheed Wallace</td>
+      <td>533</td>
+      <td>411</td>
+      <td>0.77</td>
+      <td>106</td>
+      <td>85</td>
+      <td>0.80</td>
+      <td>0.03</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>111 rows × 9 columns</p>
+</div></div></div>
+</div>
+<p>Now let’s take a look at the difference between regular season and playoff percentage. Note that the last column (“Change”) represents the change from regular season to the playoffs</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The average change in free throw percentage between the regular season and playoffs is </span><span class="si">{</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Change&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span> <span class="c1">#Mean value -.0093</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average change in free throw percentage between the regular season and playoffs is -0.928%
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s look at whether the regular season percentage has a direct impact on that, i.e. does a higher percent yield more stability in the playoffs or not. We will use linear regression to check.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">main_df</span><span class="p">[[</span><span class="s2">&quot;Regular Percentage&quot;</span><span class="p">]],</span><span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Change&quot;</span><span class="p">],</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The coefficient of our line is </span><span class="si">{</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2"> and the intercept is </span><span class="si">{</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The coefficient of our line is [-0.0248] and the intercept is 0.0097
+</pre></div>
+</div>
+</div>
+</div>
+<p>These coefficients suggest a slight higher degree of loss in free throw percentage for players who shoot better in the regular season. We want to check how strong the correlation is betwen regular season free throw percentage and the change that occurs in the playoffs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">main_df</span><span class="p">[[</span><span class="s2">&quot;Regular Percentage&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">main_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;Regular Percentage&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">(</span><span class="mf">0.35</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))),</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Change&#39;</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;All Star&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">main_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;Regular Percentage&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">(</span><span class="mf">0.35</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))),</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;pred&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">c1</span><span class="o">+</span><span class="n">c2</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Change in Percentage by Regular Season Percentage&quot;</span><span class="p">,</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-a5b7c6d17af848cb9bff0c8fcdb1779e"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-a5b7c6d17af848cb9bff0c8fcdb1779e") {
+      outputDiv = document.getElementById("altair-viz-a5b7c6d17af848cb9bff0c8fcdb1779e");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "circle", "encoding": {"color": {"type": "nominal", "field": "All Star"}, "x": {"type": "quantitative", "field": "Regular Percentage", "scale": {"domain": [0.35, 1.0]}}, "y": {"type": "quantitative", "field": "Change"}}}, {"mark": {"type": "line", "color": "red"}, "encoding": {"x": {"type": "quantitative", "field": "Regular Percentage", "scale": {"domain": [0.35, 1.0]}}, "y": {"type": "quantitative", "field": "pred"}}}], "data": {"name": "data-315f2cacfac80a9426f65fee0b6655c1"}, "title": "Change in Percentage by Regular Season Percentage", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-315f2cacfac80a9426f65fee0b6655c1": [{"Player": "LeBron James", "Regular Season Attempts": 6318, "Regular Season Makes": 4697, "Regular Percentage": 0.74, "Playoff Attempts": 1683, "Playoff Makes": 1260, "Playoff Percentage": 0.75, "Change": 0.01, "All Star": true, "pred": -0.008659087451968547}, {"Player": "Dwight Howard", "Regular Season Attempts": 6839, "Regular Season Makes": 3821, "Regular Percentage": 0.56, "Playoff Attempts": 889, "Playoff Makes": 481, "Playoff Percentage": 0.54, "Change": -0.02, "All Star": true, "pred": -0.004191914181596928}, {"Player": "Kevin Durant", "Regular Season Attempts": 5226, "Regular Season Makes": 4611, "Regular Percentage": 0.88, "Playoff Attempts": 804, "Playoff Makes": 682, "Playoff Percentage": 0.85, "Change": -0.03, "All Star": true, "pred": -0.012133555551146475}, {"Player": "Kobe Bryant", "Regular Season Attempts": 4829, "Regular Season Makes": 4055, "Regular Percentage": 0.84, "Playoff Attempts": 765, "Playoff Makes": 647, "Playoff Percentage": 0.85, "Change": 0.01, "All Star": true, "pred": -0.01114085037995278}, {"Player": "Dwyane Wade", "Regular Season Attempts": 4885, "Regular Season Makes": 3738, "Regular Percentage": 0.77, "Playoff Attempts": 709, "Playoff Makes": 538, "Playoff Percentage": 0.76, "Change": -0.01, "All Star": true, "pred": -0.009403616330363818}, {"Player": "Carmelo Anthony", "Regular Season Attempts": 4887, "Regular Season Makes": 3999, "Regular Percentage": 0.82, "Playoff Attempts": 431, "Playoff Makes": 361, "Playoff Percentage": 0.84, "Change": 0.02, "All Star": true, "pred": -0.010644497794355933}, {"Player": "Dirk Nowitzki", "Regular Season Attempts": 4161, "Regular Season Makes": 3718, "Regular Percentage": 0.89, "Playoff Attempts": 541, "Playoff Makes": 490, "Playoff Percentage": 0.91, "Change": 0.02, "All Star": true, "pred": -0.012381731843944898}, {"Player": "James Harden", "Regular Season Attempts": 4068, "Regular Season Makes": 3477, "Regular Percentage": 0.85, "Playoff Attempts": 564, "Playoff Makes": 489, "Playoff Percentage": 0.87, "Change": 0.02, "All Star": true, "pred": -0.011389026672751204}, {"Player": "Russell Westbrook", "Regular Season Attempts": 3993, "Regular Season Makes": 3261, "Regular Percentage": 0.82, "Playoff Attempts": 609, "Playoff Makes": 515, "Playoff Percentage": 0.85, "Change": 0.03, "All Star": true, "pred": -0.010644497794355933}, {"Player": "Chris Bosh", "Regular Season Attempts": 4178, "Regular Season Makes": 3371, "Regular Percentage": 0.81, "Playoff Attempts": 378, "Playoff Makes": 304, "Playoff Percentage": 0.8, "Change": -0.01, "All Star": true, "pred": -0.010396321501557513}, {"Player": "Paul Pierce", "Regular Season Attempts": 3684, "Regular Season Makes": 3047, "Regular Percentage": 0.83, "Playoff Attempts": 662, "Playoff Makes": 553, "Playoff Percentage": 0.84, "Change": 0.01, "All Star": true, "pred": -0.010892674087154356}, {"Player": "Tim Duncan", "Regular Season Attempts": 3443, "Regular Season Makes": 2454, "Regular Percentage": 0.71, "Playoff Attempts": 676, "Playoff Makes": 451, "Playoff Percentage": 0.67, "Change": -0.04, "All Star": true, "pred": -0.007914558573573276}, {"Player": "Pau Gasol", "Regular Season Attempts": 3342, "Regular Season Makes": 2616, "Regular Percentage": 0.78, "Playoff Attempts": 527, "Playoff Makes": 388, "Playoff Percentage": 0.74, "Change": -0.04, "All Star": true, "pred": -0.009651792623162242}, {"Player": "Chris Paul", "Regular Season Attempts": 3464, "Regular Season Makes": 3000, "Regular Percentage": 0.87, "Playoff Attempts": 352, "Playoff Makes": 297, "Playoff Percentage": 0.84, "Change": -0.03, "All Star": true, "pred": -0.011885379258348051}, {"Player": "Deron Williams", "Regular Season Attempts": 3247, "Regular Season Makes": 2684, "Regular Percentage": 0.83, "Playoff Attempts": 396, "Playoff Makes": 317, "Playoff Percentage": 0.8, "Change": -0.03, "All Star": true, "pred": -0.010892674087154356}, {"Player": "Josh Smith", "Regular Season Attempts": 3197, "Regular Season Makes": 1985, "Regular Percentage": 0.62, "Playoff Attempts": 359, "Playoff Makes": 225, "Playoff Percentage": 0.63, "Change": 0.01, "All Star": false, "pred": -0.005680971938387467}, {"Player": "Amare Stoudemire", "Regular Season Attempts": 3153, "Regular Season Makes": 2497, "Regular Percentage": 0.79, "Playoff Attempts": 306, "Playoff Makes": 226, "Playoff Percentage": 0.74, "Change": -0.05, "All Star": false, "pred": -0.009899968915960665}, {"Player": "Andre Iguodala", "Regular Season Attempts": 3103, "Regular Season Makes": 2198, "Regular Percentage": 0.71, "Playoff Attempts": 338, "Playoff Makes": 201, "Playoff Percentage": 0.59, "Change": -0.12, "All Star": true, "pred": -0.007914558573573276}, {"Player": "Paul Millsap", "Regular Season Attempts": 3097, "Regular Season Makes": 2269, "Regular Percentage": 0.73, "Playoff Attempts": 330, "Playoff Makes": 230, "Playoff Percentage": 0.7, "Change": -0.03, "All Star": true, "pred": -0.008410911159170123}, {"Player": "Zach Randolph", "Regular Season Attempts": 3100, "Regular Season Makes": 2382, "Regular Percentage": 0.77, "Playoff Attempts": 315, "Playoff Makes": 231, "Playoff Percentage": 0.73, "Change": -0.04, "All Star": true, "pred": -0.009403616330363818}, {"Player": "Tony Parker", "Regular Season Attempts": 2797, "Regular Season Makes": 2183, "Regular Percentage": 0.78, "Playoff Attempts": 610, "Playoff Makes": 448, "Playoff Percentage": 0.73, "Change": -0.05, "All Star": true, "pred": -0.009651792623162242}, {"Player": "Monta Ellis", "Regular Season Attempts": 3271, "Regular Season Makes": 2535, "Regular Percentage": 0.77, "Playoff Attempts": 105, "Playoff Makes": 79, "Playoff Percentage": 0.75, "Change": -0.02, "All Star": false, "pred": -0.009403616330363818}, {"Player": "LaMarcus Aldridge", "Regular Season Attempts": 3129, "Regular Season Makes": 2511, "Regular Percentage": 0.8, "Playoff Attempts": 245, "Playoff Makes": 199, "Playoff Percentage": 0.81, "Change": 0.01, "All Star": true, "pred": -0.010148145208759089}, {"Player": "DeMar DeRozan", "Regular Season Attempts": 3062, "Regular Season Makes": 2524, "Regular Percentage": 0.82, "Playoff Attempts": 219, "Playoff Makes": 185, "Playoff Percentage": 0.84, "Change": 0.02, "All Star": true, "pred": -0.010644497794355933}, {"Player": "Blake Griffin", "Regular Season Attempts": 2878, "Regular Season Makes": 1899, "Regular Percentage": 0.66, "Playoff Attempts": 319, "Playoff Makes": 229, "Playoff Percentage": 0.72, "Change": 0.06, "All Star": true, "pred": -0.006673677109581161}, {"Player": "Manu Ginobili", "Regular Season Attempts": 2577, "Regular Season Makes": 2182, "Regular Percentage": 0.85, "Playoff Attempts": 572, "Playoff Makes": 476, "Playoff Percentage": 0.83, "Change": -0.02, "All Star": true, "pred": -0.011389026672751204}, {"Player": "Jamal Crawford", "Regular Season Attempts": 2870, "Regular Season Makes": 2507, "Regular Percentage": 0.87, "Playoff Attempts": 219, "Playoff Makes": 189, "Playoff Percentage": 0.86, "Change": -0.01, "All Star": false, "pred": -0.011885379258348051}, {"Player": "Marc Gasol", "Regular Season Attempts": 2604, "Regular Season Makes": 1988, "Regular Percentage": 0.76, "Playoff Attempts": 327, "Playoff Makes": 259, "Playoff Percentage": 0.79, "Change": 0.03, "All Star": true, "pred": -0.009155440037565394}, {"Player": "David West", "Regular Season Attempts": 2634, "Regular Season Makes": 2168, "Regular Percentage": 0.82, "Playoff Attempts": 292, "Playoff Makes": 231, "Playoff Percentage": 0.79, "Change": -0.03, "All Star": true, "pred": -0.010644497794355933}, {"Player": "Kyle Lowry", "Regular Season Attempts": 2725, "Regular Season Makes": 2172, "Regular Percentage": 0.8, "Playoff Attempts": 195, "Playoff Makes": 152, "Playoff Percentage": 0.78, "Change": -0.02, "All Star": true, "pred": -0.010148145208759089}, {"Player": "Luol Deng", "Regular Season Attempts": 2628, "Regular Season Makes": 2035, "Regular Percentage": 0.77, "Playoff Attempts": 200, "Playoff Makes": 157, "Playoff Percentage": 0.78, "Change": 0.01, "All Star": true, "pred": -0.009403616330363818}, {"Player": "Nene", "Regular Season Attempts": 2594, "Regular Season Makes": 1752, "Regular Percentage": 0.68, "Playoff Attempts": 221, "Playoff Makes": 128, "Playoff Percentage": 0.58, "Change": -0.1, "All Star": false, "pred": -0.0071700296951780085}, {"Player": "Chauncey Billups", "Regular Season Attempts": 2413, "Regular Season Makes": 2191, "Regular Percentage": 0.91, "Playoff Attempts": 380, "Playoff Makes": 327, "Playoff Percentage": 0.86, "Change": -0.05, "All Star": true, "pred": -0.012878084429541746}, {"Player": "Vince Carter", "Regular Season Attempts": 2559, "Regular Season Makes": 2078, "Regular Percentage": 0.81, "Playoff Attempts": 196, "Playoff Makes": 151, "Playoff Percentage": 0.77, "Change": -0.04, "All Star": true, "pred": -0.010396321501557513}, {"Player": "Joe Johnson", "Regular Season Attempts": 2415, "Regular Season Makes": 1960, "Regular Percentage": 0.81, "Playoff Attempts": 285, "Playoff Makes": 228, "Playoff Percentage": 0.8, "Change": -0.01, "All Star": true, "pred": -0.010396321501557513}, {"Player": "Richard Jefferson", "Regular Season Attempts": 2494, "Regular Season Makes": 1901, "Regular Percentage": 0.76, "Playoff Attempts": 141, "Playoff Makes": 115, "Playoff Percentage": 0.82, "Change": 0.06, "All Star": false, "pred": -0.009155440037565394}, {"Player": "DeAndre Jordan", "Regular Season Attempts": 2305, "Regular Season Makes": 971, "Regular Percentage": 0.42, "Playoff Attempts": 325, "Playoff Makes": 132, "Playoff Percentage": 0.41, "Change": -0.01, "All Star": true, "pred": -0.0007174460824189988}, {"Player": "Carlos Boozer", "Regular Season Attempts": 2273, "Regular Season Makes": 1623, "Regular Percentage": 0.71, "Playoff Attempts": 350, "Playoff Makes": 254, "Playoff Percentage": 0.73, "Change": 0.02, "All Star": true, "pred": -0.007914558573573276}, {"Player": "Andre Miller", "Regular Season Attempts": 2247, "Regular Season Makes": 1817, "Regular Percentage": 0.81, "Playoff Attempts": 173, "Playoff Makes": 133, "Playoff Percentage": 0.77, "Change": -0.04, "All Star": false, "pred": -0.010396321501557513}, {"Player": "Tyson Chandler", "Regular Season Attempts": 2230, "Regular Season Makes": 1469, "Regular Percentage": 0.66, "Playoff Attempts": 160, "Playoff Makes": 102, "Playoff Percentage": 0.64, "Change": -0.02, "All Star": true, "pred": -0.006673677109581161}, {"Player": "John Wall", "Regular Season Attempts": 2192, "Regular Season Makes": 1730, "Regular Percentage": 0.79, "Playoff Attempts": 107, "Playoff Makes": 85, "Playoff Percentage": 0.79, "Change": 0.0, "All Star": true, "pred": -0.009899968915960665}, {"Player": "Jeff Green", "Regular Season Attempts": 2136, "Regular Season Makes": 1680, "Regular Percentage": 0.79, "Playoff Attempts": 134, "Playoff Makes": 105, "Playoff Percentage": 0.78, "Change": -0.01, "All Star": false, "pred": -0.009899968915960665}, {"Player": "Antawn Jamison", "Regular Season Attempts": 2154, "Regular Season Makes": 1556, "Regular Percentage": 0.72, "Playoff Attempts": 101, "Playoff Makes": 69, "Playoff Percentage": 0.68, "Change": -0.04, "All Star": true, "pred": -0.0081627348663717}, {"Player": "Kevin Garnett", "Regular Season Attempts": 1900, "Regular Season Makes": 1571, "Regular Percentage": 0.83, "Playoff Attempts": 320, "Playoff Makes": 260, "Playoff Percentage": 0.81, "Change": -0.02, "All Star": true, "pred": -0.010892674087154356}, {"Player": "Mike Conley", "Regular Season Attempts": 1942, "Regular Season Makes": 1566, "Regular Percentage": 0.81, "Playoff Attempts": 232, "Playoff Makes": 182, "Playoff Percentage": 0.78, "Change": -0.03, "All Star": false, "pred": -0.010396321501557513}, {"Player": "Stephen Curry", "Regular Season Attempts": 1851, "Regular Season Makes": 1667, "Regular Percentage": 0.9, "Playoff Attempts": 278, "Playoff Makes": 244, "Playoff Percentage": 0.88, "Change": -0.02, "All Star": true, "pred": -0.012629908136743322}, {"Player": "Stephen Jackson", "Regular Season Attempts": 1944, "Regular Season Makes": 1570, "Regular Percentage": 0.81, "Playoff Attempts": 128, "Playoff Makes": 106, "Playoff Percentage": 0.83, "Change": 0.02, "All Star": false, "pred": -0.010396321501557513}, {"Player": "Ray Allen", "Regular Season Attempts": 1654, "Regular Season Makes": 1502, "Regular Percentage": 0.91, "Playoff Attempts": 391, "Playoff Makes": 345, "Playoff Percentage": 0.88, "Change": -0.03, "All Star": true, "pred": -0.012878084429541746}, {"Player": "Zaza Pachulia", "Regular Season Attempts": 1899, "Regular Season Makes": 1431, "Regular Percentage": 0.75, "Playoff Attempts": 139, "Playoff Makes": 102, "Playoff Percentage": 0.73, "Change": -0.02, "All Star": false, "pred": -0.00890726374476697}, {"Player": "Luis Scola", "Regular Season Attempts": 1916, "Regular Season Makes": 1425, "Regular Percentage": 0.74, "Playoff Attempts": 117, "Playoff Makes": 78, "Playoff Percentage": 0.67, "Change": -0.07, "All Star": false, "pred": -0.008659087451968547}, {"Player": "Derrick Rose", "Regular Season Attempts": 1780, "Regular Season Makes": 1446, "Regular Percentage": 0.81, "Playoff Attempts": 222, "Playoff Makes": 186, "Playoff Percentage": 0.84, "Change": 0.03, "All Star": true, "pred": -0.010396321501557513}, {"Player": "Marvin Williams", "Regular Season Attempts": 1869, "Regular Season Makes": 1516, "Regular Percentage": 0.81, "Playoff Attempts": 107, "Playoff Makes": 89, "Playoff Percentage": 0.83, "Change": 0.02, "All Star": false, "pred": -0.010396321501557513}, {"Player": "Ben Gordon", "Regular Season Attempts": 1848, "Regular Season Makes": 1601, "Regular Percentage": 0.87, "Playoff Attempts": 119, "Playoff Makes": 107, "Playoff Percentage": 0.9, "Change": 0.03, "All Star": false, "pred": -0.011885379258348051}, {"Player": "Joakim Noah", "Regular Season Attempts": 1777, "Regular Season Makes": 1262, "Regular Percentage": 0.71, "Playoff Attempts": 182, "Playoff Makes": 123, "Playoff Percentage": 0.68, "Change": -0.03, "All Star": true, "pred": -0.007914558573573276}, {"Player": "Rajon Rondo", "Regular Season Attempts": 1605, "Regular Season Makes": 975, "Regular Percentage": 0.61, "Playoff Attempts": 343, "Playoff Makes": 222, "Playoff Percentage": 0.65, "Change": 0.04, "All Star": true, "pred": -0.005432795645589043}, {"Player": "Roy Hibbert", "Regular Season Attempts": 1728, "Regular Season Makes": 1301, "Regular Percentage": 0.75, "Playoff Attempts": 213, "Playoff Makes": 163, "Playoff Percentage": 0.77, "Change": 0.02, "All Star": true, "pred": -0.00890726374476697}, {"Player": "Paul George", "Regular Season Attempts": 1552, "Regular Season Makes": 1300, "Regular Percentage": 0.84, "Playoff Attempts": 356, "Playoff Makes": 284, "Playoff Percentage": 0.8, "Change": -0.04, "All Star": true, "pred": -0.01114085037995278}, {"Player": "Carl Landry", "Regular Season Attempts": 1729, "Regular Season Makes": 1357, "Regular Percentage": 0.78, "Playoff Attempts": 137, "Playoff Makes": 102, "Playoff Percentage": 0.74, "Change": -0.04, "All Star": false, "pred": -0.009651792623162242}, {"Player": "J.R. Smith", "Regular Season Attempts": 1638, "Regular Season Makes": 1202, "Regular Percentage": 0.73, "Playoff Attempts": 195, "Playoff Makes": 139, "Playoff Percentage": 0.71, "Change": -0.02, "All Star": false, "pred": -0.008410911159170123}, {"Player": "Andrei Kirilenko", "Regular Season Attempts": 1683, "Regular Season Makes": 1249, "Regular Percentage": 0.74, "Playoff Attempts": 132, "Playoff Makes": 98, "Playoff Percentage": 0.74, "Change": 0.0, "All Star": true, "pred": -0.008659087451968547}, {"Player": "Brandon Bass", "Regular Season Attempts": 1631, "Regular Season Makes": 1358, "Regular Percentage": 0.83, "Playoff Attempts": 164, "Playoff Makes": 146, "Playoff Percentage": 0.89, "Change": 0.06, "All Star": false, "pred": -0.010892674087154356}, {"Player": "Jeff Teague", "Regular Season Attempts": 1561, "Regular Season Makes": 1307, "Regular Percentage": 0.84, "Playoff Attempts": 222, "Playoff Makes": 193, "Playoff Percentage": 0.87, "Change": 0.03, "All Star": true, "pred": -0.01114085037995278}, {"Player": "Damian Lillard", "Regular Season Attempts": 1606, "Regular Season Makes": 1397, "Regular Percentage": 0.87, "Playoff Attempts": 176, "Playoff Makes": 155, "Playoff Percentage": 0.88, "Change": 0.01, "All Star": true, "pred": -0.011885379258348051}, {"Player": "Lamar Odom", "Regular Season Attempts": 1454, "Regular Season Makes": 970, "Regular Percentage": 0.67, "Playoff Attempts": 321, "Playoff Makes": 203, "Playoff Percentage": 0.63, "Change": -0.04, "All Star": false, "pred": -0.006921853402379585}, {"Player": "George Hill", "Regular Season Attempts": 1447, "Regular Season Makes": 1159, "Regular Percentage": 0.8, "Playoff Attempts": 279, "Playoff Makes": 227, "Playoff Percentage": 0.81, "Change": 0.01, "All Star": false, "pred": -0.010148145208759089}, {"Player": "Hedo Turkoglu", "Regular Season Attempts": 1511, "Regular Season Makes": 1175, "Regular Percentage": 0.78, "Playoff Attempts": 188, "Playoff Makes": 148, "Playoff Percentage": 0.79, "Change": 0.01, "All Star": false, "pred": -0.009651792623162242}, {"Player": "Jimmy Butler", "Regular Season Attempts": 1550, "Regular Season Makes": 1258, "Regular Percentage": 0.81, "Playoff Attempts": 149, "Playoff Makes": 121, "Playoff Percentage": 0.81, "Change": 0.0, "All Star": true, "pred": -0.010396321501557513}, {"Player": "Trevor Ariza", "Regular Season Attempts": 1532, "Regular Season Makes": 1115, "Regular Percentage": 0.73, "Playoff Attempts": 167, "Playoff Makes": 117, "Playoff Percentage": 0.7, "Change": -0.03, "All Star": false, "pred": -0.008410911159170123}, {"Player": "Tony Allen", "Regular Season Attempts": 1471, "Regular Season Makes": 1050, "Regular Percentage": 0.71, "Playoff Attempts": 204, "Playoff Makes": 148, "Playoff Percentage": 0.73, "Change": 0.02, "All Star": false, "pred": -0.007914558573573276}, {"Player": "Jason Terry", "Regular Season Attempts": 1461, "Regular Season Makes": 1245, "Regular Percentage": 0.85, "Playoff Attempts": 200, "Playoff Makes": 163, "Playoff Percentage": 0.82, "Change": -0.03, "All Star": false, "pred": -0.011389026672751204}, {"Player": "Al Horford", "Regular Season Attempts": 1466, "Regular Season Makes": 1088, "Regular Percentage": 0.74, "Playoff Attempts": 173, "Playoff Makes": 132, "Playoff Percentage": 0.76, "Change": 0.02, "All Star": true, "pred": -0.008659087451968547}, {"Player": "Richard Hamilton", "Regular Season Attempts": 1410, "Regular Season Makes": 1195, "Regular Percentage": 0.85, "Playoff Attempts": 226, "Playoff Makes": 199, "Playoff Percentage": 0.88, "Change": 0.03, "All Star": true, "pred": -0.011389026672751204}, {"Player": "Shaquille O'Neal", "Regular Season Attempts": 1495, "Regular Season Makes": 782, "Regular Percentage": 0.52, "Playoff Attempts": 137, "Playoff Makes": 71, "Playoff Percentage": 0.52, "Change": 0.0, "All Star": true, "pred": -0.0031992090104032336}, {"Player": "Andrew Bynum", "Regular Season Attempts": 1398, "Regular Season Makes": 977, "Regular Percentage": 0.7, "Playoff Attempts": 214, "Playoff Makes": 154, "Playoff Percentage": 0.72, "Change": 0.02, "All Star": true, "pred": -0.007666382280774852}, {"Player": "Steve Nash", "Regular Season Attempts": 1458, "Regular Season Makes": 1334, "Regular Percentage": 0.91, "Playoff Attempts": 133, "Playoff Makes": 120, "Playoff Percentage": 0.9, "Change": -0.01, "All Star": true, "pred": -0.012878084429541746}, {"Player": "Mo Williams", "Regular Season Attempts": 1460, "Regular Season Makes": 1281, "Regular Percentage": 0.88, "Playoff Attempts": 115, "Playoff Makes": 93, "Playoff Percentage": 0.81, "Change": -0.07, "All Star": true, "pred": -0.012133555551146475}, {"Player": "Wesley Matthews", "Regular Season Attempts": 1427, "Regular Season Makes": 1186, "Regular Percentage": 0.83, "Playoff Attempts": 118, "Playoff Makes": 96, "Playoff Percentage": 0.81, "Change": -0.02, "All Star": false, "pred": -0.010892674087154356}, {"Player": "J.J. Redick", "Regular Season Attempts": 1398, "Regular Season Makes": 1240, "Regular Percentage": 0.89, "Playoff Attempts": 142, "Playoff Makes": 127, "Playoff Percentage": 0.89, "Change": 0.0, "All Star": false, "pred": -0.012381731843944898}, {"Player": "Kyrie Irving", "Regular Season Attempts": 1377, "Regular Season Makes": 1192, "Regular Percentage": 0.87, "Playoff Attempts": 157, "Playoff Makes": 135, "Playoff Percentage": 0.86, "Change": -0.01, "All Star": true, "pred": -0.011885379258348051}, {"Player": "Tayshaun Prince", "Regular Season Attempts": 1361, "Regular Season Makes": 1015, "Regular Percentage": 0.75, "Playoff Attempts": 111, "Playoff Makes": 82, "Playoff Percentage": 0.74, "Change": -0.01, "All Star": false, "pred": -0.00890726374476697}, {"Player": "Tristan Thompson", "Regular Season Attempts": 1312, "Regular Season Makes": 826, "Regular Percentage": 0.63, "Playoff Attempts": 155, "Playoff Makes": 90, "Playoff Percentage": 0.58, "Change": -0.05, "All Star": false, "pred": -0.00592914823118589}, {"Player": "Mario Chalmers", "Regular Season Attempts": 1269, "Regular Season Makes": 998, "Regular Percentage": 0.79, "Playoff Attempts": 190, "Playoff Makes": 141, "Playoff Percentage": 0.74, "Change": -0.05, "All Star": false, "pred": -0.009899968915960665}, {"Player": "Glen Davis", "Regular Season Attempts": 1244, "Regular Season Makes": 873, "Regular Percentage": 0.7, "Playoff Attempts": 208, "Playoff Makes": 149, "Playoff Percentage": 0.72, "Change": 0.02, "All Star": false, "pred": -0.007666382280774852}, {"Player": "Rashard Lewis", "Regular Season Attempts": 1237, "Regular Season Makes": 1016, "Regular Percentage": 0.82, "Playoff Attempts": 184, "Playoff Makes": 145, "Playoff Percentage": 0.79, "Change": -0.03, "All Star": true, "pred": -0.010644497794355933}, {"Player": "Yao Ming", "Regular Season Attempts": 1266, "Regular Season Makes": 1091, "Regular Percentage": 0.86, "Playoff Attempts": 126, "Playoff Makes": 112, "Playoff Percentage": 0.89, "Change": 0.03, "All Star": true, "pred": -0.011637202965549627}, {"Player": "Anderson Varejao", "Regular Season Attempts": 1250, "Regular Season Makes": 813, "Regular Percentage": 0.65, "Playoff Attempts": 141, "Playoff Makes": 84, "Playoff Percentage": 0.6, "Change": -0.05, "All Star": false, "pred": -0.006425500816782738}, {"Player": "Tracy McGrady", "Regular Season Attempts": 1270, "Regular Season Makes": 905, "Regular Percentage": 0.71, "Playoff Attempts": 116, "Playoff Makes": 80, "Playoff Percentage": 0.69, "Change": -0.02, "All Star": true, "pred": -0.007914558573573276}, {"Player": "Kendrick Perkins", "Regular Season Attempts": 1154, "Regular Season Makes": 680, "Regular Percentage": 0.59, "Playoff Attempts": 231, "Playoff Makes": 154, "Playoff Percentage": 0.67, "Change": 0.08, "All Star": false, "pred": -0.004936443059992196}, {"Player": "Taj Gibson", "Regular Season Attempts": 1197, "Regular Season Makes": 829, "Regular Percentage": 0.69, "Playoff Attempts": 136, "Playoff Makes": 94, "Playoff Percentage": 0.69, "Change": 0.0, "All Star": false, "pred": -0.007418205987976429}, {"Player": "Leandro Barbosa", "Regular Season Attempts": 1188, "Regular Season Makes": 987, "Regular Percentage": 0.83, "Playoff Attempts": 125, "Playoff Makes": 91, "Playoff Percentage": 0.73, "Change": -0.1, "All Star": false, "pred": -0.010892674087154356}, {"Player": "Josh Howard", "Regular Season Attempts": 1194, "Regular Season Makes": 948, "Regular Percentage": 0.79, "Playoff Attempts": 106, "Playoff Makes": 81, "Playoff Percentage": 0.76, "Change": -0.03, "All Star": true, "pred": -0.009899968915960665}, {"Player": "Derek Fisher", "Regular Season Attempts": 1031, "Regular Season Makes": 877, "Regular Percentage": 0.85, "Playoff Attempts": 267, "Playoff Makes": 229, "Playoff Percentage": 0.86, "Change": 0.01, "All Star": false, "pred": -0.011389026672751204}, {"Player": "Jameer Nelson", "Regular Season Attempts": 1119, "Regular Season Makes": 932, "Regular Percentage": 0.83, "Playoff Attempts": 144, "Playoff Makes": 114, "Playoff Percentage": 0.79, "Change": -0.04, "All Star": true, "pred": -0.010892674087154356}, {"Player": "Shawn Marion", "Regular Season Attempts": 1141, "Regular Season Makes": 885, "Regular Percentage": 0.78, "Playoff Attempts": 106, "Playoff Makes": 82, "Playoff Percentage": 0.77, "Change": -0.01, "All Star": true, "pred": -0.009651792623162242}, {"Player": "Matt Barnes", "Regular Season Attempts": 1124, "Regular Season Makes": 847, "Regular Percentage": 0.75, "Playoff Attempts": 117, "Playoff Makes": 88, "Playoff Percentage": 0.75, "Change": 0.0, "All Star": false, "pred": -0.00890726374476697}, {"Player": "Jason Richardson", "Regular Season Attempts": 1130, "Regular Season Makes": 817, "Regular Percentage": 0.72, "Playoff Attempts": 105, "Playoff Makes": 76, "Playoff Percentage": 0.72, "Change": 0.0, "All Star": false, "pred": -0.0081627348663717}, {"Player": "Chris Andersen", "Regular Season Attempts": 1050, "Regular Season Makes": 716, "Regular Percentage": 0.68, "Playoff Attempts": 167, "Playoff Makes": 115, "Playoff Percentage": 0.69, "Change": 0.01, "All Star": false, "pred": -0.0071700296951780085}, {"Player": "Serge Ibaka", "Regular Season Attempts": 1015, "Regular Season Makes": 756, "Regular Percentage": 0.74, "Playoff Attempts": 164, "Playoff Makes": 126, "Playoff Percentage": 0.77, "Change": 0.03, "All Star": false, "pred": -0.008659087451968547}, {"Player": "Kawhi Leonard", "Regular Season Attempts": 919, "Regular Season Makes": 760, "Regular Percentage": 0.83, "Playoff Attempts": 223, "Playoff Makes": 166, "Playoff Percentage": 0.74, "Change": -0.09, "All Star": true, "pred": -0.010892674087154356}, {"Player": "Boris Diaw", "Regular Season Attempts": 1028, "Regular Season Makes": 741, "Regular Percentage": 0.72, "Playoff Attempts": 110, "Playoff Makes": 77, "Playoff Percentage": 0.7, "Change": -0.02, "All Star": false, "pred": -0.0081627348663717}, {"Player": "Tiago Splitter", "Regular Season Attempts": 942, "Regular Season Makes": 656, "Regular Percentage": 0.7, "Playoff Attempts": 169, "Playoff Makes": 98, "Playoff Percentage": 0.58, "Change": -0.12, "All Star": false, "pred": -0.007666382280774852}, {"Player": "Klay Thompson", "Regular Season Attempts": 909, "Regular Season Makes": 775, "Regular Percentage": 0.85, "Playoff Attempts": 171, "Playoff Makes": 142, "Playoff Percentage": 0.83, "Change": -0.02, "All Star": true, "pred": -0.011389026672751204}, {"Player": "Draymond Green", "Regular Season Attempts": 707, "Regular Season Makes": 488, "Regular Percentage": 0.69, "Playoff Attempts": 235, "Playoff Makes": 175, "Playoff Percentage": 0.74, "Change": 0.05, "All Star": true, "pred": -0.007418205987976429}, {"Player": "Zydrunas Ilgauskas", "Regular Season Attempts": 756, "Regular Season Makes": 600, "Regular Percentage": 0.79, "Playoff Attempts": 146, "Playoff Makes": 112, "Playoff Percentage": 0.77, "Change": -0.02, "All Star": true, "pred": -0.009899968915960665}, {"Player": "Kenyon Martin", "Regular Season Attempts": 775, "Regular Season Makes": 430, "Regular Percentage": 0.55, "Playoff Attempts": 108, "Playoff Makes": 67, "Playoff Percentage": 0.62, "Change": 0.07, "All Star": true, "pred": -0.0039437378887985045}, {"Player": "Jason Kidd", "Regular Season Attempts": 747, "Regular Season Makes": 607, "Regular Percentage": 0.81, "Playoff Attempts": 107, "Playoff Makes": 81, "Playoff Percentage": 0.76, "Change": -0.05, "All Star": true, "pred": -0.010396321501557513}, {"Player": "Bradley Beal", "Regular Season Attempts": 683, "Regular Season Makes": 532, "Regular Percentage": 0.78, "Playoff Attempts": 108, "Playoff Makes": 88, "Playoff Percentage": 0.81, "Change": 0.03, "All Star": false, "pred": -0.009651792623162242}, {"Player": "Harrison Barnes", "Regular Season Attempts": 656, "Regular Season Makes": 484, "Regular Percentage": 0.74, "Playoff Attempts": 119, "Playoff Makes": 90, "Playoff Percentage": 0.76, "Change": 0.02, "All Star": false, "pred": -0.008659087451968547}, {"Player": "Mickael Pietrus", "Regular Season Attempts": 631, "Regular Season Makes": 418, "Regular Percentage": 0.66, "Playoff Attempts": 143, "Playoff Makes": 97, "Playoff Percentage": 0.68, "Change": 0.02, "All Star": false, "pred": -0.006673677109581161}, {"Player": "Delonte West", "Regular Season Attempts": 623, "Regular Season Makes": 515, "Regular Percentage": 0.83, "Playoff Attempts": 106, "Playoff Makes": 90, "Playoff Percentage": 0.85, "Change": 0.02, "All Star": false, "pred": -0.010892674087154356}, {"Player": "Rasheed Wallace", "Regular Season Attempts": 533, "Regular Season Makes": 411, "Regular Percentage": 0.77, "Playoff Attempts": 106, "Playoff Makes": 85, "Playoff Percentage": 0.8, "Change": 0.03, "All Star": true, "pred": -0.009403616330363818}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>From the above graph, it seems that there is not much of a linear relationship between regular season percentage and the change that occurs in the playoffs. Checking the score below confirms that linear regression is not a great predictor for change in playoff percentage.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">,</span><span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.03622750339721614
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thus while there may be some correlation between regular season percentage and the change that occurs in the playoffs, the correlation is not strong enough to suggest a causal relationship. From here, we will then try to answer 2 follow up questions:</p>
+<p>1.) Are players who were at some point selected as all-stars(and thus are more likely to have their team depend on them to perform well in the playoffs) more or less consistent with their regular season percentage in the playoffs?</p>
+<p>2.) Can we accurately predict the change that will occur in playoff percentage based on a player’s regular season percentage and all-star status?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">change_by_starstatus</span> <span class="o">=</span> <span class="n">main_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;All Star&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s2">&quot;Change&quot;</span><span class="p">]</span> 
+<span class="n">change_by_starstatus</span> <span class="c1">#Average change from regular season to playoffs for non-all-stars and all-stars</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All Star
+False   -0.010227
+True    -0.008657
+Name: Change, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>It appears that on average, non-all-stars face a decrease of approximately 1.02% in their playoff free throw percentage, while all-stars decrease about 0.87%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">increase</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">change_by_starstatus</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">change_by_starstatus</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span><span class="o">/</span><span class="nb">abs</span><span class="p">(</span><span class="n">change_by_starstatus</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The free throw percentage of All-Stars changes </span><span class="si">{</span><span class="n">increase</span><span class="si">}</span><span class="s2">% less than that of non-All-Stars when going from the regular season to the playoffs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The free throw percentage of All-Stars changes 18.14% less than that of non-All-Stars when going from the regular season to the playoffs
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the above, it appears that all-stars are slightly more stable in terms of maintaining their free throw percentage than non-all-stars, with about 18% less variation. Now let’s look at the second question. We will use a K-nearest neighbors regressor to try to predict the change. First, we need to scale the input variables so that one is not considered more severely than the other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Regular Percentage&quot;</span><span class="p">,</span> <span class="s2">&quot;All Star&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">main_df</span><span class="p">[</span><span class="n">var_cols</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>StandardScaler()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">main_df</span><span class="p">[</span><span class="n">var_cols</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below we set up a test, then try to determine the optimal number of neighbors to use to obtain the best possible predictions without overfitting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Change&quot;</span><span class="p">],</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_scores</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">clf</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">train_error</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">test_error</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span> <span class="n">y_test</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">train_error</span><span class="p">,</span> <span class="n">test_error</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">error_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;K-inverse&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">)],</span><span class="s2">&quot;Training Error&quot;</span><span class="p">:[</span><span class="n">get_scores</span><span class="p">(</span><span class="n">k</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">)],</span><span class="s2">&quot;Test Error&quot;</span><span class="p">:[</span><span class="n">get_scores</span><span class="p">(</span><span class="n">k</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">)]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">error_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;K-inverse&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Training Error&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">error_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;Orange&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;K-inverse&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Test Error&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">e1</span><span class="o">+</span><span class="n">e2</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Training and test error by number of Neighbors&quot;</span><span class="p">,</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-dbf9c25b34744ff6921dc6c81764ce98"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-dbf9c25b34744ff6921dc6c81764ce98") {
+      outputDiv = document.getElementById("altair-viz-dbf9c25b34744ff6921dc6c81764ce98");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "color": "Blue"}, "encoding": {"x": {"type": "quantitative", "field": "K-inverse"}, "y": {"type": "quantitative", "field": "Training Error"}}}, {"mark": {"type": "line", "color": "Orange"}, "encoding": {"x": {"type": "quantitative", "field": "K-inverse"}, "y": {"type": "quantitative", "field": "Test Error"}}}], "data": {"name": "data-c4b7fece0cced120e34fe3782e0c08b9"}, "title": "Training and test error by number of Neighbors", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-c4b7fece0cced120e34fe3782e0c08b9": [{"K-inverse": 1.0, "Training Error": 0.020113636363636365, "Test Error": 0.04739130434782609}, {"K-inverse": 0.5, "Training Error": 0.02596590909090909, "Test Error": 0.042608695652173914}, {"K-inverse": 0.3333333333333333, "Training Error": 0.025795454545454545, "Test Error": 0.04043478260869565}, {"K-inverse": 0.25, "Training Error": 0.02690340909090909, "Test Error": 0.036521739130434785}, {"K-inverse": 0.2, "Training Error": 0.02677272727272727, "Test Error": 0.03626086956521739}, {"K-inverse": 0.16666666666666666, "Training Error": 0.02738636363636364, "Test Error": 0.0336231884057971}, {"K-inverse": 0.14285714285714285, "Training Error": 0.026801948051948053, "Test Error": 0.03254658385093167}, {"K-inverse": 0.125, "Training Error": 0.02715909090909091, "Test Error": 0.03206521739130434}, {"K-inverse": 0.1111111111111111, "Training Error": 0.026982323232323233, "Test Error": 0.03198067632850241}, {"K-inverse": 0.1, "Training Error": 0.027704545454545457, "Test Error": 0.03191304347826087}, {"K-inverse": 0.09090909090909091, "Training Error": 0.028037190082644627, "Test Error": 0.03098814229249012}, {"K-inverse": 0.08333333333333333, "Training Error": 0.028626893939393938, "Test Error": 0.0316304347826087}, {"K-inverse": 0.07692307692307693, "Training Error": 0.028889860139860137, "Test Error": 0.030535117056856187}, {"K-inverse": 0.07142857142857142, "Training Error": 0.029253246753246753, "Test Error": 0.029689440993788823}, {"K-inverse": 0.06666666666666667, "Training Error": 0.029068181818181816, "Test Error": 0.029217391304347827}, {"K-inverse": 0.0625, "Training Error": 0.028948863636363634, "Test Error": 0.029157608695652176}, {"K-inverse": 0.058823529411764705, "Training Error": 0.02927139037433155, "Test Error": 0.02920716112531969}, {"K-inverse": 0.05555555555555555, "Training Error": 0.029059343434343434, "Test Error": 0.02830917874396135}, {"K-inverse": 0.05263157894736842, "Training Error": 0.029288277511961724, "Test Error": 0.02807780320366133}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>Based on the above, we want to avoid lower k values for our classifer as these tend to cause overfitting. This is seen on the right-hand-side of the graph, where a low k-value will lead to a high value for 1/k. Here, we see that the training error(blue line) is low, while the test error(orange line) is high, suggesting overfitting. Thus we will want a k-value of at least 10(where K-inverse=0.1) to avoid this problem and minimize overfitting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">score</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">clf2</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">clf2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">clf2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span><span class="n">main_df</span><span class="p">[</span><span class="s2">&quot;Change&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">score</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.291718600191754
+-0.031479206615532274
+-0.014573346116970365
+-0.005247408317353708
+0.025450862895493698
+0.01931228028123977
+0.030959922319838906
+0.03225034455896425
+0.0100371524448708
+-0.00047662991371000274
+-0.008002484093088347
+-0.017972994566954448
+-0.023313425088076656
+-0.020046116481108545
+0.0004058005752635152
+0.011955517250419323
+-0.007930299044213163
+0.011344867458541796
+0.0039943111045007695
+0.0005227558724834047
+0.007320751886564891
+0.0015322288297425768
+0.002006750829637083
+-0.00316997368368499
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looking at this list, we see that all of the scores for k&gt;9 are less than .2, indicating that either k-nearest neighbors may not be the best predictor for change in free throw percentages due to the playoffs, or that the combination of independent variables used(Regular Percentage and All-Star Status) are not sufficient to make prediction for our dependent variabel(Change in free throw percentage).</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>The results from this examination of NBA free throw data demonstrated a minor dropoff in free throw percentage during the playoffs. The dropoff was slightly less for All-Star caliber players than for non-all-stars. There did not seem to be any strong linear correlation between regular season free throw percentage and the amount that the player’s percentage would drop in the playoffs, although there was a slightly higher dropoff corresponding to players with higher regular season percentages. Finally, we found that k-nearest neighbors could not be successfully used to predict the change that would occur based on whether a player’s regular season percentage and their all-star status.</p>
+<p>While the results of this investigation did not yield any major insights, it did reflect the idea that there are many, many factors affecting a player’s performance in game. While the datasets we used were thorough, it would be hard to fully account for any particular variable having a major impact on so many players</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Free throw Dataset was found on Kaggle at <a class="reference external" href="https://www.kaggle.com/sebastianmantey/nba-free-throws/code">https://www.kaggle.com/sebastianmantey/nba-free-throws/code</a></p>
+<p>All star dataset was found at <a class="reference external" href="https://www.kaggle.com/fmejia21/nba-all-star-game-20002016">https://www.kaggle.com/fmejia21/nba-all-star-game-20002016</a></p>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=85b93f6f-d194-4f67-a6f1-36edeb0b9a75' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Proj/StudentProjects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="RyanWei.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Predicting match outcomes in professional Couter Strike: Global Offensive</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="JiaBaoZhen.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Project Title</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Christopher Davis<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
