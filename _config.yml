@@ -16,6 +16,7 @@ execute:
     - 'Week7/Week7-Wednesday.ipynb'
     - 'Week8/Homework7.ipynb'
     - 'Week8/Week8-Video-notebooks.ipynb'
+    - 'Proj/StudentProjects/*.ipynb'
   execute_notebooks: 'cache'
   allow_errors: true
   timeout: 200
@@ -47,3 +48,4 @@ sphinx:
     html_extra_path:
       - data
       - extra
+      - .github

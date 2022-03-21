@@ -67,9 +67,34 @@ chapters:
     sections:
     - file: Week10/Week10-Videos
     - file: Week10/Week10-Video-notebooks
+    - file: Week10/Week10-Monday
     - file: Week10/Homework9
   - file: Proj/Proj-Intro
     sections:
     - file: Proj/CourseProject
     - file: Proj/ExtraTopics
-    - file: Proj/StudentProjects
+  - file: Proj/StudentProjects
+    sections:
+    - file: Proj/StudentProjects/NoahAgudelo
+    - file: Proj/StudentProjects/DanaAlbakri
+    - file: Proj/StudentProjects/TylerBrown
+    - file: Proj/StudentProjects/MichaelChoi
+    - file: Proj/StudentProjects/AliciaChuang
+    - file: Proj/StudentProjects/RemyClement
+    - file: Proj/StudentProjects/ZianDong
+    - file: Proj/StudentProjects/BrigitteHarijanto
+    - file: Proj/StudentProjects/HuanTranHuu
+    - file: Proj/StudentProjects/RexKim
+    - file: Proj/StudentProjects/LilyMcBeath
+    - file: Proj/StudentProjects/YufeiRen
+    - file: Proj/StudentProjects/NathanSamarasena
+    - file: Proj/StudentProjects/SiyuSun
+    - file: Proj/StudentProjects/SarahThayer
+    - file: Proj/StudentProjects/AlessandroTozcano
+    - file: Proj/StudentProjects/JennyTran
+    - file: Proj/StudentProjects/JiayuWang
+    - file: Proj/StudentProjects/RyanWei
+    - file: Proj/StudentProjects/JosephYecco
+    - file: Proj/StudentProjects/JiaBaoZhen
+    
+    
