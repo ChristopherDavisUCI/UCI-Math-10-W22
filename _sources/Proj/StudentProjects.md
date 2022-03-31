@@ -22,4 +22,4 @@ Here are some of the student projects from Winter 2022!
 * [Netflix Stock Price Prediction](StudentProjects/JiayuWang) by Jiayu Wang
 * [Predicting match outcomes in professional Couter Strike: Global Offensive](StudentProjects/RyanWei) by Ryan Wei
 * [Examining Free Throw percentages in the NBA Playoffs](StudentProjects/JosephYecco) by Joseph Yecco
-* [Project Title](StudentProjects/JiaBaoZhen) by Jia Bao Zhen
+* [Pokemon Types with Machine Learning](StudentProjects/JiaBaoZhen) by Jia Bao Zhen
